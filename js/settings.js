@@ -104,31 +104,8 @@
 			}
 		});
 
-		$("#home-reviews .owl-carousel").owlCarousel({
-			items: 1,
-			margin: 0,
-			loop: true,
-			dots: false,
-			nav: true,
-			navText: ['<i class="fa fa-arrow-left fa-2x"></i>','<i class="fa fa-arrow-right fa-2x"></i>']
-		});
 
-		$("#blog .owl-carousel").owlCarousel({
-			items: 2,
-			margin: 60,
-			loop: true,
-			dots: false,
-			nav: true,
-			navText: ['<i class="fa fa-arrow-left fa-2x"></i>','<i class="fa fa-arrow-right fa-2x"></i>'],
-			responsive:{
-				0:{
-					items:1
-				},
-				767:{
-					items:2
-				}
-			}
-		});
+
 
 		$("#reviews .owl-carousel").owlCarousel({
 			items: 1,
@@ -141,21 +118,12 @@
 
 		//=====================================================================
 
-		// Home page reviews quote
-
-		$("#home-reviews .owl-carousel blockquote").prepend("<i class='fa fa-quote-right fa-2x'></i>");
-
-		// ====================================================================
+		
 
 		// Reservation
 
-		$("#reservation-link").click(function () {
-			$("#reservation").slideDown(300);
-		});
 
-			$("#reservation .close").click(function () {
-				$("#reservation").slideUp(300);
-			});
+	
 
 		$(".quantity").on("click", function () {
 
