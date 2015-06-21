@@ -14,11 +14,11 @@ if (isset($_POST['submit'])) {
 	/*
 	hash password
 	*/
-	// $password=hash('ripemd160', "$password");
+	$password=hash('ripemd160', "$password");
 	/*
 	chech admin info in database
 	*/
-	include 'connection.php';
+	include '../connection/connection.php';
 	$sql="SELECT * FROM admin WHERE user_name = '$userid' && password= '$password' " ;
 	$query=$conn->query($sql);
 	while ($result=$query->fetch(PDO::FETCH_ASSOC)) {

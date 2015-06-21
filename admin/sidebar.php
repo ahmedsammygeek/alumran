@@ -84,39 +84,7 @@ if(!isset($_SESSION['logged']) || $_SESSION['logged'] != 'true') {
                                     <i class="fa fa-dashboard"></i> <span>admins</span>
                                 </a>
                             </li>
-                            <li class="treeview">
-                                <a href="#">
-                                    <i class="fa fa-bar-chart-o"></i>
-                                    <span>menu</span>
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li><a href="show_menu.php"><i class="fa fa-angle-double-right"></i> menu </a></li>
-                                    <li><a href="menu.php"><i class="fa fa-angle-double-right"></i> add menu</a></li>
-                                </ul>
-                            </li>
-                            <li class="treeview">
-                                <a href="#">
-                                    <i class="fa fa-bar-chart-o"></i>
-                                    <span>slider</span>
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li><a href="showslider.php"><i class="fa fa-angle-double-right"></i> sliders </a></li>
-                                    <li><a href="slider.php"><i class="fa fa-angle-double-right"></i> add slider</a></li>
-                                </ul>
-                            </li>
-                            <li class="treeview">
-                                <a href="#">
-                                    <i class="fa fa-bar-chart-o"></i>
-                                    <span>products</span>
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li><a href="products.php"><i class="fa fa-angle-double-right"></i> products </a></li>
-                                    <li><a href="add_product.php"><i class="fa fa-angle-double-right"></i> add product</a></li>
-                                </ul>
-                            </li>
+                            
 
                             <li class="treeview">
                                 <a href="#">
@@ -128,16 +96,6 @@ if(!isset($_SESSION['logged']) || $_SESSION['logged'] != 'true') {
                                     <li><a href="orders.php"><i class="fa fa-angle-double-right"></i> all orders </a></li>
                                     <li><a href="new_orders.php"><i class="fa fa-angle-double-right"></i> new orders </a></li>
                                 </ul>
-                            </li>
-
-
-                            <li>
-                                <a href="show_members.php">
-                                    <i class="fa fa-bar-chart-o"></i>
-                                    <span>members</span>
-
-                                </a>
-
                             </li>
                             <li>
                                 <a href="show_subscribe.php">
@@ -156,15 +114,6 @@ if(!isset($_SESSION['logged']) || $_SESSION['logged'] != 'true') {
 
                             </li>
                             <li>
-                                <a href="show_terms.php">
-                                    <i class="fa fa-bar-chart-o"></i>
-                                    <span>terms</span>
-
-                                </a>
-
-                            </li>
-
-                            <li>
                                 <a href="show_info.php">
                                     <i class="fa fa-bar-chart-o"></i>
                                     <span>site info</span>
@@ -172,17 +121,6 @@ if(!isset($_SESSION['logged']) || $_SESSION['logged'] != 'true') {
                                 </a>
 
                             </li>
-
-                            <li>
-                                <a href="title.php">
-                                    <i class="fa fa-bar-chart-o"></i>
-                                    <span>title of products</span>
-
-                                </a>
-
-                            </li>
-
-
                             <li>
                                 <a href="message.php">
                                     <i class="fa fa-envelope"></i> <span>Mailbox</span>

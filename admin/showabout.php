@@ -26,7 +26,7 @@ require 'sidebar.php';
             <b>Alert!</b>   an error in your deletion please try again.
             </div>';
             break;
-          
+
             case 'updated':
             echo '<div class="alert alert-success alert-dismissable">
             <i class="fa fa-check"></i>
@@ -36,7 +36,7 @@ require 'sidebar.php';
             break;
 
             default:
-                                      # code...
+
             break;
           }
         }
@@ -44,33 +44,49 @@ require 'sidebar.php';
 
         ?>
 
-        <table class="table table-hover">
+        <table class="table table-bordered table-striped">
 
           <tbody><tr>
             <th>ID</th>
             <th>CONTENT</th>
             <th>CONTENT(ar)</th>
             <th>UPDATE</th>
+            <th>VIEW</th>
 
           </tr>
           <?php
-          include 'connection.php';
-          $sql="SELECT * FROM about_us ";
+          require '../connection/connection.php';
+          $sql="SELECT * FROM aboutus ";
           $query=$conn->query($sql);
           $i=1;
           while ($result=$query->fetch(PDO::FETCH_ASSOC)) {
            extract($result);
+           if (!empty($content) && !empty($content_ar)) {
+             $small_content = substr($content, 0 , 50);
+             $small_content_ar = substr($content_ar, 0 , 50);
+           }  
            echo " <tr>
            <td>$i</td>
-           <td>$content</td>
-           <td>$content_ar</td>
+           <td>$small_content</td>
+           <td>$small_content_ar</td>
            <td>
            <a href='editabout.php?id=$id' class='btn btn-warning btn-sm'>update</a>
+           </td>
+           <td>
+           <a href='showabout.php?id=$id' class='btn btn-sm btn-info'>view</a>
            </td>
            </tr>" ;
            $i++;
 
          } 
+         if (isset($_GET['id'])) {
+           echo '<div class="callout callout-info">
+           <p>'.$content.'</p>
+           </div>' ;
+           echo '<div class="callout callout-info">
+           <p>'.$content_ar.'</p>
+           </div>' ;
+         }
 
 
 

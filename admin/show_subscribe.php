@@ -2,7 +2,7 @@
 
 require 'sidebar.php';
 require 'check_admin.php';
-require 'connection.php';
+require '../connection/connection.php';
 ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -27,57 +27,24 @@ require 'connection.php';
                     <a href="send_mail_all.php" class="btn btn-success btn-lg">send to all</a>
 
                     <div class="box-body table-responsive">
-
-                        <?php 
-                        if (isset($_GET['msg'])) {
-        //if exist msg in link get this message and do defferent action in every case and show alert
-
-                            switch ($_GET['msg']) {
-
-                                case 'error':
-            //this case error in sql request to delete this data
-                                echo '<div class="alert alert-danger alert-dismissable">
-                                <i class="fa fa-ban"></i>
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                <b>Alert!</b>   an error in your delete please try again.
-                                </div>';
-                                break;
-                                case 'deleted':
-            //this case data deleted successful
-                                echo '<div class="alert alert-success alert-dismissable">
-                                <i class="fa fa-check"></i>
-
-                                <b>Alert!</b> data deleted successfully.
-                                </div>' ;
-                                break;
-
-
-                                default:
-
-                                break;
-                            }
-                        }
-
-
-                        ?>
-
-
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>name</th>
                                     <th>email</th>
                                    
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                                $query = $conn->prepare("SELECT * FROM news_letter");
+                                $query = $conn->prepare("SELECT * FROM newsletter");
                                 $query->execute();
                                 $i = 1;
                                 while ($result = $query->fetch(PDO::FETCH_OBJ)) {
                                     echo '<tr>
                                     <td>'.$i.'</td>
+                                    <td>'.$result->name.'</td>
                                     <td>'.$result->email.'</td>
                                     </tr>';
                                     $i++;
