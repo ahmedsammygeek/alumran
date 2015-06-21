@@ -11,12 +11,10 @@ if (isset($_POST['submit'])) {
 		}
 	}
 	extract($inputs);
-
-
 	/*
 	hash password
 	*/
-	$password=hash('ripemd160', "$password");
+	// $password=hash('ripemd160', "$password");
 	/*
 	chech admin info in database
 	*/
