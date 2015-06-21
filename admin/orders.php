@@ -2,7 +2,7 @@
 
 require 'sidebar.php';
 require 'check_admin.php';
-require 'connection.php';
+require '../connection/connection.php';
 ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">

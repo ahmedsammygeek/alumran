@@ -26,8 +26,8 @@ require 'sidebar.php';
         if (isset($_GET['id'])) {
          $id=$_GET['id'];
        }
-       require 'connection.php';
-       $query = $conn->query("SELECT * FROM about_us WHERE id=$id ");
+       require '../connection/connection.php';
+       $query = $conn->query("SELECT * FROM aboutus WHERE id=$id ");
        while ($result=$query->fetch(PDO::FETCH_ASSOC)) {
          extract($result);
        }

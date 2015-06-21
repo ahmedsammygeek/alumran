@@ -1,3 +1,4 @@
+
 <?php session_start();
 require 'check_admin.php';
 /*
@@ -36,7 +37,7 @@ if (!$up) {
 /*
 get id for user 
 */
-require 'connection.php';
+require '../connection/connection.php';
 $query = $conn->prepare("SELECT email FROM members WHERE id=?");
 $query->bindValue(1,$id,PDO::PARAM_INT);
 $query->execute();

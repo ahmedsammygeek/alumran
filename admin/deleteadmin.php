@@ -1,11 +1,11 @@
-<?php 
+<?php session_start();
 require 'check_admin.php';
 
 if (isset($_GET['msg'])) {
 	$id=$_GET['msg'];
 	//get the id of row we need to delete an put it variable ($id)
 }
-include 'connection.php';
+require '../connection/connection.php';
 //connection with database (met)
 $sql="DELETE FROM admin WHERE id='$id' ";
 $query=$conn->query($sql);

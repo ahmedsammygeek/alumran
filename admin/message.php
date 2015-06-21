@@ -63,8 +63,8 @@ require 'sidebar.php';
 										<th>REPLY</th>
 									</tr>
 									<?php 
-									require 'connection.php';
-									$sql="SELECT * FROM messages";
+									require '../connection/connection.php';
+									$sql="SELECT * FROM booking";
 									$query=$conn->query($sql);
 									$i=1;
 									while ($result=$query->fetch(PDO::FETCH_ASSOC)) {

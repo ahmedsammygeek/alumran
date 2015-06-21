@@ -46,7 +46,7 @@ require 'sidebar.php';
            }
          } 
          ?>
-         <table id="example1" class="table table-hover">
+         <table id="example1" class="table table-bordered table-striped">
 
           <thead>
            <tr>
@@ -59,7 +59,7 @@ require 'sidebar.php';
         <tbody>
          
           <?php
-          include 'connection.php';
+          require '../connection/connection.php';
                 //connection with database (met)
           $sql="SELECT * FROM admin ";
           $query=$conn->query($sql);

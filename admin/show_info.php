@@ -54,38 +54,38 @@ require 'sidebar.php';
 								<table class="table table-mailbox">
 									
 									<?php 
-									require 'connection.php';
+									require '../connection/connection.php';
 									$sql="SELECT * FROM site_info";
 									$query=$conn->query($sql);
-									$result=$query->fetch(PDO::FETCH_ASSOC);
-									extract($result);
+									$result=$query->fetch(PDO::FETCH_OBJ);
+									
 									// while (strlen($address_en) > 30 || strlen($address_ar) > 30) {
 									// 	echo "<br>";
 									// }
 									echo "
 									<tr>
 									<td>phone</td>
-									<td>$phone</td>
+									<td>$result->phone</td>
 									</tr>
 									<tr>
 									<td>facebook</td>
-									<td>$facebook</td>
+									<td>$result->facebook</td>
 									</tr>
 									<tr>
 									<td>twitter</td>
-									<td>$twitter</td>
+									<td>$result->twitter</td>
 									</tr>
 									<tr>
 									<td>email</td>
-									<td>$email</td>
+									<td>$result->email</td>
 									</tr>
 									<tr>
 									<td>address_en</td>
-									<td>$address_en</td>
+									<td>$result->address</td>
 									</tr>
 									<tr>
 									<td>address_ar</td>
-									<td>$address_ar</td>
+									<td>$result->address_ar</td>
 									</tr>
 									";
 

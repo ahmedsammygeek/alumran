@@ -10,13 +10,13 @@ if (isset($_POST['submit'])) {
 		$id=$_GET['id'];
 	}
 	//recieved data admin add it in form 
-	$content=htmlspecialchars($_POST['content']);
-	$content_ar=htmlspecialchars($_POST['content_ar']);
+	$content=htmlspecialchars_decode($_POST['content']);
+	$content_ar=htmlspecialchars_decode($_POST['content_ar']);
 	
 }
 
-require 'connection.php';
-$sql="UPDATE about_us SET content='$content',content_ar='$content_ar' WHERE id=$id "; 
+require '../connection/connection.php';
+$sql="UPDATE aboutus SET content='$content',content_ar='$content_ar' WHERE id=$id "; 
 $query=$conn->prepare($sql);
 if ($query->execute()) {
 	header("location: showabout.php?msg=updated");die();

@@ -1,11 +1,11 @@
 <?php session_start();
 require 'check_admin.php';
-require 'connection.php';
+require '../connection/connection.php';
 /*
 select all members
 */
 $emails = array();
-$query = $conn->prepare("SELECT email FROM news_letter");
+$query = $conn->prepare("SELECT email FROM newsletter");
 $query->execute();
 while ($result = $query->fetch(PDO::FETCH_OBJ)) {
 	$emails[] = $result->email;
@@ -34,36 +34,36 @@ $img_name=$randomstring.".$type" ;
 add this image to our folder
 */
 // var_dump($img_name);die();
-$up = move_uploaded_file($_FILES['file']['tmp_name'], "image/$img_name");
-if (!$up) {
-	header("location: send_mail_all.php?msg=nup");die();
+$up = move_uploaded_file($_FILES['file']['tmp_name'], "../uploaded/mails_image/$img_name");
+$from = "root@alumran.com";
+
+$to = array('ahmedsamigeek@gmail.com');
+$body = '<html> 
+  <body bgcolor="#DCEEFC"> 
+    <center>';
+
+
+$body .= '<p>'.$msg.'</p><br><br> <img src="http://retagshop.com/admin/image/'.$img_name.'">';
+
+$body .= ' </center> 
+      <br><br>*** we Always love to contact with us  <br> Regards<br> alumran Team 
+  </body> 
+</html>'; 
+$headers = "From: " . $from . "\r\n";
+$headers .= "Reply-To: ". $from . "\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+$sent = @mail(implode(',' , $emails), 'RetagShop Newsletters ', $body, $headers);
+
+if($sent) {
+ header("location: show_subscribe.php?msg=done");
+ die();
+ 
 }
-require_once 'phpmailer/PHPMailerAutoload.php';
-$m = new phpmailer;
-$m->isSMTP();
-$m->SMTPAuth = true ;
-$m->Host = 'smtpout.secureserver.net';
-$m->username = 'jojoallowz' ;
-$m->password = 'Jalal369allowz' ;
-$m->SMTPSecure = 'ssl';
-$m->Port = '465' ;
-
-
-$m->From = 'admin@pixllart.com';
-$m->FromName = 'pixllart.com';
-$m->addReplyTo('' , '');
-foreach ($emails as $key => $mail) {
-	$m->addAddress($mail);
+else {
+ header("location: show_subscribe.php?msg=no");
+ die();
 }
-
-
-$m->isHtml(true);
-
-
-$m->subject = 'frist message';
-$m->Body = '<p>$msg</p> <br> <br> <img src="image/'.$img_name.'">' ; 
-$m->AltBody = '';
-
 
 if ($m->send()) {
 	echo "sent";

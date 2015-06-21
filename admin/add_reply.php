@@ -36,7 +36,7 @@ if (!$up) {
 /*
 get id for user 
 */
-require 'connection.php';
+require '../connection/connection.php';
 $query = $conn->prepare("SELECT email FROM messages WHERE id=?");
 $query->bindValue(1,$id,PDO::PARAM_INT);
 $query->execute();

@@ -63,7 +63,7 @@ require 'sidebar.php';
                 /*
                 select menu name in this id
                 */
-                require 'connection.php';
+                require '../connection/connection.php';
                 $query = $conn->prepare("SELECT * FROM site_info WHERE id=?");
                 $query->bindValue(1,$id,PDO::PARAM_INT);
                 $query->execute();
