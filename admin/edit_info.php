@@ -94,7 +94,7 @@ require 'sidebar.php';
                         </div>
                          <div class="form-group">
                             <label for="exampleInputEmail1">address(en)</label>
-                            <input type="text" name="address_en" value='<?php echo "$result->address_en"; ?>' class="form-control" id="exampleInputEmail1" >
+                            <input type="text" name="address_en" value='<?php echo "$result->address"; ?>' class="form-control" id="exampleInputEmail1" >
                         </div>
                     
                     </div><!-- /.box-body -->

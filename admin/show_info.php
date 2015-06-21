@@ -55,13 +55,8 @@ require 'sidebar.php';
 									
 									<?php 
 									require '../connection/connection.php';
-									$sql="SELECT * FROM site_info";
-									$query=$conn->query($sql);
+									$query=$conn->query("SELECT * FROM site_info");
 									$result=$query->fetch(PDO::FETCH_OBJ);
-									
-									// while (strlen($address_en) > 30 || strlen($address_ar) > 30) {
-									// 	echo "<br>";
-									// }
 									echo "
 									<tr>
 									<td>phone</td>
@@ -100,7 +95,7 @@ require 'sidebar.php';
 				</div><!-- /.box-body -->
 
 			</div><!-- /.box -->
-			<a href='edit_info.php<?php echo "?id=$id"; ?>' class='btn btn-primary btn-sm'>UPDATE</a>
+			<a href='edit_info.php<?php echo "?id=$result->id"; ?>' class='btn btn-primary btn-sm'>UPDATE</a>
 		</div><!-- /.col (MAIN) -->
 	</div>
 	<!-- MAILBOX END -->

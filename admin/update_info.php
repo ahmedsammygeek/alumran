@@ -25,12 +25,12 @@ extract($inputs);
 /*
 coonection with db 
 */
-require 'connection.php';
+require '../connection/connection.php';
 /*
 update in database
 */
 $query = $conn->prepare("UPDATE site_info SET phone=?,facebook=?,twitter=?,email=?,address_ar=?,
-	address_en=? WHERE id=?");
+	address=? WHERE id=?");
 $query->bindValue(1,$phone,PDO::PARAM_INT);
 $query->bindValue(2,$facebook,PDO::PARAM_STR);
 $query->bindValue(3,$twitter,PDO::PARAM_STR);
