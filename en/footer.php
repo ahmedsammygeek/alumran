@@ -1,12 +1,17 @@
 <footer>
+	<?php 
+	require '../connection/connection.php';
+	$site_info = $conn->query("SELECT * FROM site_info");
+	$info = $site_info->fetch(PDO::FETCH_OBJ);
+	 ?>
 			<div id="widgets">
 				<div class="container">
 					<div class="row">
 
 						<!-- About Us Start -->
 						<div class="col-sm-3 widget">
-							<h4>About us</h4>
-							<p>Morbi nec quam sed elit pharetra faucibus. Cras vel massa viverra ligula suscipit interdum eget nec est. Cras nibh mi, faucibus at ligula eu, eleifend tincidunt justo. Nunc porttitor massa at nisi condimentum fringilla. Nullam finibus, nibh eu hendrerit suscipit, tellus mi commodo lectus, sit amet dictum.<br><a href="about.html">Read more...</a></p>
+							<h4>Address</h4>
+							<p><?php echo "$info->address"; ?></p>
 						</div>
 						<!-- About Us End -->
 
@@ -29,17 +34,17 @@
 						<!-- Newsletter Start -->
 						<div class="col-sm-3 widget">
 							<h4>Newsletter</h4>
-							<form role="form" name="newsletter-form" id="newsletter-form" action="process-newsletter.php">
+							<form role="form" id="newsletter-form" action="insert_newsletter.php" method="post">
 								<div class="form-group" id="newsletter-name-group">
 									<label class="sr-only" for="newsletter-name">Name</label>
-									<input type="text" class="form-control" id="newsletter-name" placeholder="Name">
+									<input type="text" class="form-control" id="newsletter-name" placeholder="name">
 								</div>
 								
 								<div class="form-group" id="newsletter-email-group">
 									<label class="sr-only" for="newsletter-email">Email</label>
-									<input type="email" class="form-control" id="newsletter-email" placeholder="Email">
+									<input type="email" class="form-control" id="newsletter-email" placeholder="email">
 								</div>
-								<button type="submit" class="btn btn-primary">Subscribe</button>
+								<input type="submit" name="submit" class="btn btn-primary" value="Subscribe">
 							</form>
 						</div>
 						<!-- Newsletter End -->
@@ -72,17 +77,17 @@
 
 						<!-- Copyright Start -->
 						<div class="col-sm-6">
-							&copy; 2014 The Traveller by Coffeecream Themes
+							&copy; JALAL RAMZY .. web service
 						</div>
 						<!-- Copyright End -->
 
 						<!-- Social Networks Start -->
 						<div class="col-sm-6 text-right">
 							<ul>
-								<li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
+								<li><a href="<?php echo "$info->facebook"; ?>"><i class="fa fa-facebook fa-lg"></i></a></li>
+								<li><a href="<?php echo "$info->twitter"; ?>"><i class="fa fa-twitter fa-lg"></i></a></li>
 								
-								<li><a href="#"><i class="fa fa-skype fa-lg"></i></a></li>
+								<li><a href="<?php echo "$info->skype"; ?>"><i class="fa fa-skype fa-lg"></i></a></li>
 							</ul>
 						</div>
 						<!-- Social Networks End -->

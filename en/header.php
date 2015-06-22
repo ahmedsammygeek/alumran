@@ -1,5 +1,9 @@
 	<header>
-
+<?php 
+require '../connection/connection.php';
+$site_info = $conn->query("SELECT phone , email FROM site_info");
+$info = $site_info->fetch(PDO::FETCH_OBJ);
+ ?>
 			<div id="header">
 				<div class="container">
 					<div class="row">
@@ -8,8 +12,8 @@
 						</div>
 						<div class="col-xs-4 col-sm-8 text-right" id="hotel-info">
 							<ul>
-								<li id="hotel-phone"><a href="tel:1234565"><i class="fa fa-phone fa-lg primary-color"></i></a></li>
-								<li id="hotel-email"><a href="mailto:reservation@thetravellerhotel.com"><i class="fa fa-envelope fa-lg primary-color"></i></a></li>
+								<li id="hotel-phone"><a href="tel:<?php echo "$info->phone"; ?>"><i class="fa fa-phone fa-lg primary-color"></i></a></li>
+								<li id="hotel-email"><a href="mailto:<?php echo "$info->email"; ?>"><i class="fa fa-envelope fa-lg primary-color"></i></a></li>
 								
 							</ul>
 						</div>

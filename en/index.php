@@ -30,7 +30,8 @@
 
 		<!-- ============ HEADER START ============ -->
 
-	<?php require 'header.php'; ?>
+	<?php require 'header.php';
+	require '../connection/connection.php'; ?>
 		<!-- ============ HEADER END ============ -->
 
 		<!-- ============ VIDEO START ============ -->
@@ -187,10 +188,15 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
+						<?php 
+						$about = $conn->query("SELECT * FROM aboutus");
+						$about_us = $about->fetch(PDO::FETCH_OBJ);
+
+						 ?>
 
 							<!-- Latest Review 2 -->
 							<div class="latest-review">
-								<blockquote>Donec varius ante in turpis faucibus sagittis. Vestibulum lacinia ante eget fringilla lobortis. Nunc sollicitudin, arcu at fringilla varius, turpis dui venenatis augue, at adipiscing ante ipsum vel leo. In a sem sit amet mi condimentum semper. Nulla eleifend convallis gravida. Lorem ipsum dolor sit amet, consectetur adipiscing <small>James McAllister, London</small></blockquote>
+								<blockquote><?php echo "$about_us->content"; ?> <small>JALAL RAMZY for web service</small></blockquote>
 							</div>
 
 						
