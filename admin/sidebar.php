@@ -97,6 +97,14 @@ if(!isset($_SESSION['logged']) || $_SESSION['logged'] != 'true') {
                                     <li><a href="new_orders.php"><i class="fa fa-angle-double-right"></i> new orders </a></li>
                                 </ul>
                             </li>
+                             <li>
+                                <a href="website_index.php">
+                                    <i class="fa fa-bar-chart-o"></i>
+                                    <span>website home</span>
+
+                                </a>
+
+                            </li>
                             <li>
                                 <a href="show_subscribe.php">
                                     <i class="fa fa-bar-chart-o"></i>

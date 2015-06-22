@@ -56,11 +56,13 @@
 			<div class="col-sm-7 col-md-6 col-lg-5 text">
 				<div class="padding">
 					<h5>Welcome to</h5>
-					<h1>The Traveller</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci pharetra, vel accumsan ante tristique. Nullam elementum massa eget odio tristique varius. Vivamus id est nec dui auctor posuere. Maecenas eu pulvinar eros. Integer velit velit, faucibus eget accumsan a, sollicitudin in lorem. Nulla cursus vitae justo ut rutrum.<br><a href="about.html">Read more...</a></p>
+					<h1></h1>
+					<p></p>
 				</div>
 			</div>
-			<div class="col-sm-5 col-md-6 col-lg-7 photo"></div>
+			<div class="col-sm-5 col-md-6 col-lg-7 photo">
+				<img src="../uploaded/index_image/1.jpg" width="1400" height="900" alt="">
+			</div>
 		</section>
 
 		<!-- ============ WELCOME END ============ -->
@@ -68,7 +70,9 @@
 		<!-- ============ ROOMS START ============ -->
 
 		<section id="rooms" class="row color3 home-section">
-			<div class="col-sm-5 col-md-6 col-lg-7 photo"></div>
+			<div class="col-sm-5 col-md-6 col-lg-7 photo">
+				<img src="../uploaded/index_image/2.jpg" width="1400" height="900" alt="">
+			</div>
 			<div class="col-sm-7 col-md-6 col-lg-5 text">
 				<div class="padding">
 					<h5>Check out our</h5>
@@ -89,7 +93,9 @@
 					<h1>Restaurant</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci pharetra, vel accumsan ante tristique. Nullam elementum massa eget odio tristique varius. Vivamus id est nec dui auctor posuere. Maecenas eu pulvinar eros. Integer velit velit, faucibus eget accumsan a, sollicitudin in lorem. Nulla cursus vitae justo ut rutrum.<br><a href="restaurant.html">Read more...</a></p>
 				</div></div>
-			<div class="col-sm-5 col-md-6 col-lg-7 photo"></div>
+			<div class="col-sm-5 col-md-6 col-lg-7 photo">
+				<img src="../uploaded/index_image/3.jpg" width="1400" height="900" alt="">
+			</div>
 		</section>
 
 		<!-- ============ RESTAURANT END ============ -->
@@ -97,7 +103,9 @@
 		<!-- ============ SPA START ============ -->
 
 		<section id="spa" class="row color2 home-section">
-			<div class="col-sm-5 col-md-6 col-lg-7 photo"></div>
+			<div class="col-sm-5 col-md-6 col-lg-7 photo">
+				<img src="../uploaded/index_image/4.jpg" width="1400" height="900" alt="">
+			</div>
 			<div class="col-sm-7 col-md-6 col-lg-5 text">
 				<div class="padding">
 					<h5>Relax at our</h5>
@@ -117,7 +125,9 @@
 					<h1>Golf Course</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci pharetra, vel accumsan ante tristique. Nullam elementum massa eget odio tristique varius. Vivamus id est nec dui auctor posuere. Maecenas eu pulvinar eros. Integer velit velit, faucibus eget accumsan a, sollicitudin in lorem. Nulla cursus vitae justo ut rutrum.<br><a href="golf.html">Read more...</a></p>
 				</div></div>
-			<div class="col-sm-5 col-md-6 col-lg-7 photo"></div>
+			<div class="col-sm-5 col-md-6 col-lg-7 photo">
+				<img src="../uploaded/index_image/5.jpg" width="1400" height="900" alt="">
+			</div>
 		</section>
 
 		<!-- ============ GOLF END ============ -->
