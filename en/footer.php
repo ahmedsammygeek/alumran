@@ -39,7 +39,6 @@
 									<label class="sr-only" for="newsletter-name">Name</label>
 									<input type="text" class="form-control" id="newsletter-name" placeholder="name">
 								</div>
-								
 								<div class="form-group" id="newsletter-email-group">
 									<label class="sr-only" for="newsletter-email">Email</label>
 									<input type="email" class="form-control" id="newsletter-email" placeholder="email">
