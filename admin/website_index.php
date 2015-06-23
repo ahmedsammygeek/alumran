@@ -23,22 +23,6 @@ require '../connection/connection.php';
                 if (isset($_GET['msg'])) {
                     //if exist msg in link get this message and do deffrent action in every case and show alert
                     switch ($_GET['msg']) {
-                        case 'empty_data':
-                        //here user left eny input place empty
-                        echo '<div class="alert alert-danger alert-dismissable">
-                        <i class="fa fa-ban"></i>
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        <b>Alert!</b> please complete required data.
-                        </div>';
-                        break;
-                        case 'error':
-                        //this case error in sql request
-                        echo '<div class="alert alert-danger alert-dismissable">
-                        <i class="fa fa-ban"></i>
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        <b>Alert!</b> error  , please try again.
-                        </div>';
-                        break;
                         case 'updated':
                         echo '<div class="alert alert-success alert-dismissable">
                         <i class="fa fa-check"></i>
