@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2015 at 03:55 AM
+-- Generation Time: Jun 23, 2015 at 01:03 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -73,6 +73,9 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `email` varchar(255) NOT NULL,
   `phone` varchar(20) NOT NULL,
   `hotel` tinyint(4) NOT NULL,
+  `refer_id` int(11) NOT NULL,
+  `msg` text NOT NULL,
+  `address` varchar(500) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -118,6 +121,21 @@ CREATE TABLE IF NOT EXISTS `hotel_images` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `messages`
+--
+
+CREATE TABLE IF NOT EXISTS `messages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `newsletter`
 --
 
@@ -126,14 +144,15 @@ CREATE TABLE IF NOT EXISTS `newsletter` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `newsletter`
 --
 
 INSERT INTO `newsletter` (`id`, `name`, `email`) VALUES
-(1, 'alaa', 'alaaelgndy@yahoo.com');
+(1, 'alaa', 'alaaelgndy@yahoo.com'),
+(2, 'amira', 'amiraadel@yahoo.com');
 
 -- --------------------------------------------------------
 
@@ -210,10 +229,10 @@ CREATE TABLE IF NOT EXISTS `website_home` (
 --
 
 INSERT INTO `website_home` (`id`, `title`, `content`, `image`, `title_ar`, `content_ar`) VALUES
-(1, 'Turkey', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci pharetra, vel accumsan ante tristique. Nullam elementum massa eget odio tristique varius. Vivamus id est nec dui auctor posuere. Maecenas eu pulvinar eros. Integer velit velit, faucibus eget accumsan a, sollicitudin in lorem. Nulla cursus vitae justo ut rutrum.', '1.jpg', 'تركيا', 'محتوى السياحة في تركيا باللغه العربيه'),
-(2, 'rooms', 'In euismod vestibulum libero vel auctor. Cras fermentum neque ut ante porta, in bibendum lorem elementum. Morbi volutpat lacus dui, vel faucibus velit dignissim at. Integer malesuada diam urna, sed bibendum magna sollicitudin ac. Donec aliquet dui id congue interdum. Nunc aliquam dui lectus, a imperdiet ex convallis sit amet. In fringilla, sem nec sagittis dapibus, est nibh tincidunt tortor, vel vestibulum est velit vel mi.', '2.jpg', 'حجرات الفنادق', 'محتوى الحجرات في الفنادق التركية باللغة العربيه'),
+(1, 'test', 'test content', 'a2646efc07c399126e07323ff2f1c176.jpg', 'اختبار ', 'اختبار المحتوى'),
+(2, 'rooms', 'roooms content', 'hqdefault.jpg', 'حجرات الفنادق', 'محتوى الحجرات في الفنادق التركية باللغة العربيه'),
 (3, 'Islamic Tourism', 'description Islamic Tourism', '3.jpg', 'لسياحة الاسلامية', 'وصغ السياحة الاسلامية في تركيا'),
-(4, 'Water Tourism', 'descreption Water Tourism', '4.jpg', 'السياحة المائية', 'وصف السياحة المائية ف تركيا'),
+(4, 'Water Tourism', 'descreption Water Tourism', '60722_410213612378614_1066720932_n.jpg', 'السياحة المائية', 'وصف السياحة المائية ف تركيا'),
 (5, 'golf', 'descrepytion golf tourism', '5.jpg', 'الجولف ', 'وصف رياضة الجوالف في تركيا');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
