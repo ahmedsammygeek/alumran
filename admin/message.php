@@ -51,6 +51,7 @@ require 'sidebar.php';
 										<th>id</th>
 										<th>name</th>
 										<th>emial</th>
+										<th>phone</th>
 										<th>content</th>
 										<th>date & time</th>
 										<th>option</th>
@@ -59,13 +60,13 @@ require 'sidebar.php';
 									</tr>
 									<?php 
 									require '../connection/connection.php';
-									$sql="SELECT * FROM booking";
+									$sql="SELECT * FROM messages";
 									$query=$conn->query($sql);
 									$i=1;
 									while ($result=$query->fetch(PDO::FETCH_ASSOC)) {
 										extract($result);
 										$content = substr($content, 0,20);
-										if ($view == 0) {
+										if ($watched == 0) {
 											$view = "not watched";
 										}
 										else
@@ -76,8 +77,9 @@ require 'sidebar.php';
 										<td>$i</td>
 										<td>$name</td>
 										<td>$email</td>
+										<td>$phone</td>
 										<td>$content</td>
-										<td>$time</td>
+										<td>$time_send</td>
 										<td><a href='deletemessage.php?id=$id' class='btn btn-danger btn-sm'>DELETE</a>
 										<a href='viewmessage.php?id=$id' class='btn btn-primary btn-sm'>VIEW</a></td>
 										<td>$view</td>

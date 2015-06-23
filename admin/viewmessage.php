@@ -27,8 +27,8 @@ require 'sidebar.php';
 								<!-- THE MESSAGES -->
 								<table class="table table-mailbox">
 									<?php 
-									require 'connection.php';
-									$query2=$conn->prepare("UPDATE messages SET view=1 WHERE id=$id");
+									require '../connection/connection.php';
+									$query2=$conn->prepare("UPDATE messages SET watched=1 WHERE id=$id");
 									$query2->execute();
 									$sql="SELECT * FROM messages WHERE id=$id";
 									$query=$conn->query($sql);
@@ -45,7 +45,10 @@ require 'sidebar.php';
 										<td><h3>CONTENT:</h3>$content</td>
 										</tr>
 										<tr>
-										<td><h3>TIME:</h3>$time</td>
+										<td><h3>PHONE:</h3>$phone</td>
+										</tr>
+										<tr>
+										<td><h3>TIME:</h3>$time_send</td>
 										</tr>
 										";
 										$i++;

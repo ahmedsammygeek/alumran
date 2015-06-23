@@ -105,6 +105,14 @@ if(!isset($_SESSION['logged']) || $_SESSION['logged'] != 'true') {
 
                             </li>
                             <li>
+                                <a href="website_pages.php">
+                                    <i class="fa fa-bar-chart-o"></i>
+                                    <span>website pages</span>
+
+                                </a>
+
+                            </li>
+                            <li>
                                 <a href="show_subscribe.php">
                                     <i class="fa fa-bar-chart-o"></i>
                                     <span>subscribe</span>
