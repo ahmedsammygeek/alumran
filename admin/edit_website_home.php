@@ -50,6 +50,13 @@ require 'sidebar.php';
              <b>Alert!</b> enter image (jpg , png , jpeg) .
              </div>';
              break;
+             case 'not_exist':
+             echo '<div class="alert alert-danger alert-dismissable">
+             <i class="fa fa-ban"></i>
+             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+             <b>Alert!</b>this image not exist .
+             </div>';
+             break;
              case 'error':
              echo '<div class="alert alert-danger alert-dismissable">
              <i class="fa fa-ban"></i>

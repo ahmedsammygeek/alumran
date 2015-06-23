@@ -30,8 +30,11 @@ extract($inputs);
 }
 
 /*image not changed*/
-if (empty($_FILES['file']['name'])) {
+if (empty($_FILES['file']['name']) || $_FILES['file']['name'] == $img) {
 	$image = $img;
+	if (!file_exists('../uploaded/index_image/'.$img.'')) {
+		header("location: edit_website_home.php?id=$id&msg=not_exist");die();
+	}
 }
 /*update image*/
 else
