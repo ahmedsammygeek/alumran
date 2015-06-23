@@ -82,7 +82,7 @@ require '../connection/connection.php';
                                     <td>'.$result->title_ar.'</td>
                                     <td>'.$result->content_ar.'</td>
                                    
-                                    <td><a href="delete_order.php?id=" class="btn btn-sm btn-danger">Delete</a></td></tr>'; 
+                                    <td><a href="edit_website_home.php?id='.$result->id.'" class="btn btn-warning btn-sm">UPDATE</a></td></tr>'; 
                                     $i++;
                                 }
                                 ?>                                       

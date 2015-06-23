@@ -10,12 +10,11 @@ if (isset($_POST['submit'])) {
 check emtpy data 
 */
 if (empty($name) || empty($email)) {
-	header("location: footer.php?msg=empty_data");die();
+echo "empty data";
 }
 /*filter email*/
 if (!filter_var($email , FILTER_VALIDATE_EMAIL)) {
-	header("location: footer.php?msg=err_email");die();
-}
+echo "error email";}
 require '../connection/connection.php';
 /*
 check exist email
@@ -28,17 +27,14 @@ count of results
 */
 $count = $check->rowCount();
 if ($count != 0) {
-	header("location: footer.php?msg=exist");die();
-}
+echo "exist email";}
 
 $query = $conn->prepare("INSERT INTO newsletter VALUES('',?,?)");
 $query->bindValue(1,$name,PDO::PARAM_STR);
 $query->bindValue(2,$email,PDO::PARAM_STR);
 if ($query->execute()) {
-	header("location: index.php?msg=sent");die();
-}
-header("location: index.php?msg=err");die();
-
+echo "done";}
+echo "contact with support";
 
 
 
