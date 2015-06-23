@@ -30,8 +30,10 @@
 
 		<!-- ============ HEADER START ============ -->
 
-	<?php require 'header.php';
-	require '../connection/connection.php'; ?>
+	<?php 
+	require 'header.php';
+	require '../connection/connection.php'; 
+	?>
 		<!-- ============ HEADER END ============ -->
 
 		<!-- ============ VIDEO START ============ -->
@@ -49,6 +51,11 @@
 		</div>
 
 		<!-- ============ VIDEO END ============ -->
+		<?php 
+		/*data of index page*/
+		$query1   = $conn->query("SELECT * FROM website_home WHERE id=1");
+		$result1  = $query1->fetch(PDO::FETCH_OBJ); 
+		?>
 
 		<!-- ============ WELCOME START ============ -->
 
@@ -56,33 +63,43 @@
 			<div class="col-sm-7 col-md-6 col-lg-5 text">
 				<div class="padding">
 					<h5>Welcome to</h5>
-					<h1></h1>
-					<p></p>
+					<h1><?php echo "$result1->title"; ?></h1>
+					<p><?php echo "$result1->content"; ?></p>
 				</div>
 			</div>
 			<div class="col-sm-5 col-md-6 col-lg-7 photo">
-				<img src="../uploaded/index_image/1.jpg" width="1400" height="900" alt="">
+				<img src="../uploaded/index_image/<?php echo "$result1->image"; ?>"  alt="">
 			</div>
 		</section>
 
 		<!-- ============ WELCOME END ============ -->
+		<?php 
+		/*data of index page*/
+		$query2   = $conn->query("SELECT * FROM website_home WHERE id=2");
+		$result2  = $query2->fetch(PDO::FETCH_OBJ); 
+		?>
 
 		<!-- ============ ROOMS START ============ -->
 
 		<section id="rooms" class="row color3 home-section">
 			<div class="col-sm-5 col-md-6 col-lg-7 photo">
-				<img src="../uploaded/index_image/2.jpg" width="1400" height="900" alt="">
+				<img src="../uploaded/index_image/<?php echo "result2->image"; ?>" alt="">
 			</div>
 			<div class="col-sm-7 col-md-6 col-lg-5 text">
 				<div class="padding">
 					<h5>Check out our</h5>
-					<h1>Rooms</h1>
-					<p>In euismod vestibulum libero vel auctor. Cras fermentum neque ut ante porta, in bibendum lorem elementum. Morbi volutpat lacus dui, vel faucibus velit dignissim at. Integer malesuada diam urna, sed bibendum magna sollicitudin ac. Donec aliquet dui id congue interdum. Nunc aliquam dui lectus, a imperdiet ex convallis sit amet. In fringilla, sem nec sagittis dapibus, est nibh tincidunt tortor, vel vestibulum est velit vel mi.<br><a href="rooms.html">Read more...</a></p>
+					<h1><?php echo "$result2->title"; ?></h1>
+					<p><?php echo "$result2->content"; ?></p>
 				</div>
 			</div>
 		</section>
 
 		<!-- ============ ROOMS END ============ -->
+		<?php 
+		/*data of index page*/
+		$query3   = $conn->query("SELECT * FROM website_home WHERE id=3");
+		$result3  = $query3->fetch(PDO::FETCH_OBJ); 
+		?>
 
 		<!-- ============ RESTAURANT START ============ -->
 
@@ -90,31 +107,41 @@
 			<div class="col-sm-7 col-md-6 col-lg-5 text">
 				<div class="padding">
 					<h5>Fine dining at our</h5>
-					<h1>Restaurant</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci pharetra, vel accumsan ante tristique. Nullam elementum massa eget odio tristique varius. Vivamus id est nec dui auctor posuere. Maecenas eu pulvinar eros. Integer velit velit, faucibus eget accumsan a, sollicitudin in lorem. Nulla cursus vitae justo ut rutrum.<br><a href="restaurant.html">Read more...</a></p>
+					<h1><?php echo "$result3->title"; ?></h1>
+					<p><?php echo "$result3->content"; ?></p>
 				</div></div>
 			<div class="col-sm-5 col-md-6 col-lg-7 photo">
-				<img src="../uploaded/index_image/3.jpg" width="1400" height="900" alt="">
+				<img src="../uploaded/index_image/<?php echo "result3->image"; ?>"  alt="">
 			</div>
 		</section>
 
 		<!-- ============ RESTAURANT END ============ -->
+		<?php 
+		/*data of index page*/
+		$query4   = $conn->query("SELECT * FROM website_home WHERE id=4");
+		$result4  = $query4->fetch(PDO::FETCH_OBJ); 
+		?>
 
 		<!-- ============ SPA START ============ -->
 
 		<section id="spa" class="row color2 home-section">
 			<div class="col-sm-5 col-md-6 col-lg-7 photo">
-				<img src="../uploaded/index_image/4.jpg" width="1400" height="900" alt="">
+				<img src="../uploaded/index_image/<?php echo "$result4->image"; ?>" width="1400" height="900" alt="">
 			</div>
 			<div class="col-sm-7 col-md-6 col-lg-5 text">
 				<div class="padding">
 					<h5>Relax at our</h5>
-					<h1>Spa</h1>
-					<p>In euismod vestibulum libero vel auctor. Cras fermentum neque ut ante porta, in bibendum lorem elementum. Morbi volutpat lacus dui, vel faucibus velit dignissim at. Integer malesuada diam urna, sed bibendum magna sollicitudin ac. Donec aliquet dui id congue interdum. Nunc aliquam dui lectus, a imperdiet ex convallis sit amet. In fringilla, sem nec sagittis dapibus, est nibh tincidunt tortor, vel vestibulum est velit vel mi.<br><a href="spa.html">Read more...</a></p>
+					<h1><?php echo "$result4->title"; ?></h1>
+					<p><?php echo "$result4->content"; ?></p>
 				</div></div>
 		</section>
 
 		<!-- ============ SPA END ============ -->
+		<?php 
+		/*data of index page*/
+		$query5   = $conn->query("SELECT * FROM website_home WHERE id=5");
+		$result5  = $query5->fetch(PDO::FETCH_OBJ); 
+		?>
 
 		<!-- ============ GOLF START ============ -->
 
@@ -122,11 +149,11 @@
 			<div class="col-sm-7 col-md-6 col-lg-5 text">
 				<div class="padding">
 					<h5>Enjoy our 16 hole</h5>
-					<h1>Golf Course</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci pharetra, vel accumsan ante tristique. Nullam elementum massa eget odio tristique varius. Vivamus id est nec dui auctor posuere. Maecenas eu pulvinar eros. Integer velit velit, faucibus eget accumsan a, sollicitudin in lorem. Nulla cursus vitae justo ut rutrum.<br><a href="golf.html">Read more...</a></p>
+					<h1><?php echo "$result5->title"; ?></h1>
+					<p><?php echo "$result5->content"; ?></p>
 				</div></div>
 			<div class="col-sm-5 col-md-6 col-lg-7 photo">
-				<img src="../uploaded/index_image/5.jpg" width="1400" height="900" alt="">
+				<img src="../uploaded/index_image/<?php echo "$result5->image"; ?>" width="1400" height="900" alt="">
 			</div>
 		</section>
 
