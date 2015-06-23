@@ -64,30 +64,30 @@
 				<form id="res_form" >
 					
 				<div class="row">
-						<div class="form-group col-sm-6">
+						<div class="form-group col-sm-12" id="booking-name">
 							<label for="booking-name">Your Name</label>
-							<input type="text" name="name" class="form-control" id="booking-name">
+							<input type="text" name="name" class="form-control" >
 						</div>
-						<div class="form-group col-sm-6">
+						<div class="form-group col-sm-12" id="booking-address">
 							<label for="booking-company">address</label>
-							<input type="text" name="address" class="form-control" id="booking-company">
+							<input type="text" name="address" class="form-control" >
 						</div>
 					</div>
 
 					<div class="row">
-						<div class="form-group col-sm-6">
+						<div class="form-group col-sm-12" id="booking-email">
 							<label for="booking-email">Email</label>
 							<input type="email" name="email" class="form-control" id="booking-email">
 						</div>
-						<div class="form-group col-sm-6">
+						<div class="form-group col-sm-12" id="booking-phone">
 							<label for="booking-phone">Phone</label>
 							<input type="phone" name="phone" class="form-control" id="booking-phone">
 						</div>
 					</div>
 					<div class="row">
-						<div class="form-group col-sm-12">
+						<div class="form-group col-sm-12" id="booking-msg">
 							<label for="booking-phone">Phone</label>
-							<textarea name="msg" id="" class="form-control" cols="30" rows="10"></textarea>
+							<textarea name="msg" id="" class="form-control" cols="30" rows="1"></textarea>
 							
 						</div>
 						

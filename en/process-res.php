@@ -15,21 +15,15 @@ if (empty($_POST['name'])) {
 }
 
 
-
 if (empty($_POST['email'])) {
 	$errors['email'] = 'email is required.';
 
 } else {
 	$email = filter_input(INPUT_POST, 'email' , FILTER_VALIDATE_EMAIL );
+	if (!filter_var($email, FILTER_VALIDATE_EMAIL )) {
+		$errors['email'] = 'email is not valid.';
+	} 
 }
-
-if (!filter_var($email, FILTER_VALIDATE_EMAIL )) {
-	$errors['email'] = 'email is not valid.';
-
-} 
-
-
-
 
 if (empty($_POST['address'])) {
 	$errors['address'] = 'address is required.';
@@ -64,36 +58,9 @@ if (!empty($errors)) {
 	$data['errors']  = $errors;
 } else {
 
-		// if there are no errors process our form, then return a message
 
-    	//If there is no errors, send the email
-	require '../connection/connection.php';
-/*
-check exist email
-*/
-$check = $conn->prepare("SELECT email FROM newsletter WHERE email=?");
-$check->bindValue(1,$email,PDO::PARAM_STR);
-$check->execute();
-/*
-count of results
-*/
-
-if ($check->rowCount() > 0 ) {
 	$data['success'] = true;
-	$data['message'] = 'exist email';
-} else {
-	$query = $conn->prepare("INSERT INTO newsletter VALUES('',?,?)");
-	$query->bindValue(1,$name,PDO::PARAM_STR);
-	$query->bindValue(2,$email,PDO::PARAM_STR);
-	if ($query->execute()) {
-		$data['success'] = true;
-		$data['message'] = 'Thank you! , now you will recive all our offter';
-	}
-	else {
-		$data['success'] = false;
-		$data['message'] = 'error , contact with support';
-	}
-}
+	$data['message'] = 'Thank you! , now you will recive all our offter';
  // show a message of success and provide a true success variable
 
 }

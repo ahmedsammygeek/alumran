@@ -102,36 +102,46 @@ $('#res_form').submit(function(event) {
 					
 					// handle errors for name ---------------
 					if (data.errors.name) {
-						$('input[name=name]').addClass('has-error'); // add the error class to show red input
-						$('input[name=name]').append('<span class="help-block">' + data.errors.name + '</span>'); // add the actual error message under our input
+						// alert("name");
+						$('div#booking-name').addClass('has-error'); // add the error class to show red input
+						$('div#booking-name').append('<span class="help-block">' + data.errors.name + '</span>'); // add the actual error message under our input
 					}
 					
 
 					// handle errors for email ---------------
 					if (data.errors.email) {
-						$('input[name=email]').addClass('has-error'); // add the error class to show red input
-						$('input[name=email]').append('<span class="help-block">' + data.errors.email + '</span>'); // add the actual error message under our input
+						// alert("email");
+
+						$('div#booking-email').addClass('has-error'); // add the error class to show red input
+						$('div#booking-email').append('<span class="help-block">' + data.errors.email + '</span>'); // add the actual error message under our input
 					}
 
 					// handle errors for email ---------------
 					if (data.errors.phone) {
-						$('input[name=phone]').addClass('has-error'); // add the error class to show red input
-						$('input[name=phone]').append('<span class="help-block">' + data.errors.email + '</span>'); // add the actual error message under our input
+						
+
+						$('div#booking-phone').addClass('has-error'); // add the error class to show red input
+						$('div#booking-phone').append('<span class="help-block">' + data.errors.phone + '</span>'); // add the actual error message under our input
 					}
 
 					// handle errors for email ---------------
 					
 					if (data.errors.address) {
-						$('input[name=address]').addClass('has-error'); // add the error class to show red input
-						$('input[name=address]').append('<span class="help-block">' + data.errors.email + '</span>'); // add the actual error message under our input
+						
+
+						$('div#booking-address').addClass('has-error'); // add the error class to show red input
+						$('div#booking-address').append('<span class="help-block">' + data.errors.address + '</span>'); // add the actual error message under our input
 					}
 
 					if (data.errors.msg) {
-						$('input[name=msg]').addClass('has-error'); // add the error class to show red input
-						$('input[name=msg]').append('<span class="help-block">' + data.errors.email + '</span>'); // add the actual error message under our input
+						
+
+						$('div#booking-msg').addClass('has-error'); // add the error class to show red input
+						$('div#booking-msg').append('<span class="help-block">' + data.errors.msg + '</span>'); // add the actual error message under our input
 					}
 				} else {
 
+					alert(data.message);
 					// ALL GOOD! just show the success message!
 					$('#res_form').append('<div class="alert alert-success">' + data.message + '</div>');
 
