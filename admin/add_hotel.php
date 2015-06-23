@@ -22,72 +22,78 @@ require 'sidebar.php';
           <h3 class="box-title">enter data of hotel</h3>
         </div><!-- /.box-header -->
         <!-- form start -->
-        <form role="form" action="insert_hotel.php" method="post" enctype="multipart/form-data" >
-          <div class="box-body">
-            <?php
-            if (isset($_GET['msg'])) {
-             switch ($_GET['msg']) {
-               case 'empty_data':
-               echo '<div class="alert alert-danger alert-dismissable">
-               <i class="fa fa-ban"></i>
-               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-               <b>Alert!</b>   you leave input empty please complete inputs and try again.
-               </div>';
-               break;
-               case 'err_vali':
-               echo '<div class="alert alert-danger alert-dismissable">
-               <i class="fa fa-ban"></i>
-               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-               <b>Alert!</b> enter image (jpg , png , jpeg) .
-               </div>';
-               break;
-               case 'not_exist':
-               echo '<div class="alert alert-danger alert-dismissable">
-               <i class="fa fa-ban"></i>
-               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-               <b>Alert!</b>this image not exist .
-               </div>';
-               break;
-               case 'error':
-               echo '<div class="alert alert-danger alert-dismissable">
-               <i class="fa fa-ban"></i>
-               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-               <b>Alert!</b> an error in your update please try again.
-               </div>';
-               break;
+        <?php
+        if (isset($_GET['msg'])) {
+         switch ($_GET['msg']) {
+           case 'empty_data':
+           echo '<div class="alert alert-danger alert-dismissable">
+           <i class="fa fa-ban"></i>
+           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+           <b>Alert!</b>   you leave input empty please complete inputs and try again.
+           </div>';
+           break;
+           case 'err_vali':
+           echo '<div class="alert alert-danger alert-dismissable">
+           <i class="fa fa-ban"></i>
+           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+           <b>Alert!</b> enter image (jpg , png , jpeg) .
+           </div>';
+           break;
+           case 'not_exist':
+           echo '<div class="alert alert-danger alert-dismissable">
+           <i class="fa fa-ban"></i>
+           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+           <b>Alert!</b>this image not exist .
+           </div>';
+           break;
+           case 'error':
+           echo '<div class="alert alert-danger alert-dismissable">
+           <i class="fa fa-ban"></i>
+           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+           <b>Alert!</b> an error in your update please try again.
+           </div>';
+           break;
 
-               default:
+           default:
 
-               break;
-             }
-           } 
-           ?>
-           <div class="form-group">
+           break;
+         }
+       } 
+       ?>
+       <form role="form" name="add_hotel" enctype="multipart/form-data" >
+
+        <div class="box-body" data-forma-number="0">
+          <a class="btn btn-primary pull-right add_another_form" >add more files</a>
+
+          <div class="form-group">
             <label for="exampleInputEmail1">title(en)</label>
-            <input type="text" name="title"  class="form-control" id="exampleInputEmail1" >
+            <input type="text" name="title[]"  class="form-control" id="exampleInputEmail1" >
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">content(en)</label>
 
-            <textarea class="textarea" name="content"  style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+            <textarea class="textarea" name="content[]"  style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
 
           </div> 
           <div class="form-group">
             <label for="exampleInputEmail1">title(ar)</label>
-            <input type="text" name="title_ar"  class="form-control" id="exampleInputEmail1" >
+            <input type="text" name="title_ar[]"  class="form-control" id="exampleInputEmail1" >
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">content(ar)</label>
-            <textarea class="textarea" name="content_ar"  style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+            <textarea class="textarea" name="content_ar[]"  style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
 
           </div> 
           <legend>  
             other data 
           </legend>
-          <div class="form-group">
-            <label for="exampleInputEmail1">image</label>
-            <input type="file" name="file" class="form-control" id="exampleInputEmail1" >
+
+          <div class="form-group files">
+            <label>Lecture' files </label>
+            <input type="file"  name="files[]">
+            <a class="btn btn-primary pull-right add_more_files" href="">add more files</a>
           </div>
+
 
           <div class="form-group"> 
             <label for="">choose if this offer or normal hotel</label>
@@ -156,11 +162,7 @@ require 'sidebar.php';
                   <input type="checkbox" name="PET_FRIENDLY"/>
                   PET FRIENDLY
                 </label> &nbsp;&nbsp;&nbsp;
-
-
-
               </div>
-
             </div>
           </div>
 
@@ -170,8 +172,9 @@ require 'sidebar.php';
         </div><!-- /.box-body -->
 
         <div class="box-footer">
-          <button type="submit" name="submit" class="btn btn-primary">update</button>
+          <button type="submit" name="submit" id="add_all" class="btn btn-primary">update</button>
         </div>
+
       </form>
     </div><!-- /.box -->
 
@@ -190,8 +193,39 @@ require 'footer.php';
 <script src="js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(function() {
+  //bootstrap WYSIHTML5 - text editor
+  $(".textarea").wysihtml5();
+  // ad more file to upload it
+  $(document).on('click'  , 'a.add_more_files' , function(event) {
+    event.preventDefault();
+    $(this).parent().append('<input type="file" class="lecture_files" name="files[]">');
+  });
+  i = 0;
+  $('a.add_another_form').on('click', function(event) {
+    event.preventDefault();
+    i++;
+    $.ajax({
+      type    : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+      url     : 'hotel_more_form.php' , 
+      data : {id:i} // the url where we want to POST
+    }).done(function(data){
+      $('div[data-forma-number]').last().append(data);
+      $('div[data-forma-number="'+ i+'"]').find('.textarea').wysihtml5();
+    })
+  });
 
-                //bootstrap WYSIHTML5 - text editor
-                $(".textarea").wysihtml5();
-              });
+  $('form[name=add_hotel]').submit(function(event) {
+   event.preventDefault();
+   
+   $(document).find('div[data-forma-number]').each(function(index, el) {
+
+    $.post('insert_hotel.php', $('#theform').serialize());
+
+
+  });
+
+
+ });
+
+});
 </script>
