@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2015 at 01:03 PM
+-- Generation Time: Jun 23, 2015 at 01:23 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -102,6 +102,7 @@ CREATE TABLE IF NOT EXISTS `hotels` (
   `PET_FRIENDLY` tinyint(4) NOT NULL,
   `title_ar` varchar(255) NOT NULL,
   `desc_ar` text NOT NULL,
+  `hotel_or_not` tinyint(4) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -166,6 +167,7 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `descreption` text NOT NULL,
   `title_ar` varchar(255) NOT NULL,
   `descreption_ar` text NOT NULL,
+  `page_name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
