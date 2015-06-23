@@ -118,16 +118,16 @@
 					<label for="booking-name">email</label>
 					<input type="text" name="email" class="form-control" >
 				</div>
-				</div>
+			</div>
 
-				<div class="row">
-						<div class="form-group col-sm-12" id="booking-msg">
-							<label for="booking-phone">message</label>
-							<textarea name="msg" id="" class="form-control" cols="30" rows="4"></textarea>
-							
-						</div>
-						
-					</div>
+			<div class="row">
+				<div class="form-group col-sm-12" id="booking-msg">
+					<label for="booking-phone">message</label>
+					<textarea name="msg" id="" class="form-control" cols="30" rows="4"></textarea>
+					
+				</div>
+				
+			</div>
 			<div class="row">
 				<div class="col-sm-12">
 					<button type="submit" class="btn color3">Book Now</button>
