@@ -7,26 +7,52 @@ $data 			= array(); 		// array to pass back data
 // validate the variables ======================================================
 	// if any of these variables don't exist, add an error to our $errors array
 
-if (empty($_POST['input-name'])) {
+if (empty($_POST['name'])) {
 	$errors['name'] = 'Name is required.';
 
 } else {
-	$name = filter_input(INPUT_POST, 'input-name' , FILTER_SANITIZE_STRING );
+	$name = filter_input(INPUT_POST, 'name' , FILTER_SANITIZE_STRING );
 }
 
 
 
-if (empty($_POST['input-email'])) {
-	$errors['email'] = 'Email is required.';
+if (empty($_POST['email'])) {
+	$errors['email'] = 'email is required.';
+
 } else {
-	$email = filter_input(INPUT_POST, 'input-email' , FILTER_SANITIZE_STRING );
+	$email = filter_input(INPUT_POST, 'email' , FILTER_VALIDATE_EMAIL );
+}
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL )) {
+	$errors['email'] = 'email is not valid.';
+
+} 
+
+
+
+
+if (empty($_POST['address'])) {
+	$errors['address'] = 'address is required.';
+
+} else {
+	$address = filter_input(INPUT_POST, 'address' , FILTER_SANITIZE_STRING );
+}
+
+
+
+if (empty($_POST['phone'])) {
+	$errors['phone'] = 'phone is required.';
+
+} else {
+	$phone = filter_input(INPUT_POST, 'phone' , FILTER_SANITIZE_NUMBER_INT );
+}
+
+if (empty($_POST['msg'])) {
+	$errors['msg'] = 'msg is required.';
+} else {
+	$msg = filter_input(INPUT_POST, 'msg' , FILTER_SANITIZE_STRING );
 	
 }
-
-
-
-if (!filter_var($_POST['input-email'] , FILTER_VALIDATE_EMAIL))
-	$errors['email'] = 'Email is not valid';
 
 // return a response ===========================================================
 

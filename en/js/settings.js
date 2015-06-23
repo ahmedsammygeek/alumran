@@ -123,7 +123,14 @@
 		// Reservation
 
 
-	
+
+		$("#reservation-link").click(function () {
+			$("#reservation").slideDown(300);
+		});
+		
+		$("#reservation .close").click(function () {
+			$("#reservation").slideUp(300);
+		});
 
 		$(".quantity").on("click", function () {
 
@@ -177,7 +184,7 @@
 
 		var nowTemp = new Date();
 		var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
- 
+
 		var checkin = $('#reservation-arrival').datepicker({
 			onRender: function(date) {
 				return date.valueOf() < now.valueOf() ? 'disabled' : '';

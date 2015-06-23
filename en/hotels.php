@@ -16,20 +16,14 @@
 		<script src="js/html5shiv.js"></script>
 		<script src="js/respond.min.js"></script>
 		<![endif]-->
-
 	</head>
 	<body>
-
 		<!-- ============ LOADER START ============ -->
-
 		<div id="loader">
 			<i class="fa fa-cog fa-4x fa-spin primary-color"></i>
 		</div>
-
 		<!-- ============ LOADER END ============ -->
-
 		<!-- ============ HEADER START ============ -->
-
 		<?php require 'header.php'; ?>
 		<!-- ============ HEADER END ============ -->
 
@@ -47,66 +41,13 @@
 				</div>
 				<div class="row">
 
-				<div class="special-offer col-sm-6 col-md-4">
-							<img src="http://placehold.it/900x600.jpg" alt="" class="img-responsive">
-							<div class="description">
-								<h4>Long Weekend</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci.</p>
-								<a href="hotel.php" class="btn btn-default">Details</a>
-								<a href="reservation.php" class="btn btn-primary">Book Now</a>
-								
-							</div>
-						</div>
-
 						<div class="special-offer col-sm-6 col-md-4">
 							<img src="http://placehold.it/900x600.jpg" alt="" class="img-responsive">
 							<div class="description">
 								<h4>Long Weekend</h4>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci.</p>
-								<a href="hotel.php" class="btn btn-default">Details</a>
-								<a href="reservation.php" class="btn btn-primary">Book Now</a>
-							</div>
-						</div>
-
-						<div class="special-offer col-sm-6 col-md-4">
-							<img src="http://placehold.it/900x600.jpg" alt="" class="img-responsive">
-							<div class="description">
-								<h4>Long Weekend</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci.</p>
-								<a href="hotel.php" class="btn btn-default">Details</a>
-								<a href="reservation.php" class="btn btn-primary">Book Now</a>
-								
-							</div>
-						</div>
-
-						<div class="special-offer col-sm-6 col-md-4">
-							<img src="http://placehold.it/900x600.jpg" alt="" class="img-responsive">
-							<div class="description">
-								<h4>Long Weekend</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci.</p>
-								<a href="hotel.php" class="btn btn-default">Details</a>
-								<a href="reservation.php" class="btn btn-primary">Book Now</a>
-								
-							</div>
-						</div>
-
-						<div class="special-offer col-sm-6 col-md-4">
-							<img src="http://placehold.it/900x600.jpg" alt="" class="img-responsive">
-							<div class="description">
-								<h4>Long Weekend</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci.</p>
-								<a href="hotel.php" class="btn btn-default">Details</a>
-								<a href="reservation.php" class="btn btn-primary">Book Now</a>
-								
-							</div>
-						</div>
-						<div class="special-offer col-sm-6 col-md-4">
-							<img src="http://placehold.it/900x600.jpg" alt="" class="img-responsive">
-							<div class="description">
-								<h4>Long Weekend</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci.</p>
-								<a href="hotel.php" class="btn btn-default">Details</a>
-								<a href="reservation.php" class="btn btn-primary">Book Now</a>
+								<a href="hotel.php"  class="btn btn-default">Details</a>
+								<a   id="reservation-link" class="btn btn-primary">Book Now</a>
 								
 							</div>
 						</div>
@@ -116,7 +57,49 @@
 		</section>
 
 		<!-- ============ CONTENT END ============ -->
+		<div id="reservation">	
+			<div id="reservation-container" class="primary-background img-rounded">
+				<button class="close"><i class="fa fa-remove fa-lg"></i></button>
+				<h2>Reservation</h2>
+				<form id="res_form" >
+					
+				<div class="row">
+						<div class="form-group col-sm-6">
+							<label for="booking-name">Your Name</label>
+							<input type="text" name="name" class="form-control" id="booking-name">
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="booking-company">address</label>
+							<input type="text" name="address" class="form-control" id="booking-company">
+						</div>
+					</div>
 
+					<div class="row">
+						<div class="form-group col-sm-6">
+							<label for="booking-email">Email</label>
+							<input type="email" name="email" class="form-control" id="booking-email">
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="booking-phone">Phone</label>
+							<input type="phone" name="phone" class="form-control" id="booking-phone">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-12">
+							<label for="booking-phone">Phone</label>
+							<textarea name="msg" id="" class="form-control" cols="30" rows="10"></textarea>
+							
+						</div>
+						
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<button type="submit" class="btn color3">Book Now</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
 		<!-- ============ FOOTER START ============ -->
 
 		<?php 

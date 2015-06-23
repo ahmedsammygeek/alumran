@@ -1134,7 +1134,7 @@ hr {
 		padding: 30px;
 		position: absolute;
 		top: 50%;
-		width: 460px;
+		width: 570px;
 		-webkit-transform: translateY(-50%);
 		-ms-transform: translateY(-50%);
 		transform: translateY(-50%);
@@ -1151,7 +1151,12 @@ hr {
 		font-weight: 900;
 		margin: 0 0 1em;
 	}
-
+	#reservation textarea {
+		background: rgba(0,0,0,0.1);
+		border: 0;
+		color: #fff;
+		font-weight: bold;
+	}
 	#reservation input {
 		background: rgba(0,0,0,0.1);
 		border: 0;
