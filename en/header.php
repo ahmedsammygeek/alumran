@@ -13,7 +13,7 @@ $info = $site_info->fetch(PDO::FETCH_OBJ);
 						<div class="col-xs-4 col-sm-8 text-right" id="hotel-info">
 							<ul>
 								<li id="hotel-phone"><a href="tel:<?php echo "$info->phone"; ?>"><i class="fa fa-phone fa-lg primary-color"></i></a></li>
-								<li id="hotel-email"><a href="mailto:<?php echo "$info->email"; ?>"><i class="fa fa-envelope fa-lg primary-color"></i></a></li>
+								<li id="contcat-link" ><a id="contcat-link" href="mailto:<?php echo "$info->email"; ?>"><i class="fa fa-envelope fa-lg primary-color"></i></a></li>
 								
 							</ul>
 						</div>
@@ -109,5 +109,9 @@ $info = $site_info->fetch(PDO::FETCH_OBJ);
 				</div>
 			</nav>
 			<!-- Nav End -->
+
+
+
+		
 
 		</header>

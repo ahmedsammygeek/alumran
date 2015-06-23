@@ -124,6 +124,9 @@
 
 
 
+
+
+
 		$("#reservation-link").click(function () {
 			$("#reservation").slideDown(300);
 		});
@@ -131,6 +134,19 @@
 		$("#reservation .close").click(function () {
 			$("#reservation").slideUp(300);
 		});
+
+
+
+		$("#contcat-link").click(function () {
+			$("#concat_form").slideDown(300);
+		});
+		
+		$("#concat_form .close").click(function () {
+			$("#concat_form").slideUp(300);
+		});
+
+
+
 
 		$(".quantity").on("click", function () {
 
