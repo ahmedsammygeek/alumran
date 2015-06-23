@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2015 at 03:34 PM
+-- Generation Time: Jun 23, 2015 at 03:55 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -31,7 +31,14 @@ CREATE TABLE IF NOT EXISTS `aboutus` (
   `content` text NOT NULL,
   `content_ar` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `aboutus`
+--
+
+INSERT INTO `aboutus` (`id`, `content`, `content_ar`) VALUES
+(1, 'our company alumran welcome to you and we wamt make you happy fuidgvbuivberuibveruibvev<br>erbvuiebuivbeiurvbreubiverbivuiberv<br>ev<br>irevierobvie<br>brv<br>ebv<br>eiobvievbreivrbeiorbveoivboerivbeiovbervioebvrve<br>rbvuierbuierbeuirbveuivbruiebveuirbveuirbveriuvervevrerrv', 'شكرة  العمران ترحب بكم و تتمنى لكم قضاء وقت سعيد');
 
 -- --------------------------------------------------------
 
@@ -44,7 +51,15 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `user_name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `user_name`, `password`) VALUES
+(3, 'alaa', '9f501154b7e5872e75704103a87b10317e86c5ac'),
+(4, 'ahmed', 'cc6ebc80a79411f1ed29c0ea899e939d53a5eb30');
 
 -- --------------------------------------------------------
 
@@ -103,22 +118,6 @@ CREATE TABLE IF NOT EXISTS `hotel_images` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `index`
---
-
-CREATE TABLE IF NOT EXISTS `index` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(150) NOT NULL,
-  `descreption` text NOT NULL,
-  `image` varchar(50) NOT NULL,
-  `title_ar` varchar(150) NOT NULL,
-  `descreption_ar` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `newsletter`
 --
 
@@ -127,7 +126,14 @@ CREATE TABLE IF NOT EXISTS `newsletter` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `newsletter`
+--
+
+INSERT INTO `newsletter` (`id`, `name`, `email`) VALUES
+(1, 'alaa', 'alaaelgndy@yahoo.com');
 
 -- --------------------------------------------------------
 
@@ -172,8 +178,43 @@ CREATE TABLE IF NOT EXISTS `site_info` (
   `instgram` varchar(255) NOT NULL,
   `address` text NOT NULL,
   `address_ar` text NOT NULL,
+  `skype` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `site_info`
+--
+
+INSERT INTO `site_info` (`id`, `phone`, `email`, `facebook`, `twitter`, `instgram`, `address`, `address_ar`, `skype`) VALUES
+(1, '01204122661', 'alaaelgndy@yahoo.com', 'alaaelgndy@facebook.com', 'alaaelgndy@twitter.com', 'alaa@instgram.com', 'sudia , makka , eilaf', 'السعودية . مكة  , ايلاف', 'jalal@skype.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `website_home`
+--
+
+CREATE TABLE IF NOT EXISTS `website_home` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `title_ar` varchar(255) NOT NULL,
+  `content_ar` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `website_home`
+--
+
+INSERT INTO `website_home` (`id`, `title`, `content`, `image`, `title_ar`, `content_ar`) VALUES
+(1, 'Turkey', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci pharetra, vel accumsan ante tristique. Nullam elementum massa eget odio tristique varius. Vivamus id est nec dui auctor posuere. Maecenas eu pulvinar eros. Integer velit velit, faucibus eget accumsan a, sollicitudin in lorem. Nulla cursus vitae justo ut rutrum.', '1.jpg', 'تركيا', 'محتوى السياحة في تركيا باللغه العربيه'),
+(2, 'rooms', 'In euismod vestibulum libero vel auctor. Cras fermentum neque ut ante porta, in bibendum lorem elementum. Morbi volutpat lacus dui, vel faucibus velit dignissim at. Integer malesuada diam urna, sed bibendum magna sollicitudin ac. Donec aliquet dui id congue interdum. Nunc aliquam dui lectus, a imperdiet ex convallis sit amet. In fringilla, sem nec sagittis dapibus, est nibh tincidunt tortor, vel vestibulum est velit vel mi.', '2.jpg', 'حجرات الفنادق', 'محتوى الحجرات في الفنادق التركية باللغة العربيه'),
+(3, 'Islamic Tourism', 'description Islamic Tourism', '3.jpg', 'لسياحة الاسلامية', 'وصغ السياحة الاسلامية في تركيا'),
+(4, 'Water Tourism', 'descreption Water Tourism', '4.jpg', 'السياحة المائية', 'وصف السياحة المائية ف تركيا'),
+(5, 'golf', 'descrepytion golf tourism', '5.jpg', 'الجولف ', 'وصف رياضة الجوالف في تركيا');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
