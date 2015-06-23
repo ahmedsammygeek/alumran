@@ -84,17 +84,16 @@ if(!isset($_SESSION['logged']) || $_SESSION['logged'] != 'true') {
                                     <i class="fa fa-dashboard"></i> <span>admins</span>
                                 </a>
                             </li>
-                            
-
+                    
                             <li class="treeview">
                                 <a href="#">
                                     <i class="fa fa-bar-chart-o"></i>
-                                    <span>orders</span>
+                                    <span>hotels</span>
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </a>
                                 <ul class="treeview-menu">
-                                    <li><a href="orders.php"><i class="fa fa-angle-double-right"></i> all orders </a></li>
-                                    <li><a href="new_orders.php"><i class="fa fa-angle-double-right"></i> new orders </a></li>
+                                    <li><a href="hotels.php"><i class="fa fa-angle-double-right"></i> hotels </a></li>
+                                    <li><a href="add_hotel.php"><i class="fa fa-angle-double-right"></i> add new hotel </a></li>
                                 </ul>
                             </li>
                              <li>
