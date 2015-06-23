@@ -43,18 +43,18 @@ require 'sidebar.php';
              <b>Alert!</b>   you leave input empty please complete inputs and try again.
              </div>';
              break;
-             case 'error_data':
+             case 'err_vali':
              echo '<div class="alert alert-danger alert-dismissable">
              <i class="fa fa-ban"></i>
              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-             <b>Alert!</b> enter this file as image .
+             <b>Alert!</b> enter image (jpg , png , jpeg) .
              </div>';
              break;
-             case 'error_update':
+             case 'error':
              echo '<div class="alert alert-danger alert-dismissable">
              <i class="fa fa-ban"></i>
              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-             <b>Alert!</b>   an error in your update please try again.
+             <b>Alert!</b> an error in your update please try again.
              </div>';
              break;
 
