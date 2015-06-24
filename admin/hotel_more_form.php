@@ -28,7 +28,7 @@
     <div class="form-group files">
       <label>Lecture' files </label>
       <input type="file"  name="files[]">
-      <a class="btn btn-primary pull-right add_more_files" href="">add more files</a>
+      <a class="btn btn-warning pull-right add_more_files" href="">add more files</a>
     </div>
 
 
