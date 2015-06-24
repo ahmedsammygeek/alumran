@@ -15,6 +15,7 @@ if (isset($_POST['submit'])) {
 	}
 	/*type of offer*/
 	$hotel_or_offer   = $_POST['optionsRadios'];
+	$new_checks = array();
 	/*things exist in hotel*/
 	$check_boxes      = array(
 		'BED'         => FILTER_VALIDATE_INT,
@@ -30,14 +31,18 @@ if (isset($_POST['submit'])) {
 		'PET_FRIENDLY'=>FILTER_VALIDATE_INT,);
 	$check_box = filter_input_array(INPUT_POST,$check_boxes);
 	foreach ($check_box as $key => $checks) {
-		$checks = (isset($checks) ? $checks : '2');
+		if (is_null($checks)) {
+			$new_checks[$key] = 0;
+		} else {
+			$new_checks[$key] = 1;
+		}
 	}
-	extract($check_box);
+	extract($new_checks);
 	/*validate and resise images classes*/
 	require '../helpers/filevalidate.php';
 	require '../helpers/filetype.php';
 	require '../classes/SimpleImage.php';
-	if(empty($_FILES['files']['tmp_name'])){ 
+	if(empty($_FILES['files']['name'])){ 
 		echo "empty_image";die();
 	} 
 }
