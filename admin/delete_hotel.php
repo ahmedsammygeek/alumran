@@ -5,6 +5,10 @@ if (!isset($_GET['id'])) {
 	header("location: hotels.php");die();
 }
 $hotel_id = $_GET['id'];
+/*delete from pc*/
+	$images = $conn->query("SELECT * FROM hotel_images WHERE hotel_id=?");
+	$images->bindValue(1,$hotel_id,PDO::PARAM_INT);
+	$images->execute();
 /*delete from db*/
 require '../connection/connection.php';
 try {
@@ -12,6 +16,12 @@ try {
 	$query = $conn->prepare("DELETE FROM hotels WHERE id=?");
 	$query->bindValue(1,$hotel_id,PDO::PARAM_INT);
 	$query->execute();
+	/*delete */
+	while ($image = $images->fetch(PDO::FETCH_OBJ)) {
+		if (file_exists("../uploaded/hotel_images/$image->pic")) {
+			unlink("../uploaded/hotel_images/$image->pic");
+		}
+	}
 	/*delete this hotel images*/
 	$query2 = $conn->prepare("DELETE FROM hotel_images WHERE hotel_id=?");
 	$query2->bindValue(1,$hotel_id,PDO::PARAM_INT);
