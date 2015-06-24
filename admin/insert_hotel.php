@@ -42,51 +42,57 @@ if (isset($_POST['submit'])) {
 	require '../helpers/filevalidate.php';
 	require '../helpers/filetype.php';
 	require '../classes/SimpleImage.php';
-	if(empty($_FILES['files']['name'])){ 
-		echo "empty_image";die();
-	} 
+	
 }
 /*insert data in db*/
 require '../connection/connection.php';
-$query = $conn->prepare("INSERT INTO hotels VALUES('',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-$query->bindValue(1,$title,PDO::PARAM_STR);
-$query->bindValue(2,$content,PDO::PARAM_STR);
-$query->bindValue(3,$BED,PDO::PARAM_INT);
-$query->bindValue(4,$POOL,PDO::PARAM_INT);
-$query->bindValue(5,$SAFE,PDO::PARAM_INT);
-$query->bindValue(6,$GAMES,PDO::PARAM_INT);
-$query->bindValue(7,$TRANSPORT,PDO::PARAM_INT);
-$query->bindValue(8,$CONDITION,PDO::PARAM_INT);
-$query->bindValue(9,$BATHTUB,PDO::PARAM_INT);
-$query->bindValue(10,$CHAMPAIGNE,PDO::PARAM_INT);
-$query->bindValue(11,$DINNER,PDO::PARAM_INT);
-$query->bindValue(12,$ROOM_SERVICE,PDO::PARAM_INT);
-$query->bindValue(13,$PET_FRIENDLY,PDO::PARAM_INT);
-$query->bindValue(14,$title_ar,PDO::PARAM_STR);
-$query->bindValue(15,$content_ar,PDO::PARAM_STR);
-$query->bindValue(16,$hotel_or_offer,PDO::PARAM_INT);
-if ($query->execute()) {
-	$hotel_id = $conn->lastInsertId();
-	/*validate and resize image*/
-	foreach($_FILES['files']['name'] as $key => $img_name){ 
-		if (!validation($img_name,array('jpg','png','jpeg'))) {
-			echo "error_file";die();
-		}
-		$type     =get_type($img_name); 
-		$img_name = substr(str_shuffle("abcdefghijklmnopqrstuvwxyz123456789"), 0 , 12);
-		$img_name = $img_name.".".$type; 
-		$up       = move_uploaded_file($_FILES['files']['tmp_name']["$key"], '../uploaded/hotels_images/'.$img_name.'');
-		$img      = new SimpleImage();
-		$img->load('../uploaded/hotels_images/'.$img_name.'')->resize(1170, 780)->save('../uploaded/hotels_images/'.$img_name.'');
-		/*insert images for this hotel id*/
-		$insert_image = $conn->prepare("INSERT INTO hotel_images VALUES('',?,?)");
-		$insert_image->bindValue(1,$hotel_id,PDO::PARAM_INT);
-		$insert_image->bindValue(2,$img_name,PDO::PARAM_STR);
-		$insert_image->execute();
+try {
+	$conn->beginTransaction();
+	$query = $conn->prepare("INSERT INTO hotels VALUES('',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+	$query->bindValue(1,$title,PDO::PARAM_STR);
+	$query->bindValue(2,$content,PDO::PARAM_STR);
+	$query->bindValue(3,$BED,PDO::PARAM_INT);
+	$query->bindValue(4,$POOL,PDO::PARAM_INT);
+	$query->bindValue(5,$SAFE,PDO::PARAM_INT);
+	$query->bindValue(6,$GAMES,PDO::PARAM_INT);
+	$query->bindValue(7,$TRANSPORT,PDO::PARAM_INT);
+	$query->bindValue(8,$CONDITION,PDO::PARAM_INT);
+	$query->bindValue(9,$BATHTUB,PDO::PARAM_INT);
+	$query->bindValue(10,$CHAMPAIGNE,PDO::PARAM_INT);
+	$query->bindValue(11,$DINNER,PDO::PARAM_INT);
+	$query->bindValue(12,$ROOM_SERVICE,PDO::PARAM_INT);
+	$query->bindValue(13,$PET_FRIENDLY,PDO::PARAM_INT);
+	$query->bindValue(14,$title_ar,PDO::PARAM_STR);
+	$query->bindValue(15,$content_ar,PDO::PARAM_STR);
+	$query->bindValue(16,$hotel_or_offer,PDO::PARAM_INT);
+	if ($query->execute()) {
+		$hotel_id = $conn->lastInsertId();
+		/*validate and resize image*/
+		foreach($_FILES['files']['name'] as $key => $img_name){ 
+			if(empty($_FILES['files']['name']["$key"])){ 
+				echo "empty_image";die();
+			} 
+			if (!validation($img_name,array('jpg','png','jpeg'))) {
+				echo "error_file";die();
+			}
+			$type     =get_type($img_name); 
+			$img_name = substr(str_shuffle("abcdefghijklmnopqrstuvwxyz123456789"), 0 , 12);
+			$img_name = $img_name.".".$type; 
+			$up       = move_uploaded_file($_FILES['files']['tmp_name']["$key"], '../uploaded/hotels_images/'.$img_name.'');
+			$img      = new SimpleImage();
+			$img->load('../uploaded/hotels_images/'.$img_name.'')->resize(1170, 780)->save('../uploaded/hotels_images/'.$img_name.'');
+			/*insert images for this hotel id*/
+			$insert_image = $conn->prepare("INSERT INTO hotel_images VALUES('',?,?)");
+			$insert_image->bindValue(1,$hotel_id,PDO::PARAM_INT);
+			$insert_image->bindValue(2,$img_name,PDO::PARAM_STR);
+			$insert_image->execute();
+		}	
 	}
-
-	echo "inserted";
-	
+	$conn->commit();
+	echo "inserted";die();
+} catch (Exception $e) {
+	$e->getMessage();
 }
+
 
 ?>
