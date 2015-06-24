@@ -67,8 +67,8 @@
 					<p><?php echo "$result1->content"; ?></p>
 				</div>
 			</div>
-			<div class="col-sm-5 col-md-6 col-lg-7 photo">
-				<img src="../uploaded/index_image/<?php echo "$result1->image"; ?>"  alt="">
+			<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result1->image; ?>)">
+				
 			</div>
 		</section>
 
@@ -82,8 +82,8 @@
 		<!-- ============ ROOMS START ============ -->
 
 		<section id="rooms" class="row color3 home-section">
-			<div class="col-sm-5 col-md-6 col-lg-7 photo">
-				<img src="../uploaded/index_image/<?php echo "result2->image"; ?>" alt="">
+			<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result2->image; ?>)">
+				
 			</div>
 			<div class="col-sm-7 col-md-6 col-lg-5 text">
 				<div class="padding">

@@ -24,14 +24,11 @@
     <legend>  
       other data 
     </legend>
-
     <div class="form-group files">
       <label>Lecture' files </label>
       <input type="file"  name="files[]">
       <a class="btn btn-warning pull-right add_more_files" href="">add more files</a>
     </div>
-
-
     <div class="form-group"> 
       <label for="">choose if this offer or normal hotel</label>
       <div class="radio">
@@ -46,7 +43,6 @@
           offer
         </label>
       </div>
-
     </div>
     <label for=""> the hotel features </label>
     <div class="form-group"> 
