@@ -41,16 +41,16 @@
 				</div>
 				<div class="row">
 
-						<div class="special-offer col-sm-6 col-md-4">
-							<img src="http://placehold.it/900x600.jpg" alt="" class="img-responsive">
-							<div class="description">
-								<h4>Long Weekend</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci.</p>
-								<a href="hotel.php"  class="btn btn-default">Details</a>
-								<a   id="reservation-link" class="btn btn-primary">Book Now</a>
-								
-							</div>
+					<div class="special-offer col-sm-6 col-md-4">
+						<img src="http://placehold.it/900x600.jpg" alt="" class="img-responsive">
+						<div class="description">
+							<h4>Long Weekend</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci.</p>
+							<a href="hotel.php"  class="btn btn-default">Details</a>
+							<a name="book_now_button" id="reservation-link" data-hotel-id='3' class="btn btn-primary">Book Now</a>
+
 						</div>
+					</div>
 
 				</div>
 			</div>
@@ -61,40 +61,40 @@
 			<div id="reservation-container" class="primary-background img-rounded">
 				<button class="close"><i class="fa fa-remove fa-lg"></i></button>
 				<h2>Reservation</h2>
-				<form id="res_form" >
+				<form id="res_form">
 					
-				<div class="row">
-						<div class="form-group col-sm-12" id="booking-name">
+					<div class="row">
+						<div class="form-group col-sm-6" id="booking-name">
 							<label for="booking-name">Your Name</label>
-							<input type="text" name="name" class="form-control" >
+							<input type="text" name="username" class="form-control"  >
 						</div>
-						<div class="form-group col-sm-12" id="booking-address">
+						<div class="form-group col-sm-6" id="booking-address">
 							<label for="booking-company">address</label>
-							<input type="text" name="address" class="form-control" >
+							<input type="text" name="useraddress" class="form-control" >
 						</div>
 					</div>
 
 					<div class="row">
-						<div class="form-group col-sm-12" id="booking-email">
+						<div class="form-group col-sm-6" id="booking-email">
 							<label for="booking-email">Email</label>
-							<input type="email" name="email" class="form-control" id="booking-email">
+							<input type="email" name="useremail" class="form-control" id="booking-email">
 						</div>
-						<div class="form-group col-sm-12" id="booking-phone">
+						<div class="form-group col-sm-6" id="booking-phone">
 							<label for="booking-phone">Phone</label>
-							<input type="phone" name="phone" class="form-control" id="booking-phone">
+							<input type="phone" name="userphone" class="form-control" id="booking-phone">
 						</div>
 					</div>
 					<div class="row">
 						<div class="form-group col-sm-12" id="booking-msg">
 							<label for="booking-phone">Phone</label>
-							<textarea name="msg" id="" class="form-control" cols="30" rows="1"></textarea>
+							<textarea name="usermsg" id="" class="form-control" cols="20" rows="4"></textarea>
 							
 						</div>
 						
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<button type="submit" class="btn color3">Book Now</button>
+							<button type="submit" name="book_this_hotel" class="btn color3">Book Now</button>
 						</div>
 					</div>
 				</form>
@@ -110,10 +110,9 @@
 
 		<!-- ============ RESERVATION BAR START ============ -->
 
-
-
 		<!-- ============ RESERVATION BAR END ============ -->
 		<?php require 'scripts.php'; ?>
+		<script src="js/booking.js"></script>
 
 	</body>
 	</html>

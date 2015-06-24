@@ -65,6 +65,7 @@
 					<h5>Welcome to</h5>
 					<h1><?php echo "$result1->title"; ?></h1>
 					<p><?php echo "$result1->content"; ?></p>
+
 				</div>
 			</div>
 			<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result1->image; ?>)">
@@ -90,6 +91,7 @@
 					<h5>Check out our</h5>
 					<h1><?php echo "$result2->title"; ?></h1>
 					<p><?php echo "$result2->content"; ?></p>
+					
 				</div>
 			</div>
 		</section>
@@ -109,9 +111,10 @@
 					<h5>Fine dining at our</h5>
 					<h1><?php echo "$result3->title"; ?></h1>
 					<p><?php echo "$result3->content"; ?></p>
+					
 				</div></div>
-			<div class="col-sm-5 col-md-6 col-lg-7 photo">
-				<img src="../uploaded/index_image/<?php echo "result3->image"; ?>"  alt="">
+			<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result3->image; ?>)">
+				
 			</div>
 		</section>
 
@@ -125,14 +128,15 @@
 		<!-- ============ SPA START ============ -->
 
 		<section id="spa" class="row color2 home-section">
-			<div class="col-sm-5 col-md-6 col-lg-7 photo">
-				<img src="../uploaded/index_image/<?php echo "$result4->image"; ?>" width="1400" height="900" alt="">
+			<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result4->image; ?>)">
+				
 			</div>
 			<div class="col-sm-7 col-md-6 col-lg-5 text">
 				<div class="padding">
 					<h5>Relax at our</h5>
 					<h1><?php echo "$result4->title"; ?></h1>
 					<p><?php echo "$result4->content"; ?></p>
+					
 				</div></div>
 		</section>
 
@@ -151,9 +155,10 @@
 					<h5>Enjoy our 16 hole</h5>
 					<h1><?php echo "$result5->title"; ?></h1>
 					<p><?php echo "$result5->content"; ?></p>
+					
 				</div></div>
-			<div class="col-sm-5 col-md-6 col-lg-7 photo">
-				<img src="../uploaded/index_image/<?php echo "$result5->image"; ?>" width="1400" height="900" alt="">
+			<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result5->image; ?>)">
+				
 			</div>
 		</section>
 
