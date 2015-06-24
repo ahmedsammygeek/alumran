@@ -43,11 +43,6 @@ if (isset($_POST['submit'])) {
 		}
 	}
 	extract($new_checks);
-	/*validate and resise images classes*/
-	// require '../helpers/filevalidate.php';
-	// require '../helpers/filetype.php';
-	// require '../classes/SimpleImage.php';
-	
 }
 /*insert data in db*/
 require '../connection/connection.php';
@@ -89,27 +84,6 @@ $query->bindValue(17,$row_id,PDO::PARAM_INT);
 if ($query->execute()) {
 	header("location: hotels.php?msg=updated");die();
 }
-/*validate and resize image*/
-	// foreach($_FILES['files']['name'] as $key => $img_name){ 
-	// 	if(empty($_FILES['files']['name']["$key"])){ 
-	// 		header("location: edit.php?msg=empty_data&id=$row_id");die();
-	// 	} 
-	// 	if (!validation($img_name,array('jpg','png','jpeg'))) {
-	// 		header("location: edit.php?msg=empty_data&id=$row_id");die();
-	// 	}
-	// 	$type     =get_type($img_name); 
-	// 	$img_name = substr(str_shuffle("abcdefghijklmnopqrstuvwxyz123456789"), 0 , 12);
-	// 	$img_name = $img_name.".".$type; 
-	// 	$up       = move_uploaded_file($_FILES['files']['tmp_name']["$key"], '../uploaded/hotels_images/'.$img_name.'');
-	// 	$img      = new SimpleImage();
-	// 	$img->load('../uploaded/hotels_images/'.$img_name.'')->resize(1170, 780)->save('../uploaded/hotels_images/'.$img_name.'');
-	// 	/*insert images for this hotel id*/
-	// 	$insert_image = $conn->prepare("INSERT INTO hotel_images VALUES('',?,?)");
-	// 	$insert_image->bindValue(1,$hotel_id,PDO::PARAM_INT);
-	// 	$insert_image->bindValue(2,$img_name,PDO::PARAM_STR);
-	// 	$insert_image->execute();
-	// }	
-
 
 
 ?>

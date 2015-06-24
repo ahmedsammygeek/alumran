@@ -190,13 +190,13 @@ require 'sidebar.php';
         echo "<tr>
         <td>$i</td>
         <td><img src='../uploaded/hotels_images/".$image->pic."' width='50' height='50' alt='' ></td>
-        <td><a href='delete_image_hotel.php?id=".$image->id."'  class='btn btn-danger btn-sm'>DELETE</td>
+        <td><a href='delete_image_hotel.php?image_id=".$image->id."&hotel_id=".$hotel_id."'  class='btn btn-danger btn-sm'>DELETE</td>
         </tr>";
       } ?>
       <br>
 
     </tbody></table>
-    <form action="add_image_hotel.php?id=$hotel_id" method="post" enctype="multipart/form-data">
+    <form action="add_image_hotel.php<?php echo "?id=$hotel_id"; ?>" method="post" enctype="multipart/form-data">
       <input type="file" name="file"><br>
       <button type="submit" name="submit" id="add_all" class="btn btn-primary">add</button>
 

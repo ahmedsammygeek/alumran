@@ -5,12 +5,12 @@ if (!isset($_GET['id'])) {
 	header("location: hotels.php");die();
 }
 $hotel_id = $_GET['id'];
+require '../connection/connection.php';
 /*delete from pc*/
-	$images = $conn->query("SELECT * FROM hotel_images WHERE hotel_id=?");
+	$images = $conn->prepare("SELECT * FROM hotel_images WHERE hotel_id=?");
 	$images->bindValue(1,$hotel_id,PDO::PARAM_INT);
 	$images->execute();
 /*delete from db*/
-require '../connection/connection.php';
 try {
 	$conn->beginTransaction();
 	$query = $conn->prepare("DELETE FROM hotels WHERE id=?");
