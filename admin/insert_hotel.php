@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
 	$check_box = filter_input_array(INPUT_POST,$check_boxes);
 	foreach ($check_box as $key => $checks) {
 		if (is_null($checks)) {
-			$new_checks[$key] = 0;
+			$new_checks[$key] = 2;
 		} else {
 			$new_checks[$key] = 1;
 		}
