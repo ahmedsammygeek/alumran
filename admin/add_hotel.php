@@ -165,10 +165,13 @@ require 'sidebar.php';
         </div><!-- /.box-body -->
       </form>
 
-      <div class="box-footer">
+         <div class="box-footer">
         <button type="submit" name="submit" id="add_all" class="btn btn-primary">add</button>
         <a class="btn btn-success pull-right add_another_form" >add more hotel</a>
       </div>
+      </form>
+
+     
     </div><!-- /.box -->
 
 
@@ -193,43 +196,44 @@ $(function() {
     event.preventDefault();
     $(this).parent().append('<input type="file" class="lecture_files" name="files[]">');
   });
-  i = 0;
-  $('a.add_another_form').on('click', function(event) {
-    event.preventDefault();
-    i++;
-    $.ajax({
-      type    : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-      url     : 'hotel_more_form.php' , 
-      data : {id:i} // the url where we want to POST
-    }).done(function(data){
-      $('form[name="add_hotel"]').last().append(data);
-      $('form[data-forma-number="'+ i+'"]').find('.textarea').wysihtml5();
-      $("input[type='checkbox'], input[type='radio']").iCheck({
-        checkboxClass: 'icheckbox_minimal',
-        radioClass: 'iradio_minimal'
-      });
-    })
-  });
 
-  $('button[id=add_all]').on('click' , function(event) {
-   event.preventDefault();
-   alert("dsds");
+//   i = 0;
+//   $('a.add_another_form').on('click', function(event) {
+//     event.preventDefault();
+//     i++;
+//     $.ajax({
+//       type    : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+//       url     : 'hotel_more_form.php' , 
+//       data : {id:i} // the url where we want to POST
+//     }).done(function(data){
+//       $('form[name="add_hotel"]').last().append(data);
+//       $('form[data-forma-number="'+ i+'"]').find('.textarea').wysihtml5();
+//       $("input[type='checkbox'], input[type='radio']").iCheck({
+//         checkboxClass: 'icheckbox_minimal',
+//         radioClass: 'iradio_minimal'
+//       });
+//     })
+//   });
 
-   forms = $(document).find('form[data-forma-number]'); 
-   for (var i = 0; i < forms.length; i++) {
-  // $.post('insert_hotel.php', forms[i].serialize());
-  data = new FormData($('form[data-forma-number]')[i]);
-  console.log(data);
-  $.ajax({
-      type    : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-      url     : 'insert_hotel.php' , 
-      data  : data,
-      processData: false,
-      contentType: false,
-       // the url where we want to POST
-     });
-};
-});
+//   $('button[id=add_all]').on('click' , function(event) {
+//    event.preventDefault();
+   
+
+//    forms = $(document).find('form[data-forma-number]'); 
+//    for (var i = 0; i < forms.length; i++) {
+//   // $.post('insert_hotel.php', forms[i].serialize());
+//   data = new FormData($('form[data-forma-number]')[i]);
+//   console.log(data);
+//   $.ajax({
+//       type    : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+//       url     : 'insert_hotel.php' , 
+//       data  : data,
+//       processData: false,
+//       contentType: false,
+//        // the url where we want to POST
+//      });
+// };
+// });
 
 });
 </script>
