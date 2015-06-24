@@ -30,17 +30,14 @@ if (isset($_POST['submit'])) {
 		'PET_FRIENDLY'=>FILTER_VALIDATE_INT,);
 	$check_box = filter_input_array(INPUT_POST,$check_boxes);
 	foreach ($check_box as $key => $checks) {
-		if (is_null($checks)) {
-			$checks = 2;
-		}
-		var_dump($checks);
+		$checks = (isset($checks) ? $checks : '2');
 	}
 	extract($check_box);
 	/*validate and resise images classes*/
 	require '../helpers/filevalidate.php';
 	require '../helpers/filetype.php';
 	require '../classes/SimpleImage.php';
-	if(empty($_FILES['files']['name'])){ 
+	if(empty($_FILES['files']['tmp_name'])){ 
 		echo "empty_image";die();
 	} 
 }
