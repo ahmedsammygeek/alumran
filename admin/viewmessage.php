@@ -48,7 +48,7 @@ require 'sidebar.php';
 										<td><h3>PHONE:</h3>$phone</td>
 										</tr>
 										<tr>
-										<td><h3>TIME:</h3>$time_send</td>
+										<td><h3>TIME:</h3>$time_sent</td>
 										</tr>
 										";
 										$i++;

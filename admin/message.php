@@ -79,7 +79,7 @@ require 'sidebar.php';
 										<td>$email</td>
 										<td>$phone</td>
 										<td>$content</td>
-										<td>$time_send</td>
+										<td>$time_sent</td>
 										<td><a href='deletemessage.php?id=$id' class='btn btn-danger btn-sm'>DELETE</a>
 										<a href='viewmessage.php?id=$id' class='btn btn-primary btn-sm'>VIEW</a></td>
 										<td>$view</td>

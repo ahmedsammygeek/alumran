@@ -96,6 +96,14 @@ if(!isset($_SESSION['logged']) || $_SESSION['logged'] != 'true') {
                                     <li><a href="add_hotel.php"><i class="fa fa-angle-double-right"></i> add new hotel </a></li>
                                 </ul>
                             </li>
+                            <li>
+                                <a href="bookinglist.php">
+                                    <i class="fa fa-bar-chart-o"></i>
+                                    <span>booking</span>
+
+                                </a>
+
+                            </li>
                              <li>
                                 <a href="website_index.php">
                                     <i class="fa fa-bar-chart-o"></i>

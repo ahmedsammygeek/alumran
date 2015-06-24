@@ -25,7 +25,7 @@ require '../connection/connection.php';
 			if (isset($_GET['msg'])) {
                     //if exist msg in link get this message and do deffrent action in every case and show alert
 				switch ($_GET['msg']) {
-					case 'updated':
+					case 'deleted':
 					echo '<div class="alert alert-success alert-dismissable">
 					<i class="fa fa-check"></i>
 
@@ -97,8 +97,7 @@ require '../connection/connection.php';
 								<ul class="dropdown-menu" role="menu">
 								<li><a href="viewbooking.php?id='.$id.'" >VIEW</a></li>
 
-								<li><a href="deletemessage.php?id='.$id.'" >DELETE</a></li>
-								<li><a href="viewmessage.php?id='.$id.'" >mark as done</a></li>
+								<li><a href="delete_booking.php?id='.$id.'" >DELETE</a></li>
 								</ul>
 								</div></td> </tr>';
 
