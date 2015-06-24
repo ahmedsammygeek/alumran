@@ -1,4 +1,5 @@
-   <div class="box-body" data-forma-number="<?php echo $_POST['id']; ?>">
+ <form  role="form" method="post" action="insert_hotel.php" name="add_hotel" data-forma-number="<?php echo $_POST['id']; ?>"  enctype="multipart/form-data">
+   <div class="box-body" >
 
      <div class="form-group">
       <label for="exampleInputEmail1">title(en)</label>
@@ -100,8 +101,6 @@
         </div>
       </div>
     </div>
-
-
-
-
   </div><!-- /.box-body -->
+
+</form>

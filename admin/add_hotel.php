@@ -60,7 +60,7 @@ require 'sidebar.php';
          }
        } 
        ?>
-       <form role="form" name="add_hotel" enctype="multipart/form-data" >
+       <form role="form" method="post" action="insert_hotel.php"  name="add_hotel" enctype="multipart/form-data" data-forma-number="0">
 
         <div class="box-body" data-forma-number="0">
           <a class="btn btn-primary pull-right add_another_form" >add more files</a>
@@ -165,17 +165,12 @@ require 'sidebar.php';
               </div>
             </div>
           </div>
-
-
-
-
         </div><!-- /.box-body -->
-
-        <div class="box-footer">
-          <button type="submit" name="submit" id="add_all" class="btn btn-primary">update</button>
-        </div>
-
       </form>
+
+      <div class="box-footer">
+        <button type="submit" name="submit" id="add_all" class="btn btn-primary">update</button>
+      </div>
     </div><!-- /.box -->
 
 
@@ -209,23 +204,41 @@ $(function() {
       url     : 'hotel_more_form.php' , 
       data : {id:i} // the url where we want to POST
     }).done(function(data){
-      $('div[data-forma-number]').last().append(data);
-      $('div[data-forma-number="'+ i+'"]').find('.textarea').wysihtml5();
+      $('form[name="add_hotel"]').last().append(data);
+      $('form[data-forma-number="'+ i+'"]').find('.textarea').wysihtml5();
     })
   });
 
-  $('form[name=add_hotel]').submit(function(event) {
+  $('button[id=add_all]').on('click' , function(event) {
    event.preventDefault();
-   
-   $(document).find('div[data-forma-number]').each(function(index, el) {
+   alert("dsds");
 
-    $.post('insert_hotel.php', $('#theform').serialize());
+   forms = $(document).find('form[data-forma-number]'); 
+   for (var i = 0; i < forms.length; i++) {
+  // $.post('insert_hotel.php', forms[i].serialize());
+  data = new FormData($('form[data-forma-number]')[i]);
+  console.log(data);
+  $.ajax({
+      type    : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+      url     : 'insert_hotel.php' , 
+      data  : data,
+      processData: false,
+      contentType: false,
+       // the url where we want to POST
+     });
 
 
-  });
+};
 
 
- });
+
+  //  .each(function(index, el) {
+  //   console.log($(document).find('div[data-forma-number]'));
+  //   // $.post('insert_hotel.php', $('form[name=add_hotel]'+index+'')serialize());
+  // });
+
+
+});
 
 });
 </script>
