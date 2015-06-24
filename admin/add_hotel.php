@@ -61,11 +61,10 @@ require 'sidebar.php';
        } 
        ?>
        <form role="form" method="post" action="insert_hotel.php"  name="add_hotel" enctype="multipart/form-data" data-forma-number="0">
-
         <div class="box-body" data-forma-number="0">
-          <a class="btn btn-primary pull-right add_another_form" >add more files</a>
-
-          <div class="form-group">
+                      <h2 class="text-center">new hotel Data</h2>
+          
+            <div class="form-group">
             <label for="exampleInputEmail1">title(en)</label>
             <input type="text" name="title[]"  class="form-control" id="exampleInputEmail1" >
           </div>
@@ -91,10 +90,8 @@ require 'sidebar.php';
           <div class="form-group files">
             <label>Lecture' files </label>
             <input type="file"  name="files[]">
-            <a class="btn btn-primary pull-right add_more_files" href="">add more files</a>
+            <a class="btn btn-warning pull-right add_more_files" href="">add more files</a>
           </div>
-
-
           <div class="form-group"> 
             <label for="">choose if this offer or normal hotel</label>
             <div class="radio">
@@ -170,6 +167,7 @@ require 'sidebar.php';
 
       <div class="box-footer">
         <button type="submit" name="submit" id="add_all" class="btn btn-primary">update</button>
+        <a class="btn btn-success pull-right add_another_form" >add more hotel</a>
       </div>
     </div><!-- /.box -->
 
@@ -206,6 +204,10 @@ $(function() {
     }).done(function(data){
       $('form[name="add_hotel"]').last().append(data);
       $('form[data-forma-number="'+ i+'"]').find('.textarea').wysihtml5();
+       $("input[type='checkbox'], input[type='radio']").iCheck({
+        checkboxClass: 'icheckbox_minimal',
+        radioClass: 'iradio_minimal'
+    });
     })
   });
 
@@ -226,18 +228,7 @@ $(function() {
       contentType: false,
        // the url where we want to POST
      });
-
-
 };
-
-
-
-  //  .each(function(index, el) {
-  //   console.log($(document).find('div[data-forma-number]'));
-  //   // $.post('insert_hotel.php', $('form[name=add_hotel]'+index+'')serialize());
-  // });
-
-
 });
 
 });

@@ -1,5 +1,6 @@
  <form  role="form" method="post" action="insert_hotel.php" name="add_hotel" data-forma-number="<?php echo $_POST['id']; ?>"  enctype="multipart/form-data">
    <div class="box-body" >
+    <h2 class="text-center">data of hotel number (<?php echo $_POST['id']; ?>)</h2>
 
      <div class="form-group">
       <label for="exampleInputEmail1">title(en)</label>
