@@ -60,7 +60,7 @@ require 'sidebar.php';
 									<?php 
 
 									$hotel = $conn->prepare("SELECT * FROM hotels WHERE id = ?");
-									$hotel->bindValue(1,$id,PDO::PARAM_INT);
+									$hotel->bindValue(1,$refer_id,PDO::PARAM_INT);
 									$hotel->execute();
 									$details = $hotel->fetch(PDO::FETCH_OBJ);
 									// var_dump($hotel->execute()); die;
