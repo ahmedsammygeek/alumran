@@ -138,6 +138,7 @@
 		<!-- ============ RESERVATION BAR END ============ -->
 <?php require 'scripts.php'; ?>
 	<script src="js/fotorama.js"></script>
+	<script src="js/booking.js"></script>
 
 	</body>
 </html>
