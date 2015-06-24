@@ -80,11 +80,14 @@ require 'sidebar.php';
 
          } 
          if (isset($_GET['id'])) {
+          $id = $_GET['id'];
+          $view = $conn->query("SELECT * FROM aboutus WHERE id = $id");
+          $result2 = $view->fetch(PDO::FETCH_OBJ);
            echo '<div class="callout callout-info">
-           <p>'.$content.'</p>
+           <p>'.$result2->content.'</p>
            </div>' ;
            echo '<div class="callout callout-info">
-           <p>'.$content_ar.'</p>
+           <p>'.$result2->content_ar.'</p>
            </div>' ;
          }
 
