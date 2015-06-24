@@ -54,8 +54,8 @@
 
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec erat ac orci maximus gravida in vitae nisi. Nam quis dolor eros. Etiam nisi dui, ornare ac maximus id, malesuada eget tellus. Nulla eget dolor cursus, consectetur purus vitae, commodo leo. Aliquam erat volutpat. Suspendisse elementum, risus eu facilisis luctus, lectus velit tempus turpis, et pulvinar nulla sem et nunc. Nunc ultricies erat et ipsum sollicitudin pellentesque. Ut lacinia bibendum posuere. Suspendisse dolor urna, pharetra vel enim et, maximus volutpat mi.</p>
 						<p>
-							<a href="reservation.html" class="btn btn-primary">Book This Room</a>
-							<a href="rooms.html" class="btn btn-default">View Other Rooms</a>
+							<a name="book_now_button" data-hotel-id='9' class="btn btn-primary" id="reservation-link">Book This Room</a>
+							<a href="hotels.php"  class="btn btn-default">View Other Rooms</a>
 						</p>
 					</div>
 					<div class="col-sm-4">
@@ -124,7 +124,49 @@
 
 		<!-- ============ CONTENT END ============ -->
 
-	
+		<div id="reservation">	
+			<div id="reservation-container" class="primary-background img-rounded">
+				<button class="close"><i class="fa fa-remove fa-lg"></i></button>
+				<h2>Reservation</h2>
+				<form id="res_form">
+					
+					<div class="row">
+						<div class="form-group col-sm-6" id="booking-name">
+							<label for="booking-name">Your Name</label>
+							<input type="text" name="username" class="form-control"  >
+						</div>
+						<div class="form-group col-sm-6" id="booking-address">
+							<label for="booking-company">address</label>
+							<input type="text" name="useraddress" class="form-control" >
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col-sm-6" id="booking-email">
+							<label for="booking-email">Email</label>
+							<input type="email" name="useremail" class="form-control" id="booking-email">
+						</div>
+						<div class="form-group col-sm-6" id="booking-phone">
+							<label for="booking-phone">Phone</label>
+							<input type="phone" name="userphone" class="form-control" id="booking-phone">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-12" id="booking-msg">
+							<label for="booking-phone">Phone</label>
+							<textarea name="usermsg" id="" class="form-control" cols="20" rows="4"></textarea>
+							
+						</div>
+						
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<button type="submit" name="book_this_hotel" class="btn color3">Book Now</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
 
 		<!-- ============ FOOTER START ============ -->
 
