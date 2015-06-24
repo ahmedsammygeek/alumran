@@ -62,25 +62,25 @@ require 'sidebar.php';
        ?>
        <form role="form" method="post" action="insert_hotel.php"  name="add_hotel" enctype="multipart/form-data" data-forma-number="0">
         <div class="box-body" data-forma-number="0">
-                      <h2 class="text-center">new hotel Data</h2>
-          
-            <div class="form-group">
+          <h2 class="text-center">new hotel Data</h2>
+
+          <div class="form-group">
             <label for="exampleInputEmail1">title(en)</label>
-            <input type="text" name="title[]"  class="form-control" id="exampleInputEmail1" >
+            <input type="text" name="title"  class="form-control" id="exampleInputEmail1" >
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">content(en)</label>
 
-            <textarea class="textarea" name="content[]"  style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+            <textarea class="textarea" name="content"  style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
 
           </div> 
           <div class="form-group">
             <label for="exampleInputEmail1">title(ar)</label>
-            <input type="text" name="title_ar[]"  class="form-control" id="exampleInputEmail1" >
+            <input type="text" name="title_ar"  class="form-control" id="exampleInputEmail1" >
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">content(ar)</label>
-            <textarea class="textarea" name="content_ar[]"  style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+            <textarea class="textarea" name="content_ar"  style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
 
           </div> 
           <legend>  
@@ -204,10 +204,10 @@ $(function() {
     }).done(function(data){
       $('form[name="add_hotel"]').last().append(data);
       $('form[data-forma-number="'+ i+'"]').find('.textarea').wysihtml5();
-       $("input[type='checkbox'], input[type='radio']").iCheck({
+      $("input[type='checkbox'], input[type='radio']").iCheck({
         checkboxClass: 'icheckbox_minimal',
         radioClass: 'iradio_minimal'
-    });
+      });
     })
   });
 

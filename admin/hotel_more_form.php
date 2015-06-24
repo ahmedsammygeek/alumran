@@ -4,21 +4,21 @@
 
      <div class="form-group">
       <label for="exampleInputEmail1">title(en)</label>
-      <input type="text" name="title[]r"  class="form-control" id="exampleInputEmail1" >
+      <input type="text" name="titler"  class="form-control" id="exampleInputEmail1" >
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">content(en)</label>
 
-      <textarea class="textarea" name="content[]"  style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+      <textarea class="textarea" name="content"  style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
 
     </div> 
     <div class="form-group">
       <label for="exampleInputEmail1">title(ar)</label>
-      <input type="text" name="title_ar[]"  class="form-control" id="exampleInputEmail1" >
+      <input type="text" name="title_ar"  class="form-control" id="exampleInputEmail1" >
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">content(ar)</label>
-      <textarea class="textarea" name="content_ar[]"  style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+      <textarea class="textarea" name="content_ar"  style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
 
     </div> 
     <legend>  
