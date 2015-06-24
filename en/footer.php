@@ -52,17 +52,8 @@
 				<div class="col-sm-3 widget">
 					<h4>Contact</h4>
 					<p>
-						The Traveller Hotel<br>
-						8699 Santa Monica Blvd<br>
-						Los Angeles, CA 90069-4109
-					</p>
-					<p>
-						Phone: 1800-123-456<br>
-						Fax:  1800-123-456<br>
-						Email: info@smartway.com
-					</p>
-					<p>
-						<a href="contact.html">Get Directions &nbsp; <i class="fa fa-angle-right"></i></a>
+						Phone: <?php echo "$info->phone"; ?><br>
+						Email: <?php echo "$info->email"; ?>
 					</p>
 				</div>
 				<!-- Contact End -->
@@ -97,6 +88,8 @@
 </footer>
 
 
+<<<<<<< HEAD
+=======
 <div id="concat_form">	
 	<div id="reservation-container" class="primary-background img-rounded">
 		<button class="close"><i class="fa fa-remove fa-lg"></i></button>
@@ -136,3 +129,4 @@
 		</form>
 	</div>
 </div>
+>>>>>>> 96d614f2641ea4e037bb539203a67e9ccdac8554

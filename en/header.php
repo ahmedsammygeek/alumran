@@ -1,5 +1,6 @@
 	<header>
 <?php 
+require 'popup.php';
 require '../connection/connection.php';
 $site_info = $conn->query("SELECT phone , email FROM site_info");
 $info = $site_info->fetch(PDO::FETCH_OBJ);
