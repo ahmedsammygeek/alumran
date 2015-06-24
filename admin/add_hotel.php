@@ -113,50 +113,50 @@ require 'sidebar.php';
             <div class="checkbox">
               <div class="col-md-12">
                 <label>
-                  <input type="checkbox" name="BED"/>
+                  <input type="checkbox" name="BED" value="1" />
                   KING SIZE BED
                 </label> &nbsp;&nbsp;&nbsp;
                 <label>
-                  <input type="checkbox" name="POOL"/>
+                  <input type="checkbox" name="POOL" value="1"/>
                   SWIMMING POOL
                 </label> &nbsp;&nbsp;&nbsp;
                 <label>
-                  <input type="checkbox" name="SAFE"/>
+                  <input type="checkbox" name="SAFE" value="1"/>
                   SAFE
                 </label> &nbsp;&nbsp;&nbsp;
                 <label>
-                  <input type="checkbox" name="GAMES"/>
+                  <input type="checkbox" name="GAMES" value="1"/>
                   MEDIA & GAMES
                 </label> &nbsp;&nbsp;&nbsp;
                 <label>
-                  <input type="checkbox" name="TRANSPORT"/>
+                  <input type="checkbox" name="TRANSPORT" value="1"/>
                   AIRPORT TRANSPORT
                 </label> &nbsp;&nbsp;&nbsp;
                 <label>
-                  <input type="checkbox" name="CONDITION"/>
+                  <input type="checkbox" name="CONDITION" value="1"/>
                   AIR CONDITION
                 </label> &nbsp;&nbsp;&nbsp;
               </div>
               <div class="col-md-12">
 
                 <label>
-                  <input type="checkbox" name="BATHTUB"/>
+                  <input type="checkbox" name="BATHTUB" value="1"/>
                   BATHTUB
                 </label> &nbsp;&nbsp;&nbsp;
                 <label>
-                  <input type="checkbox" name="CHAMPAIGNE"/>
+                  <input type="checkbox" name="CHAMPAIGNE" value="1"/>
                   CHAMPAIGNE
                 </label> &nbsp;&nbsp;&nbsp;
                 <label>
-                  <input type="checkbox" name="DINNER"/>
+                  <input type="checkbox" name="DINNER" value="1"/>
                   DINNER
                 </label> &nbsp;&nbsp;&nbsp;
                 <label>
-                  <input type="checkbox" name="ROOM_SERVICE"/>
+                  <input type="checkbox" name="ROOM_SERVICE" value="1"/>
                   24H ROOM SERVICE
                 </label> &nbsp;&nbsp;&nbsp;
                 <label>
-                  <input type="checkbox" name="PET_FRIENDLY"/>
+                  <input type="checkbox" name="PET_FRIENDLY" value="1"/>
                   PET FRIENDLY
                 </label> &nbsp;&nbsp;&nbsp;
               </div>
