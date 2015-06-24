@@ -165,6 +165,7 @@ require 'sidebar.php';
         </div><!-- /.box-body -->
       </form>
 
+      <div class="box-footer">
          <div class="box-footer">
         <button type="submit" name="submit" id="add_all" class="btn btn-primary">add</button>
         <a class="btn btn-success pull-right add_another_form" >add more hotel</a>
