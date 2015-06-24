@@ -23,7 +23,7 @@ require 'sidebar.php';
 
 								}
 								?>
-<label for=""></label> : ahme 
+
 								<!-- THE MESSAGES -->
 								<table class="table table-mailbox">
 									<?php 
@@ -34,47 +34,73 @@ require 'sidebar.php';
 									$query=$conn->query($sql);
 									$i=1;
 									$result=$query->fetch(PDO::FETCH_ASSOC);
-									extract($result);
+									extract($result); ?>
+									
+									<tr>
+										<td><label>name : </label><?php echo $name; ?></td>
+									</tr>
 
-									echo "<tr>
-									<td><h3>FROM:</h3>$name</td>
+									<tr>
+										<td><label>email : </label><?php echo $email; ?></td>
+									</tr>
+
+									<tr>
+										<td><label>address : </label><?php echo $address; ?></td>
+									</tr>
+
+									<tr>
+										<td><label>content : </label><?php echo $msg; ?></td>
 									</tr>
 									<tr>
-									<td><h3>EMAIL:</h3>$email</td>
+										<td><label>phone : </label><?php echo $phone; ?></td>
 									</tr>
 									<tr>
-									<td><h3>CONTENT:</h3>msg</td>
+										<td><label>date : </label><?php echo $date; ?></td>
 									</tr>
+									<?php 
+
+									$hotel = $conn->prepare("SELECT * FROM hotels WHERE id = ?");
+									$hotel->bindValue(1,$id,PDO::PARAM_INT);
+									$hotel->execute();
+									$details = $hotel->fetch(PDO::FETCH_OBJ);
+									// var_dump($hotel->execute()); die;
+									
+									?>
+
 									<tr>
-									<td><h3>PHONE:</h3>$phone</td>
-									</tr>
-									<tr>
-									<td><h3>address:</h3>$address</td>
-									</tr>
-									<tr>
+										<td>
+											<label>wanted hotel is :</label>
+											<a target='_blank' href='viewhotel.php?id=<?php echo $refer_id; ?>'>
+												<?php echo $details->title;  ?></a>
+											</td>
+										</tr>
+
+
+
+									<!-- <tr>
 									<td><h3>TIME:</h3>$date</td>
 									</tr>
 									<tr>
-									<td><h3>hotel:</h3><a target='_blank' href='viewhotel.php?id=$id'>Click here to see the wanted hotel Details</a></td>
+									<td><h3>hotel:</td>
 									</tr>
 									";
 									$i++;
-									
+								-->
 
-									?>
-									
+								<!-- ?> -->
 
 
-								</table>
-							</div><!-- /.table-responsive -->
-						</div><!-- /.col (RIGHT) -->
-					</div><!-- /.row -->
-				</div><!-- /.box-body -->
 
-			</div><!-- /.box -->
-		</div><!-- /.col (MAIN) -->
-	</div>
-	<!-- MAILBOX END -->
+							</table>
+						</div><!-- /.table-responsive -->
+					</div><!-- /.col (RIGHT) -->
+				</div><!-- /.row -->
+			</div><!-- /.box-body -->
+
+		</div><!-- /.box -->
+	</div><!-- /.col (MAIN) -->
+</div>
+<!-- MAILBOX END -->
 
 </section><!-- /.content -->
 <?php require 'footer.php';
