@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2015 at 01:23 PM
+-- Generation Time: Jun 24, 2015 at 05:00 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -76,8 +76,25 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `refer_id` int(11) NOT NULL,
   `msg` text NOT NULL,
   `address` varchar(500) NOT NULL,
+  `date` timestamp NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`id`, `name`, `email`, `phone`, `hotel`, `refer_id`, `msg`, `address`, `date`) VALUES
+(1, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00'),
+(2, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00'),
+(3, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00'),
+(4, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00'),
+(5, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00'),
+(6, 'ahmed', 'ahme@yahoo.com', '019992828', 1, 3, 'hkjashkhaskja', 'mansoura', '0000-00-00 00:00:00'),
+(7, 'ahme', 'ask@yahoo.com', '01993', 1, 3, 'asdaskd', 'asd', '0000-00-00 00:00:00'),
+(8, 'admin', 'glal@yaho.com', '010928373', 1, 9, 'some ata here b2a ', 'mansoura', '0000-00-00 00:00:00'),
+(9, 'admin', 'glal@yaho.com', '010928373', 1, 9, 'some ata here b2a ', 'mansoura', '0000-00-00 00:00:00'),
+(10, 'admin', 'glal@yaho.com', '010928373', 1, 9, 'some ata here b2a ', 'mansoura', '2015-06-24 14:58:01');
 
 -- --------------------------------------------------------
 
@@ -104,7 +121,14 @@ CREATE TABLE IF NOT EXISTS `hotels` (
   `desc_ar` text NOT NULL,
   `hotel_or_not` tinyint(4) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `hotels`
+--
+
+INSERT INTO `hotels` (`id`, `title`, `desc`, `BED`, `POOL`, `SAFE`, `GAMES`, `TRANSPORT`, `CONDITION`, `BATHTUB`, `CHAMPAIGNE`, `DINNER`, `ROOM_SERVICE`, `PET_FRIENDLY`, `title_ar`, `desc_ar`, `hotel_or_not`) VALUES
+(1, 'fkds;lfk;', 'fadf', 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 2, 'f', 'fd', 0);
 
 -- --------------------------------------------------------
 
@@ -117,7 +141,14 @@ CREATE TABLE IF NOT EXISTS `hotel_images` (
   `hotel_id` int(11) NOT NULL,
   `pic` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `hotel_images`
+--
+
+INSERT INTO `hotel_images` (`id`, `hotel_id`, `pic`) VALUES
+(1, 1, '5d6zsuclb439.jpg');
 
 -- --------------------------------------------------------
 
@@ -145,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `newsletter` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `newsletter`
@@ -153,7 +184,10 @@ CREATE TABLE IF NOT EXISTS `newsletter` (
 
 INSERT INTO `newsletter` (`id`, `name`, `email`) VALUES
 (1, 'alaa', 'alaaelgndy@yahoo.com'),
-(2, 'amira', 'amiraadel@yahoo.com');
+(2, 'amira', 'amiraadel@yahoo.com'),
+(3, 'kjlk', 'sfks@yahoo.co'),
+(4, 'kjlk', 'sfks@yahoo.c'),
+(5, 'kjlk', 'sfks@yahoo.com');
 
 -- --------------------------------------------------------
 
@@ -231,11 +265,11 @@ CREATE TABLE IF NOT EXISTS `website_home` (
 --
 
 INSERT INTO `website_home` (`id`, `title`, `content`, `image`, `title_ar`, `content_ar`) VALUES
-(1, 'test', 'test content', 'a2646efc07c399126e07323ff2f1c176.jpg', 'اختبار ', 'اختبار المحتوى'),
-(2, 'rooms', 'roooms content', 'hqdefault.jpg', 'حجرات الفنادق', 'محتوى الحجرات في الفنادق التركية باللغة العربيه'),
-(3, 'Islamic Tourism', 'description Islamic Tourism', '3.jpg', 'لسياحة الاسلامية', 'وصغ السياحة الاسلامية في تركيا'),
-(4, 'Water Tourism', 'descreption Water Tourism', '60722_410213612378614_1066720932_n.jpg', 'السياحة المائية', 'وصف السياحة المائية ف تركيا'),
-(5, 'golf', 'descrepytion golf tourism', '5.jpg', 'الجولف ', 'وصف رياضة الجوالف في تركيا');
+(1, 'test', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit perspiciatis officia recusandae ut nesciunt beatae in earum, similique, dolor omnis architecto error odio excepturi nisi dolorum. Explicabo quo quidem, ipsum?', 'a2646efc07c399126e07323ff2f1c176.jpg', 'اختبار ', 'أبجد هوز دولور الجلوس امات، consectetur الحسومات. في المزاريب، وأنهم لا يعرفون اللقاء المبارك Reprehenderit المقبولة واجبات، وفي نفسه، وآلام خطأ المهندس المعماري، كل الكراهية excepturi الحزن فقط. سأشرح هذه النقطة، أليس كذلك؟'),
+(2, 'rooms', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit perspiciatis officia recusandae ut nesciunt beatae in earum, similique, dolor omnis architecto error odio excepturi nisi dolorum. Explicabo quo quidem, ipsum?', 'hqdefault.jpg', 'حجرات الفنادق', 'أبجد هوز دولور الجلوس امات، consectetur الحسومات. في المزاريب، وأنهم لا يعرفون اللقاء المبارك Reprehenderit المقبولة واجبات، وفي نفسه، وآلام خطأ المهندس المعماري، كل الكراهية excepturi الحزن فقط. سأشرح هذه النقطة، أليس كذلك؟'),
+(3, 'Islamic Tourism', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit perspiciatis officia recusandae ut nesciunt beatae in earum, similique, dolor omnis architecto error odio excepturi nisi dolorum. Explicabo quo quidem, ipsum?', '3.jpg', 'لسياحة الاسلامية', 'أبجد هوز دولور الجلوس امات، consectetur الحسومات. في المزاريب، وأنهم لا يعرفون اللقاء المبارك Reprehenderit المقبولة واجبات، وفي نفسه، وآلام خطأ المهندس المعماري، كل الكراهية excepturi الحزن فقط. سأشرح هذه النقطة، أليس كذلك؟'),
+(4, 'Water Tourism', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit perspiciatis officia recusandae ut nesciunt beatae in earum, similique, dolor omnis architecto error odio excepturi nisi dolorum. Explicabo quo quidem, ipsum?', '60722_410213612378614_1066720932_n.jpg', 'السياحة المائية', 'أبجد هوز دولور الجلوس امات، consectetur الحسومات. في المزاريب، وأنهم لا يعرفون اللقاء المبارك Reprehenderit المقبولة واجبات، وفي نفسه، وآلام خطأ المهندس المعماري، كل الكراهية excepturi الحزن فقط. سأشرح هذه النقطة، أليس كذلك؟'),
+(5, 'golf', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit perspiciatis officia recusandae ut nesciunt beatae in earum, similique, dolor omnis architecto error odio excepturi nisi dolorum. Explicabo quo quidem, ipsum?', '5.jpg', 'الجولف ', 'أبجد هوز دولور الجلوس امات، consectetur الحسومات. في المزاريب، وأنهم لا يعرفون اللقاء المبارك Reprehenderit المقبولة واجبات، وفي نفسه، وآلام خطأ المهندس المعماري، كل الكراهية excepturi الحزن فقط. سأشرح هذه النقطة، أليس كذلك؟');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

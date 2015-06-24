@@ -48,13 +48,14 @@ require 'sidebar.php';
 								<!-- THE MESSAGES -->
 								<table class="table table-mailbox">
 									<tr>
-										<th>id</th>
+										<th>#</th>
 										<th>name</th>
 										<th>emial</th>
 										<th>phone</th>
-										<th>content</th>
+										<th>adress</th>
+										<th>message</th>
 										<th>date & time</th>
-										<th>option</th>
+										<th>kslf </th>
 										<th>WATCHED</th>
 										<th>REPLY</th>
 									</tr>
@@ -65,14 +66,7 @@ require 'sidebar.php';
 									$i=1;
 									while ($result=$query->fetch(PDO::FETCH_ASSOC)) {
 										extract($result);
-										$content = substr($content, 0,20);
-										if ($watched == 0) {
-											$view = "not watched";
-										}
-										else
-										{
-											$view = "watched";	
-										}	
+										
 										echo "<tr>
 										<td>$i</td>
 										<td>$name</td>

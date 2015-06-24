@@ -59,8 +59,9 @@ if (!empty($errors)) {
 } else {
 
 	require '../connection/connection.php';
+	
 
-	$insert = $conn->prepare("INSERT INTO booking VALUES('' , ? , ? , ? , ? , ? , ? , ?)");
+	$insert = $conn->prepare("INSERT INTO booking VALUES('' , ? , ? , ? , ? , ? , ? , ? , NOW())");
 	$insert->bindValue(1,$name , PDO::PARAM_STR);
 	$insert->bindValue(2,$email , PDO::PARAM_STR);
 	$insert->bindValue(3,$phone , PDO::PARAM_STR);
@@ -68,6 +69,7 @@ if (!empty($errors)) {
 	$insert->bindValue(5,$hotel_id , PDO::PARAM_INT);
 	$insert->bindValue(6,$msg , PDO::PARAM_STR);
 	$insert->bindValue(7,$address , PDO::PARAM_STR);
+
 	$insert->execute();
 
 	if($insert->rowCount()) {
