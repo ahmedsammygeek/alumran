@@ -76,20 +76,22 @@ require 'sidebar.php';
 
          } 
          if (isset($_GET['id'])) {
-          $id = $_GET['id'];  
+          $id = $_GET['id'];
+          $query3 = $conn->query("SELECT * FROM pages WHERE id=$id");
+          $result3 = $query3->fetch(PDO::FETCH_OBJ); 
           echo '
-          <h3 text-center>'.$page_name.'</h3>
+          <h3 text-center>'.$result3->page_name.'</h3>
           <div class="callout callout-info">
           <h4>title(en)</h4>
-          <p>'.$title.'</p><hr>
+          <p>'.$result3->title.'</p><hr>
           <h5>descreption(en)</h5>
-          <p>'.$descreption.'</p>
+          <p>'.$result3->descreption.'</p>
           </div>' ;
           echo '<div class="callout callout-info">
           <h4>title(ar)</h4>
-          <p>'.$title_ar.'</p> <hr>
+          <p>'.$result3->title_ar.'</p> <hr>
           <h5>descreption(ar)</h5>
-          <p>'.$descreption_ar.'</p>
+          <p>'.$result3->descreption_ar.'</p>
           </div>' ;
           $query2 = $conn->query("SELECT image FROM pages_images WHERE page_id=$id");
           echo '<div class="callout callout-info"> images:&nbsp;&nbsp;&nbsp; ';

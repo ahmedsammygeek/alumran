@@ -23,8 +23,15 @@ require 'sidebar.php';
 							<b>Alert!</b>   an error in your deletion please try again.
 							</div>';
 							break;
-
 							case 'updated':
+							echo '<div class="alert alert-success alert-dismissable">
+							<i class="fa fa-check"></i>
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+							<b>Alert!</b> data deleted successfully.
+							</div>';  
+							break;
+
+							case 'deleted':
 							echo '<div class="alert alert-success alert-dismissable">
 							<i class="fa fa-check"></i>
 							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
