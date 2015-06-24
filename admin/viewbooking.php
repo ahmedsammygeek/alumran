@@ -28,8 +28,8 @@ require 'sidebar.php';
 								<table class="table table-mailbox">
 									<?php 
 									require '../connection/connection.php';
-									$query2=$conn->prepare("UPDATE booking SET seen=1 WHERE id=$id");
-									$query2->execute();
+									// $query2=$conn->prepare("UPDATE booking SET seen=1 WHERE id=$id");
+									// $query2->execute();
 									$sql="SELECT * FROM booking WHERE id=$id";
 									$query=$conn->query($sql);
 									$i=1;

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2015 at 05:00 PM
+-- Generation Time: Jun 24, 2015 at 06:26 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -77,6 +77,7 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `msg` text NOT NULL,
   `address` varchar(500) NOT NULL,
   `date` timestamp NOT NULL,
+  `seen` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
@@ -84,17 +85,17 @@ CREATE TABLE IF NOT EXISTS `booking` (
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`id`, `name`, `email`, `phone`, `hotel`, `refer_id`, `msg`, `address`, `date`) VALUES
-(1, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00'),
-(2, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00'),
-(3, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00'),
-(4, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00'),
-(5, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00'),
-(6, 'ahmed', 'ahme@yahoo.com', '019992828', 1, 3, 'hkjashkhaskja', 'mansoura', '0000-00-00 00:00:00'),
-(7, 'ahme', 'ask@yahoo.com', '01993', 1, 3, 'asdaskd', 'asd', '0000-00-00 00:00:00'),
-(8, 'admin', 'glal@yaho.com', '010928373', 1, 9, 'some ata here b2a ', 'mansoura', '0000-00-00 00:00:00'),
-(9, 'admin', 'glal@yaho.com', '010928373', 1, 9, 'some ata here b2a ', 'mansoura', '0000-00-00 00:00:00'),
-(10, 'admin', 'glal@yaho.com', '010928373', 1, 9, 'some ata here b2a ', 'mansoura', '2015-06-24 14:58:01');
+INSERT INTO `booking` (`id`, `name`, `email`, `phone`, `hotel`, `refer_id`, `msg`, `address`, `date`, `seen`) VALUES
+(1, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00', 0),
+(2, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00', 0),
+(3, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00', 0),
+(4, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00', 0),
+(5, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00', 0),
+(6, 'ahmed', 'ahme@yahoo.com', '019992828', 1, 3, 'hkjashkhaskja', 'mansoura', '0000-00-00 00:00:00', 0),
+(7, 'ahme', 'ask@yahoo.com', '01993', 1, 3, 'asdaskd', 'asd', '0000-00-00 00:00:00', 0),
+(8, 'admin', 'glal@yaho.com', '010928373', 1, 9, 'some ata here b2a ', 'mansoura', '0000-00-00 00:00:00', 0),
+(9, 'admin', 'glal@yaho.com', '010928373', 1, 9, 'some ata here b2a ', 'mansoura', '0000-00-00 00:00:00', 0),
+(10, 'admin', 'glal@yaho.com', '010928373', 1, 1, 'some ata here b2a ', 'mansoura', '2015-06-24 14:58:01', 1);
 
 -- --------------------------------------------------------
 
@@ -119,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `hotels` (
   `PET_FRIENDLY` tinyint(4) NOT NULL,
   `title_ar` varchar(255) NOT NULL,
   `desc_ar` text NOT NULL,
-  `hotel_or_not` tinyint(4) NOT NULL,
+  `hotel_or_not` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
@@ -128,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `hotels` (
 --
 
 INSERT INTO `hotels` (`id`, `title`, `desc`, `BED`, `POOL`, `SAFE`, `GAMES`, `TRANSPORT`, `CONDITION`, `BATHTUB`, `CHAMPAIGNE`, `DINNER`, `ROOM_SERVICE`, `PET_FRIENDLY`, `title_ar`, `desc_ar`, `hotel_or_not`) VALUES
-(1, 'fkds;lfk;', 'fadf', 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 2, 'f', 'fd', 0);
+(1, 'fkds;lfk;', 'fadf', 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 2, 'flk;lk;l', 'fd', '0');
 
 -- --------------------------------------------------------
 
