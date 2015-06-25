@@ -44,7 +44,9 @@
 					<?php 
 
 					require '../connection/connection.php';
-					$hotels = $conn->prepare("SELECT H.*  , (SELECT pic FROM hotel_images WHERE hotel_id = H.id LIMIT 1) AS pic FROM hotels AS H  WHERE H.hotel_or_not = 'yes'");
+					$hotels = $conn->prepare("SELECT H.*  , (SELECT pic
+					 FROM hotel_images WHERE hotel_id = H.id LIMIT 1)
+					  AS pic FROM hotels AS H WHERE H.hotel_or_not = 'no' ");
 					$hotels->execute();
 
 					while ($hotel = $hotels->fetch(PDO::FETCH_OBJ)) {
@@ -54,7 +56,7 @@
 						<h4>'.$hotel->title.'</h4>
 						<p>'.substr(html_entity_decode(strip_tags($hotel->desc)), 0 , 110).'...</p>
 						<a href="hotel.php?hotel_id='.$hotel->id.'"  class="btn btn-default">Details</a>
-						<a  href="reservation.php?id='.$hotel->id.'" class="btn btn-primary">Book Now</a>
+						<a  href="reservation2.php?id='.$hotel->id.'" class="btn btn-primary">Book Now</a>
 						</div>
 						</div>';
 					}
