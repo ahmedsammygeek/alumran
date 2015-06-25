@@ -33,7 +33,7 @@
 										<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
 										<h4>Hotel reservations</h4>
 										<p>With hotel reservation service can identify the most important and best hotels scattered across Turkey with all the services provided by them and choose the right book</p>
-										<p><a href="hotels.php" class="btn btn-primary">show</a></p>
+										<p><a href="page.php?id=1" class="btn btn-primary">show</a></p>
 									</div>
 									<div class="col-sm-3">
 										<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
