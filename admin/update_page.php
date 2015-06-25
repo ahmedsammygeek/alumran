@@ -6,10 +6,10 @@ if (!isset($_GET['id'])) {
 }
 $page_id = $_GET['id'];
 /*vars from html*/
-$title      = htmlspecialchars_decode($_POST['title']);
-$content    = htmlspecialchars_decode($_POST['content']);
-$title_ar   = htmlspecialchars_decode($_POST['title_ar']);
-$content_ar = htmlspecialchars_decode($_POST['content_ar']);
+$title      = htmlspecialchars($_POST['title']);
+$content    = htmlspecialchars($_POST['content']);
+$title_ar   = htmlspecialchars($_POST['title_ar']);
+$content_ar = htmlspecialchars($_POST['content_ar']);
 $inputs = array($title , $content , $title_ar , $content_ar );
 /*check empty*/
 foreach ($inputs as $value) {
@@ -18,12 +18,13 @@ foreach ($inputs as $value) {
 	}
 }
 /*update in db*/
+require '../connection/connection.php';
 $query = $conn->prepare("UPDATE pages SET title=? , descreption=? , title_ar=? , descreption_ar=? 
 	WHERE id=$page_id");
 $query->bindValue(1,$title,PDO::PARAM_STR);
-$query->bindValue(2,$descreption,PDO::PARAM_STR);
+$query->bindValue(2,$content,PDO::PARAM_STR);
 $query->bindValue(3,$title_ar,PDO::PARAM_STR);
-$query->bindValue(4,$descreption_ar,PDO::PARAM_STR);
+$query->bindValue(4,$content_ar,PDO::PARAM_STR);
 if ($query->execute()) {
 	header("location: website_pages.php?msg=updated");die();
 }

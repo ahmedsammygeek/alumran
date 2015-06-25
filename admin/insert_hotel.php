@@ -2,10 +2,10 @@
 require 'check_admin.php';
 /*data from html form*/
 if (isset($_POST['submit'])) {
-	$title            = htmlspecialchars_decode($_POST['title']);
-	$content          = htmlspecialchars_decode($_POST['content']);
-	$title_ar         = htmlspecialchars_decode($_POST['title_ar']);
-	$content_ar       = htmlspecialchars_decode($_POST['content_ar']);
+	$title            = htmlspecialchars($_POST['title']);
+	$content          = htmlspecialchars($_POST['content']);
+	$title_ar         = htmlspecialchars($_POST['title_ar']);
+	$content_ar       = htmlspecialchars($_POST['content_ar']);
 	$inputs           = array($title , $title_ar , $content , $content_ar);
 	/*check empty data*/
 	foreach ($inputs as $value) {

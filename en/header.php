@@ -9,12 +9,12 @@ $info = $site_info->fetch(PDO::FETCH_OBJ);
 				<div class="container">
 					<div class="row">
 						<div id="logo" class="col-xs-8 col-sm-4">
-							<a href="index.html"><img src="images/logo.png" alt="The Traveller. Modern hotel html template." class="img-responsive" /></a>
+							<a href="index.php"><img width="259" height="45" src="images/1.png" alt="The Traveller. Modern hotel html template." class="img-responsive" /></a>
 						</div>
 						<div class="col-xs-4 col-sm-8 text-right" id="hotel-info">
 							<ul>
-								<li id="hotel-phone"><a href="tel:<?php echo "$info->phone"; ?>"><i class="fa fa-phone fa-lg primary-color"></i></a></li>
-								<li id="contcat-link" ><a id="contcat-link" href="mailto:<?php echo "$info->email"; ?>"><i class="fa fa-envelope fa-lg primary-color"></i></a></li>
+								<li id="hotel-phone"><a href="tel:<?php echo $info->phone; ?>"><i class="fa fa-phone fa-lg primary-color"></i></a></li>
+								<li id="contcat-link" ><a id="contcat-link" href="mailto:<?php echo $info->email; ?>"><i class="fa fa-envelope fa-lg primary-color"></i></a></li>
 								
 							</ul>
 						</div>
