@@ -43,7 +43,7 @@
 							<label class="sr-only" for="newsletter-email">البريد الالكتروني</label>
 							<input type="email" class="form-control" id="newsletter-email" placeholder="البريد الالكتروني">
 						</div>
-						<input type="submit" name="submit" class="btn btn-primary" value="Subscribe">
+						<input type="submit" name="submit" class="btn btn-primary" value="مشاركة">
 					</form>
 				</div>
 				<!-- Newsletter End -->

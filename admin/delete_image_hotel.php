@@ -20,7 +20,7 @@ if ($query->execute()) {
 			unlink("../uploaded/hotels_images/$image->pic");
 		}
 	}
-	header("location: edit_hotel.php?msg=delete_image&id=$hotel_id");die();
+	header("location: edit_hotel.php?msg=deleted&id=$hotel_id");die();
 }
 
 

@@ -46,13 +46,21 @@ require 'sidebar.php';
            <b>Alert!</b>this image not exist .
            </div>';
            break;
-           case 'error':
+           case 'deleted':
            echo '<div class="alert alert-danger alert-dismissable">
            <i class="fa fa-ban"></i>
            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-           <b>Alert!</b> an error in your update please try again.
+           <b>Alert!</b>your data deleted successfully.
            </div>';
            break;
+           case 'inserted':
+           echo '<div class="alert alert-success alert-dismissable">
+           <i class="fa fa-check"></i>
+           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+           <b>Alert!</b> data deleted successfully.
+           </div>';  
+           break;
+
 
            default:
 

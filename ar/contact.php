@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="description" content="The Traveller - HTML Template">
 	<meta name="author" content="Coffeecream Themes, info@coffeecream.eu">
-	<title>The Traveller - HTML Template</title>
+	<title>الكيالي | تواصل معنا</title>
 	<link rel="shortcut icon" href="images/favicon.png">
 
 	<!-- Main Stylesheet -->
@@ -69,45 +69,44 @@
 
 
 					<div class="col-sm-12 text-center">
-						<h5>Visit or call us</h5>
-						<h1>Contact</h1>
+						<h1>تواصل معنا</h1>
 					</div>
 				</div>
 
 				<!-- Contact Form Start -->
-				<form action="insert_user_mail.php" method="post">
+				<form action="insert_user_mail.php" method="post" dir="rtl">
 					<div class="row">
 						<div class="col-sm-4 form-group">
-							<label class="sr-only" for="contact-name">Name</label>
+							<label class="sr-only" for="contact-name">الاسم</label>
 							<div class="input-group">
-								<input type="text" name="name" class="form-control" id="contact-name" placeholder="Name">
+								<input type="text" name="name" class="form-control" id="contact-name" placeholder="الاسم">
 								<div class="input-group-addon"><i class="fa fa-user"></i></div>
 							</div>
 						</div>
 						<div class="col-sm-4 form-group">
-							<label class="sr-only" for="contact-email">Email</label>
+							<label class="sr-only" for="contact-email">البريد الالكتروني</label>
 							<div class="input-group">
-								<input type="email" name="email" class="form-control" id="contact-email" placeholder="Email">
+								<input type="email" name="email" class="form-control" id="contact-email" placeholder="البريد الالكتروني">
 								<div class="input-group-addon"><i class="fa fa-envelope"></i></div>
 							</div>
 						</div>
 						<div class="col-sm-4 form-group">
-							<label class="sr-only"  for="contact-subject">phone</label>
+							<label class="sr-only"  for="contact-subject">الجوال</label>
 							<div class="input-group">
-								<input type="text" name="phone" class="form-control" id="contact-subject" placeholder="phone number">
+								<input type="text" name="phone" class="form-control" id="contact-subject" placeholder="رقم الجوال">
 								<div class="input-group-addon"><i class="fa fa-pencil"></i></div>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm-12 form-group">
-							<label class="sr-only" for="contact-message">content</label>
-							<textarea class="form-control" name="msg" rows="6" id="contact-message" placeholder="Message"></textarea>
+							<label class="sr-only" for="contact-message">المحتوى</label>
+							<textarea class="form-control" name="msg" rows="6" id="contact-message" placeholder="المحتوى ......"></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm-12 text-center">
-							<button type="submit" name="submit" class="btn btn-primary btn-lg">Submit</button>
+							<button type="submit" name="submit" class="btn btn-primary btn-lg">ارسال</button>
 							<hr>
 						</div>
 					</div>

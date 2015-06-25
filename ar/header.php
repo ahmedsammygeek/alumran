@@ -34,25 +34,25 @@ $info = $site_info->fetch(PDO::FETCH_OBJ);
 								<div class="row">
 									<div class="col-sm-3">
 										<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
-										<h4>Hotel reservations</h4>
+										<h4>حجزات فندقية</h4>
 										<p>With hotel reservation service can identify the most important and best hotels scattered across Turkey with all the services provided by them and choose the right book</p>
 										<p><a href="hotels.php" class="btn btn-primary">show</a></p>
 									</div>
 									<div class="col-sm-3">
 										<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
-										<h4>Flight Reservations</h4>
+										<h4>حجزات طيران</h4>
 										<p>Omran Tourism Company and public services and the right hand guide that helps you to book airline tickets to and from anywhere in the world </p>
 										<p><a href="suite.html" class="btn btn-primary">Read more</a></p>
 									</div>
 									<div class="col-sm-3">
 										<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
-										<h4>Medical Tourism</h4>
+										<h4>سياحة طبية</h4>
 										<p>Omran Tourism Company and General Services is pleased to offer medical tourism service in Turkey, Arab travelers to the brothers in the best hospitals in Istanbul </p>
 										<p><a href="double.html" class="btn btn-primary">Read more</a></p>
 									</div>
 									<div class="col-sm-3">
 										<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
-										<h4>Single Rooms</h4>
+										<h4>عروض موسمية</h4>
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus.</p>
 										<p><a href="single.html" class="btn btn-primary">Read more</a></p>
 									</div>
@@ -64,27 +64,15 @@ $info = $site_info->fetch(PDO::FETCH_OBJ);
 								<div class="row">
 									<div class="col-sm-3">
 										<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
-										<h4>Investment projects</h4>
+										<h4>مشاريع استثمارية</h4>
 										<p>Construction company is keen to encourage investment by providing higher levels of service to investors at all times</p>
 										<p><a href="dining.html" class="btn btn-primary">Read more</a></p>
 									</div>
 									<div class="col-sm-3">
 										<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
-										<h4>Economic Studies</h4>
+										<h4>دراسات اقتصادية</h4>
 										<p>The preparation of the initial economic feasibility studies is one of the services provided by the construction company for tourism and public services</p>
 										<p><a href="restaurant.html" class="btn btn-primary">Read more</a></p>
-									</div>
-									<div class="col-sm-3">
-										<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
-										<h4> Brokerage business</h4>
-										<p>The preparation of the initial economic feasibility studies is one of the services provided by the construction company for tourism and public services</p>
-										<p><a href="bar.html" class="btn btn-primary">Read more</a></p>
-									</div>
-									<div class="col-sm-3">
-										<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
-										<h4>Machines-and-production lines.</h4>
-										<p>Construction company seeking to put its engineers qualified expertise to serve its customers and help them understand and characterize and identify industrial needs</p>
-										<p><a href="poolside.html" class="btn btn-primary">Read more</a></p>
 									</div>
 								</div>
 							</div>

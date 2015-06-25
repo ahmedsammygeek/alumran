@@ -94,7 +94,6 @@ require 'sidebar.php';
     switch ($_GET['msg']) {
 
       case 'empty_data':
-            //this case error in sql request to delete this data
       echo '<div class="alert alert-danger alert-dismissable">
       <i class="fa fa-ban"></i>
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -102,7 +101,6 @@ require 'sidebar.php';
       </div>';
       break;
       case 'err_vali':
-            //this case error in sql request to delete this data
       echo '<div class="alert alert-danger alert-dismissable">
       <i class="fa fa-ban"></i>
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -116,13 +114,13 @@ require 'sidebar.php';
       <b>Alert!</b> data deleted successfully.
       </div>';  
       break;
-      case 'error':
-            //this case error in sql request to delete this data
-      echo '<div class="alert alert-danger alert-dismissable">
-      <i class="fa fa-ban"></i>
+      case 'inserted':
+      echo '<div class="alert alert-success alert-dismissable">
+      <i class="fa fa-check"></i>
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-      <b>Alert!</b>   an error in your deletion please try again.
-      </div>';
+      <b>Alert!</b> data deleted successfully.
+      </div>';  
+      break;
       break; 
       break;
 

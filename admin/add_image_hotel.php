@@ -15,7 +15,7 @@ if (empty($_FILES['file']['name'])) {
 $img_name = $_FILES['file']['name'];
 /*validate and resize image*/
 if (!validation($img_name,array('jpg','png','jpeg'))) {
-	header("location: edit_hotel.php?msg=empty_data&id=$hotel_id");die();
+	header("location: edit_hotel.php?msg=err_vali&id=$hotel_id");die();
 }
 $type     =get_type($img_name); 
 $img_name = substr(str_shuffle("abcdefghijklmnopqrstuvwxyz123456789"), 0 , 12);
@@ -29,7 +29,7 @@ $insert_image = $conn->prepare("INSERT INTO hotel_images VALUES('',?,?)");
 $insert_image->bindValue(1,$hotel_id,PDO::PARAM_INT);
 $insert_image->bindValue(2,$img_name,PDO::PARAM_STR);
 if ($insert_image->execute()) {
-	header("location: edit_hotel.php?id=$hotel_id");die();
+	header("location: edit_hotel.php?id=$hotel_id&msg=inserted");die();
 }
 
 

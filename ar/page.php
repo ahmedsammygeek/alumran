@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="description" content="The Traveller - HTML Template">
 	<meta name="author" content="Coffeecream Themes, info@coffeecream.eu">
-	<title>The Traveller - HTML Template</title>
+	<title>الكيالي | صفحات</title>
 	<link rel="shortcut icon" href="images/favicon.png">
 
 	<!-- Main Stylesheet -->
@@ -39,7 +39,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 text-center">
-						<h5>Relax &amp; Enjoy</h5>
+						<h5>اهدا &amp; استمتع</h5>
 						<h1>Spa &amp; Wellness</h1>
 					</div>
 				</div>

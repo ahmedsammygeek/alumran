@@ -60,9 +60,8 @@
 		<!-- ============ WELCOME START ============ -->
 
 		<section id="welcome" class="row color2 home-section">
-			<div class="col-sm-7 col-md-6 col-lg-5 text">
+			<div class="col-sm-7 col-md-6 col-lg-5 text text-center">
 				<div class="padding">
-					<h5>Welcome to</h5>
 					<h1><?php echo "$result1->title_ar"; ?></h1>
 					<p><?php echo "$result1->content_ar"; ?></p>
 
@@ -86,9 +85,8 @@
 			<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result2->image; ?>)">
 				
 			</div>
-			<div class="col-sm-7 col-md-6 col-lg-5 text">
+			<div class="col-sm-7 col-md-6 col-lg-5 text text-center">
 				<div class="padding">
-					<h5>Check out our</h5>
 					<h1><?php echo "$result2->title_ar"; ?></h1>
 					<p><?php echo "$result2->content_ar"; ?></p>
 					
@@ -106,9 +104,8 @@
 		<!-- ============ RESTAURANT START ============ -->
 
 		<section id="restaurant" class="row home-section">
-			<div class="col-sm-7 col-md-6 col-lg-5 text">
+			<div class="col-sm-7 col-md-6 col-lg-5 text text-center">
 				<div class="padding">
-					<h5>Fine dining at our</h5>
 					<h1><?php echo "$result3->title_ar"; ?></h1>
 					<p><?php echo "$result3->content_ar"; ?></p>
 					
@@ -131,9 +128,8 @@
 			<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result4->image; ?>)">
 				
 			</div>
-			<div class="col-sm-7 col-md-6 col-lg-5 text">
+			<div class="col-sm-7 col-md-6 col-lg-5 text text-center">
 				<div class="padding">
-					<h5>Relax at our</h5>
 					<h1><?php echo "$result4->title_ar"; ?></h1>
 					<p><?php echo "$result4->content_ar"; ?></p>
 					
@@ -150,9 +146,8 @@
 		<!-- ============ GOLF START ============ -->
 
 		<section id="golf" class="row color3 home-section">
-			<div class="col-sm-7 col-md-6 col-lg-5 text">
+			<div class="col-sm-7 col-md-6 col-lg-5 text text-center">
 				<div class="padding">
-					<h5>Enjoy our 16 hole</h5>
 					<h1><?php echo "$result5->title_ar"; ?></h1>
 					<p><?php echo "$result5->content_ar"; ?></p>
 					
@@ -236,7 +231,7 @@
 						 ?>
 
 							<!-- Latest Review 2 -->
-							<div class="latest-review">
+							<div class="latest-review text-right">
 								<blockquote><?php echo "$about_us->content_ar"; ?> <small>JALAL RAMZY for web service</small></blockquote>
 							</div>
 
