@@ -17,6 +17,7 @@ foreach ($inputs as $value) {
 		header("location: edit_pages.php?id=$page_id&msg=empty_data");
 	}
 }
+require '../connection/connection.php';
 /*update in db*/
 require '../connection/connection.php';
 $query = $conn->prepare("UPDATE pages SET title=? , descreption=? , title_ar=? , descreption_ar=? 

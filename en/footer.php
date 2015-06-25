@@ -87,8 +87,6 @@
 	</div>
 </footer>
 
-
-
 <div id="concat_form">	
 	<div id="reservation-container" class="primary-background img-rounded">
 		<button class="close"><i class="fa fa-remove fa-lg"></i></button>
@@ -128,4 +126,3 @@
 		</form>
 	</div>
 </div>
-

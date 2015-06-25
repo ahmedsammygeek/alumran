@@ -117,13 +117,13 @@ require 'sidebar.php';
 							echo "</div>";
 							/*images*/
 							$query3 = $conn->query("SELECT pic FROM hotel_images WHERE hotel_id=$hotel_id");
+							echo '<div class="callout callout-info">
+							<h4>images: </h4>';
 							while ($result3 = $query3->fetch(PDO::FETCH_OBJ)) {
-								echo '<div class="callout callout-info">
-							<h4>images: </h4>
-							<img src="../uploaded/hotels_images/'.$result3->pic.'" width="70" height="70" alt="">
-							
-							</div>' ;
+								echo '<img src="../uploaded/hotels_images/'.$result3->pic.'" width="70" height="70" alt="">
+								';								
 							}
+							echo '</div>' ;
 
 
 							
@@ -135,13 +135,13 @@ require 'sidebar.php';
 						?>
 
 
-					</tbody></table>
-				</div><!-- /.box-body -->
-			</div><!-- /.box -->
-		</div>
-	</div>
-</section><!-- /.content --> 
+						</tbody></table>
+						</div><!-- /.box-body -->
+						</div><!-- /.box -->
+						</div>
+						</div>
+						</section><!-- /.content --> 
 
-<?php 
-require 'footer.php';
-?>
+						<?php 
+						require 'footer.php';
+						?>
