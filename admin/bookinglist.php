@@ -68,7 +68,7 @@ require '../connection/connection.php';
 
 							while ($result=$query->fetch(PDO::FETCH_ASSOC)) {
 								extract($result);
-								if($seen == 1) {
+								if($seen == 0) {
 									echo '<tr style="background:gray;">';
 								}
 								else {

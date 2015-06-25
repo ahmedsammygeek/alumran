@@ -10,7 +10,9 @@ if (isset($_POST['submit'])) {
 	/*check empty data*/
 	foreach ($inputs as $value) {
 		if (empty($value)) {
-			echo "empty_data";die();
+			header('location: add_hotel.php?msg=empty_data');
+			die;
+			
 		}
 	}
 	/*type of offer*/
@@ -70,10 +72,15 @@ try {
 		/*validate and resize image*/
 		foreach($_FILES['files']['name'] as $key => $img_name){ 
 			if(empty($_FILES['files']['name']["$key"])){ 
-				echo "empty_image";die();
+				header('location: add_hotel.php?msg=empty_image');
+				die;
+
+				
 			} 
 			if (!validation($img_name,array('jpg','png','jpeg'))) {
-				echo "error_file";die();
+				header('location: add_hotel.php?msg=error_file');
+				die;
+				
 			}
 			$type     =get_type($img_name); 
 			$img_name = substr(str_shuffle("abcdefghijklmnopqrstuvwxyz123456789"), 0 , 12);
@@ -89,8 +96,11 @@ try {
 		}	
 	}
 	$conn->commit();
-	echo "inserted";die();
-} catch (Exception $e) {
+	header('location: add_hotel.php?msg=inserted');
+	die;
+
+}
+catch (Exception $e) {
 	$e->getMessage();
 }
 

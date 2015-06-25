@@ -16,7 +16,7 @@ if (empty($_GET['id'])) {
 
 
 if (empty($_POST['name'])) {
-	header('location: reservation.php?msg=name&id='.$hotel_id);
+	header('location: reservation2.php?msg=name&id='.$hotel_id);
 	die;
 
 } else {
@@ -25,20 +25,20 @@ if (empty($_POST['name'])) {
 
 
 if (empty($_POST['email'])) {
-	header('location: reservation.php?msg=email&id='.$hotel_id);
+	header('location: reservation2.php?msg=email&id='.$hotel_id);
 	die;
 	
 
 } else {
 	$email = filter_input(INPUT_POST, 'email' , FILTER_VALIDATE_EMAIL );
 	if (!filter_var($email, FILTER_VALIDATE_EMAIL )) {
-		header('location: reservation.php?msg=emailIN&id='.$hotel_id);
+		header('location: reservation2.php?msg=emailIN&id='.$hotel_id);
 		die;
 	} 
 }
 
 if (empty($_POST['address'])) {
-	header('location: reservation.php?msg=address&id='.$hotel_id);
+	header('location: reservation2.php?msg=address&id='.$hotel_id);
 	die;
 	
 
@@ -49,14 +49,14 @@ if (empty($_POST['address'])) {
 
 
 if (empty($_POST['phone'])) {
-	header('location: reservation.php?msg=phone&id='.$hotel_id);
+	header('location: reservation2.php?msg=phone&id='.$hotel_id);
 	die;
 } else {
 	$phone = filter_input(INPUT_POST, 'phone' , FILTER_SANITIZE_NUMBER_INT );
 }
 
 if (empty($_POST['msg'])) {
-	header('location: reservation.php?msg=msg&id='.$hotel_id);
+	header('location: reservation2.php?msg=msg&id='.$hotel_id);
 	die;
 	
 } else {
@@ -75,11 +75,11 @@ $insert->bindValue(6,$msg , PDO::PARAM_STR);
 $insert->bindValue(7,$address , PDO::PARAM_STR);
 
 if($insert->execute()) {
-	header('location: reservation.php?msg=done&id='.$hotel_id);
+	header('location: reservation2.php?msg=done&id='.$hotel_id);
 	die;
 }
 else {
-	header('location: reservation.php?msg=error&id='.$hotel_id);
+	header('location: reservation2.php?msg=error&id='.$hotel_id);
 	die;
 }
 
