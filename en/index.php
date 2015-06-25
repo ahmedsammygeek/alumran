@@ -173,10 +173,11 @@
 									<h5>Check Out our latest</h5>
 									<h1>Tourist sites</h1>
 									<div class="owl-carousel">
+										
 										<?php 
 										$show = $conn->query("SELECT id , title , `desc` FROM hotels WHERE hotel_or_not='yes'");
 										while ($res = $show->fetch(PDO::FETCH_OBJ)) {
-											$small_desc = substr($res->desc, 0 , 50);
+											$small_desc = substr(strip_tags($res->desc), 0 , 50);
 											$hotel_img = $conn->query("SELECT pic FROM hotel_images WHERE hotel_id=$res->id");
 											$res2 = $hotel_img->fetch(PDO::FETCH_OBJ);
 											echo '<div class="special-offer">';
