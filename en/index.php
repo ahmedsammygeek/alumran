@@ -174,22 +174,22 @@
 									<h1>Tourist sites</h1>
 									<div class="owl-carousel">
 										<?php 
-										$show = $conn->query("SELECT * FROM hotels WHERE hotel_or_not='yes'");
+										$show = $conn->query("SELECT id , title , `desc` FROM hotels WHERE hotel_or_not='yes'");
 										while ($res = $show->fetch(PDO::FETCH_OBJ)) {
+											$small_desc = substr($res->desc, 0 , 50);
 											$hotel_img = $conn->query("SELECT pic FROM hotel_images WHERE hotel_id=$res->id");
 											$res2 = $hotel_img->fetch(PDO::FETCH_OBJ);
-											echo '<div class="special-offer">
-											<img src="../uploaded/hotels_images/'.$res2->pic.'" alt="" class="img-responsive" />
+											echo '<div class="special-offer">';
+											echo '<img src="../uploaded/hotels_images/'.$res2->pic.'" alt="" width="400" height="267" class="img-responsive" />
 											<h4>'.$res->title.'</h4>
-											<p>'.$res->desc.'</p>
+											<p>'.$small_desc.'</p>
 											<p><a href="hotel.php?hotel_id='.$res->id.'" class="btn btn-primary">DETAILS</a></p>
-
-											</div>
+											' ;
+											echo'</div>
 											' ;
 										}
 
 										?>
-
 
 									</div>
 								</div>
