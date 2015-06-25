@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2015 at 04:58 PM
+-- Generation Time: Jun 25, 2015 at 05:32 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -79,23 +79,19 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `date` timestamp NOT NULL,
   `seen` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `booking`
 --
 
 INSERT INTO `booking` (`id`, `name`, `email`, `phone`, `hotel`, `refer_id`, `msg`, `address`, `date`, `seen`) VALUES
-(1, 'admin', 'amed@yahoo.com', '01099819821', 1, 2, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00', 0),
-(2, 'admin', 'amed@yahoo.com', '01099819821', 1, 2, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00', 0),
 (3, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00', 0),
-(4, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00', 0),
 (5, 'admin', 'amed@yahoo.com', '01099819821', 1, 3, 'i wanna rea this room pleaxe ', 'manousra', '0000-00-00 00:00:00', 0),
 (6, 'ahmed', 'ahme@yahoo.com', '019992828', 1, 3, 'hkjashkhaskja', 'mansoura', '0000-00-00 00:00:00', 0),
 (7, 'ahme', 'ask@yahoo.com', '01993', 1, 3, 'asdaskd', 'asd', '0000-00-00 00:00:00', 0),
 (8, 'admin', 'glal@yaho.com', '010928373', 1, 9, 'some ata here b2a ', 'mansoura', '0000-00-00 00:00:00', 0),
-(9, 'admin', 'glal@yaho.com', '010928373', 1, 9, 'some ata here b2a ', 'mansoura', '0000-00-00 00:00:00', 0),
-(10, 'admin', 'glal@yaho.com', '010928373', 1, 1, 'some ata here b2a ', 'mansoura', '2015-06-24 14:58:01', 1);
+(11, 'alaa', 'alaaelgndy21@yahoo.com', '01201212454', 1, 3, 'content', 'cairo', '2015-06-25 15:27:54', 0);
 
 -- --------------------------------------------------------
 
@@ -237,7 +233,7 @@ INSERT INTO `pages` (`id`, `title`, `descreption`, `title_ar`, `descreption_ar`,
 (2, 'Property', 'you can rent , buy ans sell too&nbsp;Property throuth our company', 'عقارات', 'يمكنك بيع و شراء و تاجير عقارات من خلالنا', 'Property', ''),
 (3, 'vip service', '', 'خدمات vip', '', 'خدمات vip', ''),
 (4, 'know turkey', '', 'تعرف على تركيا', '', 'تعرف على تركيا', ''),
-(5, 'airport', '', 'حجوزات طيران', '', 'حجوزات طيران', ''),
+(5, 'airport', '', 'حجوزات طيران', '', 'حجوزات طيران', 'airport 7agz'),
 (6, 'doctors', '', 'سياحة طبية', '', 'سياحة طبية', ''),
 (7, 'investment', '', 'مشاريع استثمارية', '', 'استثمار', ''),
 (8, '', '', 'دراسات اقتصادية', '', 'استثمار', '');

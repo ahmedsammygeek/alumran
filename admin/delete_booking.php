@@ -5,8 +5,8 @@ if (!isset($_GET['id'])) {
 }
 $book_id = $_GET['id'];
 require '../connection/connection.php';
-$query = $conn->prepare("DELETE FROM bookind WHERE id=?");
-$query->bindValue(1,$id,PDO::PARAM_INT);
+$query = $conn->prepare("DELETE FROM booking WHERE id=?");
+$query->bindValue(1,$book_id,PDO::PARAM_INT);
 if ($query->execute()) {
 	header("location: bookinglist.php?msg=deleted");die();	
 }
