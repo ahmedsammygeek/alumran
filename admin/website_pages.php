@@ -80,7 +80,7 @@ require 'sidebar.php';
           $query3 = $conn->query("SELECT * FROM pages WHERE id=$id");
           $result3 = $query3->fetch(PDO::FETCH_OBJ); 
           echo '
-          <h3 text-center>'.$result3->page_name.'</h3>
+          <h3 text-center>'.$result3->page_name.'   --   '.$result3->page_name_ar.'</h3>
           <div class="callout callout-info">
           <h4>title(en)</h4>
           <p>'.$result3->title.'</p><hr>

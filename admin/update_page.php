@@ -10,6 +10,8 @@ $title      = htmlspecialchars($_POST['title']);
 $content    = htmlspecialchars($_POST['content']);
 $title_ar   = htmlspecialchars($_POST['title_ar']);
 $content_ar = htmlspecialchars($_POST['content_ar']);
+$page_name  = htmlspecialchars_decode($_POST['page_name']);
+$page_name_ar= htmlspecialchars_decode($_POST['page_name_ar']);
 $inputs = array($title , $content , $title_ar , $content_ar );
 /*check empty*/
 foreach ($inputs as $value) {
@@ -20,12 +22,15 @@ foreach ($inputs as $value) {
 require '../connection/connection.php';
 /*update in db*/
 require '../connection/connection.php';
-$query = $conn->prepare("UPDATE pages SET title=? , descreption=? , title_ar=? , descreption_ar=? 
+$query = $conn->prepare("UPDATE pages SET title=? , descreption=? , title_ar=? , descreption_ar=? , 
+page_name=? , page_name_ar=? 
 	WHERE id=$page_id");
 $query->bindValue(1,$title,PDO::PARAM_STR);
 $query->bindValue(2,$content,PDO::PARAM_STR);
 $query->bindValue(3,$title_ar,PDO::PARAM_STR);
 $query->bindValue(4,$content_ar,PDO::PARAM_STR);
+$query->bindValue(5,$page_name,PDO::PARAM_STR);
+$query->bindValue(6,$page_name_ar,PDO::PARAM_STR);
 if ($query->execute()) {
 	header("location: website_pages.php?msg=updated");die();
 }
