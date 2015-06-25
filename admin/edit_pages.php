@@ -64,7 +64,7 @@ require 'sidebar.php';
           <input type="text" name="page_name" value='<?php echo "$page_name"; ?>' class="form-control" id="exampleInputEmail1" >
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">page name(en)</label>
+          <label for="exampleInputEmail1">page name(ar)</label>
           <input type="text" name="page_name_ar" value='<?php echo "$page_name_ar"; ?>' class="form-control" id="exampleInputEmail1" >
         </div>
          <div class="form-group">
