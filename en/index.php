@@ -184,7 +184,7 @@
 											echo '<img src="../uploaded/hotels_images/'.$res2->pic.'" alt="" width="400" height="267" class="img-responsive" />
 											<h4>'.$res->title.'</h4>
 											<p>'.$small_desc.'</p>
-											<p><a href="hotel.php?hotel_id='.$res->id.'" class="btn btn-primary">DETAILS</a></p>
+											<p><a href="offer.php?hotel_id='.$res->id.'" class="btn btn-primary">DETAILS</a></p>
 											' ;
 											echo'</div>
 											' ;

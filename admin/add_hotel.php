@@ -32,7 +32,17 @@ require 'sidebar.php';
            <b>Alert!</b>   you leave input empty please complete inputs and try again.
            </div>';
            break;
-           case 'err_vali':
+
+           case 'inserted':
+           echo '<div class="alert alert-success alert-dismissable">
+           <i class="fa fa-ban"></i>
+           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+           <b>Alert!</b>   you leave input empty please complete inputs and try again.
+           </div>';
+           break;
+
+
+           case 'error_file':
            echo '<div class="alert alert-danger alert-dismissable">
            <i class="fa fa-ban"></i>
            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
