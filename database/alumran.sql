@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2015 at 03:26 PM
+-- Generation Time: Jun 25, 2015 at 04:58 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -224,6 +224,7 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `title_ar` varchar(255) NOT NULL,
   `descreption_ar` text NOT NULL,
   `page_name` varchar(255) NOT NULL,
+  `page_name_ar` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
@@ -231,15 +232,15 @@ CREATE TABLE IF NOT EXISTS `pages` (
 -- Dumping data for table `pages`
 --
 
-INSERT INTO `pages` (`id`, `title`, `descreption`, `title_ar`, `descreption_ar`, `page_name`) VALUES
-(1, 'cars rent', 'information about cars rent in turey .', 'سيارات للتاجير', 'معلومات تاجير السيارات في تركيا من خلال الشركة', 'cars'),
-(2, 'Property', 'you can rent , buy ans sell too&nbsp;Property throuth our company', 'عقارات', 'يمكنك بيع و شراء و تاجير عقارات من خلالنا', 'Property'),
-(3, 'vip service', '', 'خدمات vip', '', 'خدمات vip'),
-(4, 'know turkey', '', 'تعرف على تركيا', '', 'تعرف على تركيا'),
-(5, 'airport', '', 'حجوزات طيران', '', 'حجوزات طيران'),
-(6, 'doctors', '', 'سياحة طبية', '', 'سياحة طبية'),
-(7, 'investment', '', 'مشاريع استثمارية', '', 'استثمار'),
-(8, '', '', 'دراسات اقتصادية', '', 'استثمار');
+INSERT INTO `pages` (`id`, `title`, `descreption`, `title_ar`, `descreption_ar`, `page_name`, `page_name_ar`) VALUES
+(1, 'cars rent', 'information about cars rent in turey .', 'سيارات للتاجير', 'معلومات تاجير السيارات في تركيا من خلال الشركة', 'cars', ''),
+(2, 'Property', 'you can rent , buy ans sell too&nbsp;Property throuth our company', 'عقارات', 'يمكنك بيع و شراء و تاجير عقارات من خلالنا', 'Property', ''),
+(3, 'vip service', '', 'خدمات vip', '', 'خدمات vip', ''),
+(4, 'know turkey', '', 'تعرف على تركيا', '', 'تعرف على تركيا', ''),
+(5, 'airport', '', 'حجوزات طيران', '', 'حجوزات طيران', ''),
+(6, 'doctors', '', 'سياحة طبية', '', 'سياحة طبية', ''),
+(7, 'investment', '', 'مشاريع استثمارية', '', 'استثمار', ''),
+(8, '', '', 'دراسات اقتصادية', '', 'استثمار', '');
 
 -- --------------------------------------------------------
 
