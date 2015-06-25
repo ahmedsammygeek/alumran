@@ -54,8 +54,10 @@ require 'sidebar.php';
           $i=1;
           while ($result=$query->fetch(PDO::FETCH_ASSOC)) {
            extract($result);
-           $small_content = substr($descreption, 0 , 30);
-           $small_content_ar = substr($descreption_ar, 0 , 30);
+
+            $small_content = substr(html_entity_decode(strip_tags($descreption)), 0 , 30);
+             $small_content_ar = substr(html_entity_decode(strip_tags($descreption_ar)), 0 , 30);
+
            echo " <tr>
            <td>$i</td>
            <td>$page_name</td>

@@ -41,16 +41,26 @@
 				</div>
 				<div class="row">
 
-					<div class="special-offer col-sm-6 col-md-4">
-						<img src="http://placehold.it/900x600.jpg" alt="" class="img-responsive">
-						<div class="description">
-							<h4>Long Weekend</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci.</p>
-							<a href="hotel.php"  class="btn btn-default">Details</a>
-							<a name="book_now_button" id="reservation-link" data-hotel-id='3' class="btn btn-primary">Book Now</a>
+					<?php 
 
+					require '../connection/connection.php';
+					$hotels = $conn->prepare("SELECT H.*  , (SELECT pic FROM hotel_images WHERE hotel_id = H.id LIMIT 1) AS pic FROM hotels AS H ");
+					$hotels->execute();
+
+					while ($hotel = $hotels->fetch(PDO::FETCH_OBJ)) {
+						echo '<div class="special-offer col-sm-6 col-md-4">
+						<img src="../uploaded/hotels_images/'.$hotel->pic.'" alt="" class="img-responsive">
+						<div class="description">
+						<h4>'.$hotel->title.'</h4>
+						<p>'.substr(html_entity_decode(strip_tags($hotel->desc)), 0 , 110).'...</p>
+						<a href="hotel.php?hotel_id='.$hotel->id.'"  class="btn btn-default">Details</a>
+						<a  href="reservation.php?id='.$hotel->id.'" class="btn btn-primary">Book Now</a>
 						</div>
-					</div>
+						</div>';
+					}
+
+					?>
+
 
 				</div>
 			</div>
@@ -61,46 +71,13 @@
 			<div id="reservation-container" class="primary-background img-rounded">
 				<button class="close"><i class="fa fa-remove fa-lg"></i></button>
 				<h2>Reservation</h2>
-				<form id="res_form">
-					
-					<div class="row">
-						<div class="form-group col-sm-6" id="booking-name">
-							<label for="booking-name">Your Name</label>
-							<input type="text" name="username" class="form-control"  >
-						</div>
-						<div class="form-group col-sm-6" id="booking-address">
-							<label for="booking-company">address</label>
-							<input type="text" name="useraddress" class="form-control" >
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="form-group col-sm-6" id="booking-email">
-							<label for="booking-email">Email</label>
-							<input type="email" name="useremail" class="form-control" id="booking-email">
-						</div>
-						<div class="form-group col-sm-6" id="booking-phone">
-							<label for="booking-phone">Phone</label>
-							<input type="phone" name="userphone" class="form-control" id="booking-phone">
-						</div>
-					</div>
-					<div class="row">
-						<div class="form-group col-sm-12" id="booking-msg">
-							<label for="booking-phone">Phone</label>
-							<textarea name="usermsg" id="" class="form-control" cols="20" rows="4"></textarea>
-							
-						</div>
-						
-					</div>
-					<div class="row">
-						<div class="col-sm-12">
-							<button type="submit" name="book_this_hotel" class="btn color3">Book Now</button>
-						</div>
-					</div>
-				</form>
+				 
 			</div>
 		</div>
 		<!-- ============ FOOTER START ============ -->
+
+
+
 
 		<?php 
 		require 'footer.php';
@@ -112,7 +89,7 @@
 
 		<!-- ============ RESERVATION BAR END ============ -->
 		<?php require 'scripts.php'; ?>
-		<script src="js/booking.js"></script>
+		<!-- // <script src="js/booking.js"></script> -->
 
 	</body>
 	</html>

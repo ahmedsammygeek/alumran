@@ -90,7 +90,7 @@
 <div id="concat_form">	
 	<div id="reservation-container" class="primary-background img-rounded">
 		<button class="close"><i class="fa fa-remove fa-lg"></i></button>
-		<h2>Reservation</h2>
+		<h2>Contat us</h2>
 		<form  action="send_mail_to_us.php" method="post" >
 			<div class="row" >
 				<div class="form-group col-sm-6" id="booking-name">

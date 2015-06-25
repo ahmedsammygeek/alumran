@@ -1,17 +1,18 @@
+
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<meta name="description" content="The Traveller - HTML Template">
-		<meta name="author" content="Coffeecream Themes, info@coffeecream.eu">
-		<title>The Traveller - HTML Template</title>
-		<link rel="shortcut icon" href="images/favicon.png">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="The Traveller - HTML Template">
+	<meta name="author" content="Coffeecream Themes, info@coffeecream.eu">
+	<title>The Traveller - HTML Template</title>
+	<link rel="shortcut icon" href="images/favicon.png">
 
-		<!-- Main Stylesheet -->
-		<link href="css/style.css" rel="stylesheet">
+	<!-- Main Stylesheet -->
+	<link href="css/style.css" rel="stylesheet">
 
-		<!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
 		<script src="js/respond.min.js"></script>
@@ -29,7 +30,7 @@
 		<!-- ============ LOADER END ============ -->
 
 		<!-- ============ HEADER START ============ -->
-<?php require 'header.php'; ?>
+		<?php require 'header.php'; ?>
 
 		<!-- ============ HEADER END ============ -->
 
@@ -190,7 +191,7 @@
 
 		<!-- ============ FOOTER START ============ -->
 
-<?php require 'footer.php'; ?>
+		<?php require 'footer.php'; ?>
 		<!-- ============ FOOTER END ============ -->
 
 		<!-- ============ RESERVATION BAR START ============ -->
@@ -200,4 +201,4 @@
 		<?php require 'scripts.php'; ?>
 
 	</body>
-</html>
+	</html>
