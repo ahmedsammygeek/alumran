@@ -42,13 +42,13 @@ $info = $site_info->fetch(PDO::FETCH_OBJ);
 										<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
 										<h4>Flight Reservations</h4>
 										<p>Omran Tourism Company and public services and the right hand guide that helps you to book airline tickets to and from anywhere in the world </p>
-										<p><a href="page.php?id=5" class="btn btn-primary">Read more</a></p>
+										<p><a href="page.php?page_id=5" class="btn btn-primary">Read more</a></p>
 									</div>
 									<div class="col-sm-3">
 										<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
 										<h4>Medical Tourism</h4>
 										<p>Omran Tourism Company and General Services is pleased to offer medical tourism service in Turkey, Arab travelers to the brothers in the best hospitals in Istanbul </p>
-										<p><a href="page.php?id=6" class="btn btn-primary">Read more</a></p>
+										<p><a href="page.php?page_id=6" class="btn btn-primary">Read more</a></p>
 									</div>
 									<div class="col-sm-3">
 										<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
@@ -66,44 +66,44 @@ $info = $site_info->fetch(PDO::FETCH_OBJ);
 										<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
 										<h4>Investment projects</h4>
 										<p>Construction company is keen to encourage investment by providing higher levels of service to investors at all times</p>
-										<p><a href="page.php?id=7" class="btn btn-primary">Read more</a></p>
+										<p><a href="page.php?page_id=7" class="btn btn-primary">Read more</a></p>
 									</div>
 									<div class="col-sm-3">
 										<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
 										<h4>Economic Studies</h4>
 										<p>The preparation of the initial economic feasibility studies is one of the services provided by the construction company for tourism and public services</p>
-										<p><a href="page.php?id=8" class="btn btn-primary">Read more</a></p>
+										<p><a href="page.php?page_id=8" class="btn btn-primary">Read more</a></p>
 									</div>
 									<div class="col-sm-3">
 										<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
 										<h4> Brokerage business</h4>
 										<p>The preparation of the initial economic feasibility studies is one of the services provided by the construction company for tourism and public services</p>
-										<p><a href="page.php?id=9" class="btn btn-primary">Read more</a></p>
+										<p><a href="page.php?page_id=9" class="btn btn-primary">Read more</a></p>
 									</div>
 									<div class="col-sm-3">
 										<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
 										<h4>Machines-and-production lines.</h4>
 										<p>Construction company seeking to put its engineers qualified expertise to serve its customers and help them understand and characterize and identify industrial needs</p>
-										<p><a href="page.php?id=10" class="btn btn-primary">Read more</a></p>
+										<p><a href="page.php?page_id=10" class="btn btn-primary">Read more</a></p>
 									</div>
 								</div>
 							</div>
 						</li>
 						
-						<li><a href="page.php?id=1">Rent cars</a>
+						<li><a href="page.php?page_id=1">Rent cars</a>
 							
 						</li>
 
-						<li><a href="page.php?id=2">Property</a>
+						<li><a href="page.php?page_id=2">Property</a>
 							
 						</li>
 
-						<li><a href="page.php?id=3">Services</a>
+						<li><a href="page.php?page_id=3">Services</a>
 							
 						</li>
 
 
-						<li><a href="page.php?id=4">Know on Turkey</a>
+						<li><a href="page.php?page_id=4">Know on Turkey</a>
 							
 						</li>
 					</ul>
