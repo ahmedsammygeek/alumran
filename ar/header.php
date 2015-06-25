@@ -27,9 +27,9 @@ $info = $site_info->fetch(PDO::FETCH_OBJ);
 			<nav>
 				<div class="container">
 					<ul class="jetmenu">
-						<li class="active"><a href="index.php">Home</a>
+						<li class="active"><a href="index.php">الرئيسية</a>
 						</li>
-						<li><a href="#">Tourism</a>
+						<li><a href="#">قطاع السياحة</a>
 							<div class="megamenu full-width">
 								<div class="row">
 									<div class="col-sm-3">
@@ -59,7 +59,7 @@ $info = $site_info->fetch(PDO::FETCH_OBJ);
 								</div>
 							</div>
 						</li>
-						<li><a href="#">Investment</a>
+						<li><a href="#">قطاع الاستثمار</a>
 							<div class="megamenu full-width">
 								<div class="row">
 									<div class="col-sm-3">
@@ -90,20 +90,20 @@ $info = $site_info->fetch(PDO::FETCH_OBJ);
 							</div>
 						</li>
 						
-						<li><a href="#">Rent cars</a>
+						<li><a href="#">تاجير سيارات</a>
 							
 						</li>
 
-						<li><a href="#">Property</a>
+						<li><a href="#">عقارات</a>
 							
 						</li>
 
-						<li><a href="#">Services</a>
+						<li><a href="#">خدمات خاصة</a>
 							
 						</li>
 
 
-						<li><a href="#">Know on Turkey</a>
+						<li><a href="#">تعرف على تركيا</a>
 							
 						</li>
 					</ul>
