@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<meta name="description" content="The Traveller - HTML Template">
-		<meta name="author" content="Coffeecream Themes, info@coffeecream.eu">
-		<title>The Traveller - HTML Template</title>
-		<link rel="shortcut icon" href="images/favicon.png">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="The Traveller - HTML Template">
+	<meta name="author" content="Coffeecream Themes, info@coffeecream.eu">
+	<title>The Traveller - HTML Template</title>
+	<link rel="shortcut icon" href="images/favicon.png">
 
-		<!-- Main Stylesheet -->
-		<link href="css/style.css" rel="stylesheet">
+	<!-- Main Stylesheet -->
+	<link href="css/style.css" rel="stylesheet">
 
-		<!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
 		<script src="js/respond.min.js"></script>
@@ -30,10 +30,10 @@
 
 		<!-- ============ HEADER START ============ -->
 
-	<?php 
-	require 'header.php';
-	require '../connection/connection.php'; 
-	?>
+		<?php 
+		require 'header.php';
+		require '../connection/connection.php'; 
+		?>
 		<!-- ============ HEADER END ============ -->
 
 		<!-- ============ VIDEO START ============ -->
@@ -113,154 +113,135 @@
 					<p><?php echo "$result3->content"; ?></p>
 					
 				</div></div>
-			<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result3->image; ?>)">
-				
-			</div>
-		</section>
+				<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result3->image; ?>)">
 
-		<!-- ============ RESTAURANT END ============ -->
-		<?php 
-		/*data of index page*/
-		$query4   = $conn->query("SELECT * FROM website_home WHERE id=4");
-		$result4  = $query4->fetch(PDO::FETCH_OBJ); 
-		?>
+				</div>
+			</section>
 
-		<!-- ============ SPA START ============ -->
+			<!-- ============ RESTAURANT END ============ -->
+			<?php 
+			/*data of index page*/
+			$query4   = $conn->query("SELECT * FROM website_home WHERE id=4");
+			$result4  = $query4->fetch(PDO::FETCH_OBJ); 
+			?>
 
-		<section id="spa" class="row color2 home-section">
-			<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result4->image; ?>)">
-				
-			</div>
-			<div class="col-sm-7 col-md-6 col-lg-5 text">
-				<div class="padding">
-					<h5>Relax at our</h5>
-					<h1><?php echo "$result4->title"; ?></h1>
-					<p><?php echo "$result4->content"; ?></p>
-					
-				</div></div>
-		</section>
+			<!-- ============ SPA START ============ -->
 
-		<!-- ============ SPA END ============ -->
-		<?php 
-		/*data of index page*/
-		$query5   = $conn->query("SELECT * FROM website_home WHERE id=5");
-		$result5  = $query5->fetch(PDO::FETCH_OBJ); 
-		?>
+			<section id="spa" class="row color2 home-section">
+				<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result4->image; ?>)">
 
-		<!-- ============ GOLF START ============ -->
+				</div>
+				<div class="col-sm-7 col-md-6 col-lg-5 text">
+					<div class="padding">
+						<h5>Relax at our</h5>
+						<h1><?php echo "$result4->title"; ?></h1>
+						<p><?php echo "$result4->content"; ?></p>
 
-		<section id="golf" class="row color3 home-section">
-			<div class="col-sm-7 col-md-6 col-lg-5 text">
-				<div class="padding">
-					<h5>Enjoy our 16 hole</h5>
-					<h1><?php echo "$result5->title"; ?></h1>
-					<p><?php echo "$result5->content"; ?></p>
-					
-				</div></div>
-			<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result5->image; ?>)">
-				
-			</div>
-		</section>
+					</div></div>
+				</section>
 
-		<!-- ============ GOLF END ============ -->
+				<!-- ============ SPA END ============ -->
+				<?php 
+				/*data of index page*/
+				$query5   = $conn->query("SELECT * FROM website_home WHERE id=5");
+				$result5  = $query5->fetch(PDO::FETCH_OBJ); 
+				?>
 
-		<!-- ============ SPECIAL OFFERS START ============ -->
+				<!-- ============ GOLF START ============ -->
 
-		<section id="specials">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12 text-center">
-						<h5>Check Out our latest</h5>
-						<h1>Tourist sites</h1>
-						<div class="owl-carousel">
+				<section id="golf" class="row color3 home-section">
+					<div class="col-sm-7 col-md-6 col-lg-5 text">
+						<div class="padding">
+							<h5>Enjoy our 16 hole</h5>
+							<h1><?php echo "$result5->title"; ?></h1>
+							<p><?php echo "$result5->content"; ?></p>
 
-							<!-- Special Offer 1 -->
-							<div class="special-offer">
-								<img src="http://placehold.it/400x267.jpg" alt="" class="img-responsive" />
-								<h4>Romantic Getaway</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci pharetra, vel accumsan ante tristique.</p>
-								<p><a href="specials.html" class="btn btn-primary">Book Now</a></p>
-								
+						</div></div>
+						<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result5->image; ?>)">
+
+						</div>
+					</section>
+
+					<!-- ============ GOLF END ============ -->
+
+					<!-- ============ SPECIAL OFFERS START ============ -->
+
+					<section id="specials">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-12 text-center">
+									<h5>Check Out our latest</h5>
+									<h1>Tourist sites</h1>
+									<div class="owl-carousel">
+										<?php 
+										$show = $conn->query("SELECT id , title , `desc` FROM hotels WHERE hotel_or_not='yes'");
+										while ($res = $show->fetch(PDO::FETCH_OBJ)) {
+											$small_desc = substr($res->desc, 0 , 50);
+											$hotel_img = $conn->query("SELECT pic FROM hotel_images WHERE hotel_id=$res->id");
+											$res2 = $hotel_img->fetch(PDO::FETCH_OBJ);
+											echo '<div class="special-offer">';
+											echo '<img src="../uploaded/hotels_images/'.$res2->pic.'" alt="" width="400" height="267" class="img-responsive" />
+											<h4>'.$res->title.'</h4>
+											<p>'.$small_desc.'</p>
+											<p><a href="hotel.php?hotel_id='.$res->id.'" class="btn btn-primary">DETAILS</a></p>
+											' ;
+											echo'</div>
+											' ;
+										}
+
+										?>
+
+									</div>
+								</div>
 							</div>
+						</div>
+					</section>
 
-							<!-- Special Offer 2 -->
-							<div class="special-offer">
-								<img src="http://placehold.it/400x267.jpg" alt="" class="img-responsive" />
-								<h4>Business Rate</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci pharetra, vel accumsan ante tristique.</p>
-								<p><a href="specials.html" class="btn btn-primary">Book Now</a></p>
-								
+					<!-- ============ SPECIAL OFFERS END ============ -->
+
+					<!-- ============ REVIEWS START ============ -->
+
+					<section id="home-reviews" class="primary-background">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-12 text-center">
+
+									<h1>About Us</h1>
+								</div>
 							</div>
+							<div class="row">
+								<div class="col-sm-12">
+									<?php 
+									$about = $conn->query("SELECT * FROM aboutus");
+									$about_us = $about->fetch(PDO::FETCH_OBJ);
 
-							<!-- Special Offer 3 -->
-							<div class="special-offer">
-								<img src="http://placehold.it/400x267.jpg" alt="" class="img-responsive" />
-								<h4>Family Weekend</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci pharetra, vel accumsan ante tristique.</p>
-								<p><a href="specials.html" class="btn btn-primary">Book Now</a></p>
-								
-							</div>
+									?>
 
-							<!-- Special Offer 4 -->
-							<div class="special-offer">
-								<img src="http://placehold.it/400x267.jpg" alt="" class="img-responsive" />
-								<h4>Spa Midweek</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus. Integer egestas quam non orci pharetra, vel accumsan ante tristique.</p>
-								<p><a href="specials.html" class="btn btn-primary">Book Now</a></p>
-								
+									<!-- Latest Review 2 -->
+									<div class="latest-review">
+										<blockquote><?php echo "$about_us->content"; ?> <small>JALAL RAMZY for web service</small></blockquote>
+									</div>
+
+
+								</div>
 							</div>
 
 						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+					</section>
 
-		<!-- ============ SPECIAL OFFERS END ============ -->
-
-		<!-- ============ REVIEWS START ============ -->
-
-		<section id="home-reviews" class="primary-background">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12 text-center">
-						
-						<h1>About Us</h1>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-12">
-						<?php 
-						$about = $conn->query("SELECT * FROM aboutus");
-						$about_us = $about->fetch(PDO::FETCH_OBJ);
-
-						 ?>
-
-							<!-- Latest Review 2 -->
-							<div class="latest-review">
-								<blockquote><?php echo "$about_us->content"; ?> <small>JALAL RAMZY for web service</small></blockquote>
-							</div>
-
-						
-					</div>
-				</div>
-			
-			</div>
-		</section>
-
-		<!-- ============ REVIEWS END ============ -->
+					<!-- ============ REVIEWS END ============ -->
 
 
 
-		<!-- ============ FOOTER START ============ -->
+					<!-- ============ FOOTER START ============ -->
 
-		<?php 
-		require 'footer.php';
-		 ?>
-		<!-- ============ FOOTER END ============ -->
+					<?php 
+					require 'footer.php';
+					?>
+					<!-- ============ FOOTER END ============ -->
 
 
 
-<?php 	require 'scripts.php'; ?>
-	</body>
-</html>
+					<?php 	require 'scripts.php'; ?>
+				</body>
+				</html>
