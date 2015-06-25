@@ -131,11 +131,9 @@ if(!$id) {
 					</div>
 					<div class="row">
 						<div class="form-group col-sm-12" id="booking-msg">
-							<label for="booking-phone">Phone</label>
+							<label for="booking-phone">massege</label>
 							<textarea name="msg" id="" class="form-control" cols="20" rows="4"></textarea>
-							
 						</div>
-						
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
