@@ -9,39 +9,39 @@
 			<div class="row">
 
 				<!-- About Us Start -->
-				<div class="col-sm-3 widget">
-					<h4>Address</h4>
-					<p><?php echo "$info->address"; ?></p>
+				<div class="col-sm-3 widget text-right">
+					<h4>العنوان</h4>
+					<p><?php echo "$info->address_ar"; ?></p>
 				</div>
 				<!-- About Us End -->
 
 				<!-- Quick Links Start -->
-				<div class="col-sm-3 widget">
-					<h4>Quick links</h4>
+				<div dir="rtl" class="col-sm-3 widget text-right">
+					<h4>اختصارات</h4>
 					<nav>
 						<ul>
-							<li><a href="weddings.html"><i class="fa fa-angle-right primary-color"></i>Weddings</a></li>
-							<li><a href="conferences.html"><i class="fa fa-angle-right primary-color"></i>Conferences</a></li>
-							<li><a href="events.html"><i class="fa fa-angle-right primary-color"></i>Events</a></li>
-							<li><a href="vouchers.html"><i class="fa fa-angle-right primary-color"></i>Gift Vouchers</a></li>
-							<li><a href="contact.html"><i class="fa fa-angle-right primary-color"></i>Location</a></li>
-							<li><a href="gallery.html"><i class="fa fa-angle-right primary-color"></i>Photo Gallery</a></li>
+							<li><a href="weddings.html"><i class="fa fa-angle-left primary-color"></i>Weddings</a></li>
+							<li><a href="conferences.html"><i class="fa fa-angle-left primary-color"></i>Conferences</a></li>
+							<li><a href="events.html"><i class="fa fa-angle-left primary-color"></i>Events</a></li>
+							<li><a href="vouchers.html"><i class="fa fa-angle-left primary-color"></i>Gift Vouchers</a></li>
+							<li><a href="contact.html"><i class="fa fa-angle-left primary-color"></i>Location</a></li>
+							<li><a href="gallery.html"><i class="fa fa-angle-left primary-color"></i>Photo Gallery</a></li>
 						</ul>
 					</nav>
 				</div>
 				<!-- Quick Links End -->
 
 				<!-- Newsletter Start -->
-				<div class="col-sm-3 widget">
-					<h4>Newsletter</h4>
-					<form role="form" id="newsletter-form" action="insert_newsletter.php" method="post">
+				<div class="col-sm-3 widget text-right">
+					<h4>مشاركة</h4>
+					<form role="form" dir="rtl" id="newsletter-form" action="insert_newsletter.php" method="post">
 						<div class="form-group" id="newsletter-name-group">
-							<label class="sr-only" for="newsletter-name">Name</label>
-							<input type="text" class="form-control" id="newsletter-name" placeholder="name">
+							<label class="sr-only" for="newsletter-name">الاسم</label>
+							<input type="text" class="form-control" id="newsletter-name" placeholder="الاسم">
 						</div>
 						<div class="form-group" id="newsletter-email-group">
-							<label class="sr-only" for="newsletter-email">Email</label>
-							<input type="email" class="form-control" id="newsletter-email" placeholder="email">
+							<label class="sr-only" for="newsletter-email">البريد الالكتروني</label>
+							<input type="email" class="form-control" id="newsletter-email" placeholder="البريد الالكتروني">
 						</div>
 						<input type="submit" name="submit" class="btn btn-primary" value="Subscribe">
 					</form>
@@ -49,8 +49,8 @@
 				<!-- Newsletter End -->
 
 				<!-- Contact Start -->
-				<div class="col-sm-3 widget">
-					<h4>Contact</h4>
+				<div class="col-sm-3 widget text-right">
+					<h4>تواصل معنا</h4>
 					<p>
 						Phone: <?php echo "$info->phone"; ?><br>
 						Email: <?php echo "$info->email"; ?>
