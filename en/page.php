@@ -96,6 +96,101 @@ $page_details = $page->fetch(PDO::FETCH_OBJ);
 							<!-- <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/46751897"></iframe> -->
 						</div>
 					</div>
+					
+					<div class="col-md-12">
+
+						<?php 
+						if (isset($_GET['msg'])) {
+
+							switch ($_GET['msg']) {
+								case 'erro':	
+								echo '<div class="alert alert-danger alert-dismissable">
+								<i class="fa fa-ban"></i>
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+								<b>Alert!</b> please try again .
+								</div>';
+								break;
+								case 'name':
+								case 'email':
+								case 'msg':
+								case 'address':
+								case 'phone':
+								echo '<div class="alert alert-danger alert-dismissable">
+								<i class="fa fa-ban"></i>
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+								<b>Alert!</b> error  , please complete required data.
+								</div>';
+								break;
+								
+								case 'emailIN':
+								echo '<div class="alert alert-danger alert-dismissable">
+								<i class="fa fa-ban"></i>
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+								<b>Alert!</b> erro  , please enter A valid email
+								</div>';
+								break;
+
+								case 'done':
+								echo '<div class="alert alert-success alert-dismissable">
+								<i class="fa fa-check"></i>
+
+								<b>Alert!</b> reservation send successfully.
+								</div>' ;
+								break;
+
+
+								case 'deleted':
+								echo '<div class="alert alert-success alert-dismissable">
+								<i class="fa fa-check"></i>
+
+								<b>Alert!</b> data deleted successfully. we will call you very soon 
+								</div>' ;
+								break;
+
+							}
+						}
+
+
+						?>
+						<h2 class="text-center"> book now with Alkayali </h2>
+						<form id="res_form" action="book-page.php?id=<?php echo $page_id; ?>" method="post">
+							<div class="row">
+								<div class="form-group col-sm-6" id="booking-name">
+									<label for="booking-name">Your Name</label>
+									<input type="text" name="name" class="form-control"  >
+								</div>
+								<div class="form-group col-sm-6" id="booking-address">
+									<label for="booking-company">address</label>
+									<input type="text" name="address" class="form-control" >
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="form-group col-sm-6" id="booking-email">
+									<label for="booking-email">Email</label>
+									<input type="email" name="email" class="form-control" id="booking-email">
+								</div>
+								<div class="form-group col-sm-6" id="booking-phone">
+									<label for="booking-phone">Phone</label>
+									<input type="phone" name="phone" class="form-control" id="booking-phone">
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-sm-12" id="booking-msg">
+									<label for="booking-phone">Phone</label>
+									<textarea name="msg" id="" class="form-control" cols="20" rows="4"></textarea>
+
+								</div>
+
+							</div>
+							<div class="row">
+								<div class="col-sm-12">
+									<button type="submit" name="book_this_hotel" class="btn color3">Book Now</button>
+								</div>
+							</div>
+						</form>
+					</div>
+
 				</div>
 
 
