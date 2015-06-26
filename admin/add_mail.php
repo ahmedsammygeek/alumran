@@ -43,38 +43,37 @@ $query->bindValue(1,$id,PDO::PARAM_INT);
 $query->execute();
 $result = $query->fetch(PDO::FETCH_ASSOC);
 extract($result);
-require_once 'phpmailer/PHPMailerAutoload.php';
-$m = new phpmailer;
-$m->isSMTP();
-$m->SMTPAuth = true ;
-$m->Host = 'smtpout.secureserver.net';
-$m->username = 'jojoallowz' ;
-$m->password = 'Jalal369allowz' ;
-$m->SMTPSecure = 'ssl';
-$m->Port = '465' ;
+
+$from = "root@reatgshop.com";
+
+$to = array('ahmedsamigeek@gmail.com');
+$body = '<html> 
+  <body bgcolor="#DCEEFC"> 
+    <center>';
 
 
-$m->From = 'admin@pixllart.com';
-$m->FromName = 'pixllart.com';
-$m->addReplyTo('' , '');
-$m->addAddress($email , '');
+$body .= '<p>'.$msg.'</p><br><br> <img src="http://retagshop.com/admin/image/'.$img_name.'">';
 
+$body .= ' </center> 
+      <br><br>*** we Always love to contact with us  <br> Regards<br> RetagShop Team 
+  </body> 
+</html>'; 
+$headers = "From: " . $from . "\r\n";
+$headers .= "Reply-To: ". $from . "\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+$sent = @mail($email, 'RetagShop Newsletters ', $body, $headers);
 
-$m->isHtml(true);
-
-
-$m->subject = 'frist message';
-$m->Body = '<p>$msg</p><br><br> <img src="image/'.$img_name.'">' ; 
-$m->AltBody = '';
-
-
-if ($m->send()) {
-	echo "sent";
+if($sent) {
+	header("location: show_members.php?msg=done");
+	die();
+	
 }
-else
-{
-	echo $m->ErrorInfo;
+else {
+	header("location: show_members.php?msg=no");
+	die();
 }
+
 
 
 

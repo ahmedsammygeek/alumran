@@ -65,13 +65,5 @@ else {
  die();
 }
 
-if ($m->send()) {
-	echo "sent";
-}
-else
-{
-	echo $m->ErrorInfo;
-}
-
 
 ?>
