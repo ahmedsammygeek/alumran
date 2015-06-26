@@ -22,9 +22,9 @@
 
 		<!-- ============ LOADER START ============ -->
 
-		<div id="loader">
+		<!-- <div id="loader">
 			<i class="fa fa-cog fa-4x fa-spin primary-color"></i>
-		</div>
+		</div> -->
 
 		<!-- ============ LOADER END ============ -->
 
@@ -40,8 +40,8 @@
 
 		<div id="video">
 			<video loop autoplay>
-				<source src="videos/video.m4v" type="video/mp4" />
-				<source src="videos/video.ogv" type="video/ogg" />
+				<source src="../vidoz/22.mp4" type="video/mp4" />
+				<source src="../vidoz/sta.m4v" type="video/m4v" />
 			</video>
 			<div class="tint">
 				<div class="container">
