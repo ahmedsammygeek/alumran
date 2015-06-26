@@ -99,14 +99,22 @@
 									<p>The preparation of the initial economic feasibility studies is one of the services provided by the construction company for tourism and public services</p>
 									<p><a href="page.php?page_id=8" class="btn btn-primary">Read more</a></p>
 								</div>
+								<?php 
+								$page9 = $conn->query("SELECT image FROM pages_images WHERE page_id=9");
+								$image9 = $page9->fetch(PDO::FETCH_OBJ);
+								?>
 								<div class="col-sm-3">
-									<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
+									<img src="../uploaded/pages_images/<?php echo "$image9->image"; ?>" alt="" class="img-responsive" />
 									<h4> Brokerage business</h4>
 									<p>The preparation of the initial economic feasibility studies is one of the services provided by the construction company for tourism and public services</p>
 									<p><a href="page.php?page_id=9" class="btn btn-primary">Read more</a></p>
 								</div>
+								<?php 
+								$page10 = $conn->query("SELECT image FROM pages_images WHERE page_id=10");
+								$image10 = $page10->fetch(PDO::FETCH_OBJ);
+								?>
 								<div class="col-sm-3">
-									<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
+									<img src="../uploaded/pages_images/<?php echo "$image10->image"; ?>" alt="" class="img-responsive" />
 									<h4>Machines-and-production lines.</h4>
 									<p>Construction company seeking to put its engineers qualified expertise to serve its customers and help them understand and characterize and identify industrial needs</p>
 									<p><a href="page.php?page_id=10" class="btn btn-primary">Read more</a></p>
