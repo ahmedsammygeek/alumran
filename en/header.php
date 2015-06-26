@@ -30,7 +30,9 @@
 					<li class="active"><a href="index.php">Home</a>
 					</li>
 					<?php 
-					$hotel_image = $conn->query("SELECT pic FROM hotel_images");
+					$hotels = $conn->query("SELECT id FROM hotels WHERE hotel_or_not=1");
+					$hotel = $hotels->fetch(PDO::FETCH_OBJ);
+					$hotel_image = $conn->query("SELECT pic FROM hotel_images WHERE hotel_id=$hotel->id");
 					$pic = $hotel_image->fetch(PDO::FETCH_OBJ); ?>
 					<li><a href="#">Tourism</a>
 						<div class="megamenu full-width">
@@ -59,8 +61,14 @@
 									<p>Omran Tourism Company and General Services is pleased to offer medical tourism service in Turkey, Arab travelers to the brothers in the best hospitals in Istanbul </p>
 									<p><a href="page.php?page_id=6" class="btn btn-primary">Read more</a></p>
 								</div>
+								<?php 
+								$offers = $conn->query("SELECT id FROM hotels WHERE hotel_or_not =0");
+								$offer = $offers->fetch(PDO::FETCH_OBJ);
+								$offers_image = $conn->query("SELECT pic FROM hotel_images WHERE hotel_id=$offer->id");
+								$offer_image = $offers_image->fetch(PDO::FETCH_OBJ);
+								?>
 								<div class="col-sm-3">
-									<img src="../uploaded/hotels_images/<?php echo "$image_offer->pic"; ?>" alt="" class="img-responsive" />
+									<img src="../uploaded/hotels_images/<?php echo "$offer_image->pic"; ?>" alt="" class="img-responsive" />
 									<h4>Offers</h4>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus.</p>
 									<p><a href="offers.php" class="btn btn-primary">Read more</a></p>
@@ -71,14 +79,22 @@
 					<li><a href="#">Investment</a>
 						<div class="megamenu full-width">
 							<div class="row">
+								<?php 
+								$page7 = $conn->query("SELECT image FROM pages_images WHERE page_id=7");
+								$image7 = $page7->fetch(PDO::FETCH_OBJ);
+								?>
 								<div class="col-sm-3">
-									<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
+									<img src="../uploaded/pages_images/<?php echo "$image7->image"; ?>" alt="" class="img-responsive" />
 									<h4>Investment projects</h4>
 									<p>Construction company is keen to encourage investment by providing higher levels of service to investors at all times</p>
 									<p><a href="page.php?page_id=7" class="btn btn-primary">Read more</a></p>
 								</div>
+								<?php 
+								$page8 = $conn->query("SELECT image FROM pages_images WHERE page_id=8");
+								$image8 = $page8->fetch(PDO::FETCH_OBJ);
+								?>
 								<div class="col-sm-3">
-									<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
+									<img src="../uploaded/pages_images/<?php echo "$image8->image"; ?>" alt="" class="img-responsive" />
 									<h4>Economic Studies</h4>
 									<p>The preparation of the initial economic feasibility studies is one of the services provided by the construction company for tourism and public services</p>
 									<p><a href="page.php?page_id=8" class="btn btn-primary">Read more</a></p>
