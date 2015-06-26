@@ -92,9 +92,9 @@
 								<?php 
 								$page8 = $conn->query("SELECT image FROM pages_images WHERE page_id=8");
 								$image8 = $page8->fetch(PDO::FETCH_OBJ);
-								if(!$page8->rowCount()) {
-									$image8->image = '';
-								}
+								// if(!$page8->rowCount()) {
+								// 	$image8->image = 'image.png';
+								// }
 
 								?>
 								<div class="col-sm-3">
