@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2015 at 09:41 AM
+-- Generation Time: Jun 26, 2015 at 10:04 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -253,7 +253,7 @@ CREATE TABLE IF NOT EXISTS `pages_images` (
   `image` varchar(255) NOT NULL,
   `page_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `pages_images`
@@ -269,7 +269,10 @@ INSERT INTO `pages_images` (`id`, `image`, `page_id`) VALUES
 (11, 'Flights_hero_image_42-42982796.jpg', 5),
 (12, 'health-tourism-turkey.jpg', 6),
 (14, 'hqdefault.jpg', 7),
-(16, 'hqdefault.jpg', 3);
+(16, 'hqdefault.jpg', 3),
+(17, 'hqdefault.jpg', 8),
+(18, 'hqdefault.jpg', 9),
+(19, 'hqdefault.jpg', 10);
 
 -- --------------------------------------------------------
 
@@ -295,7 +298,7 @@ CREATE TABLE IF NOT EXISTS `site_info` (
 --
 
 INSERT INTO `site_info` (`id`, `phone`, `email`, `facebook`, `twitter`, `instgram`, `address`, `address_ar`, `skype`) VALUES
-(1, '01204122661', 'alaaelgndy@yahoo.com', 'alaaelgndy@facebook.com', 'alaaelgndy@twitter.com', 'alaa@instgram.com', 'sudia , makka , eilaf', 'السعودية . مكة  , ايلاف', 'jalal@skype.com');
+(1, '01204122661', 'jalal@yahoo.com', 'jalaal@facebook.com', 'jalal@twitter.com', 'alaa@instgram.com', 'sudia , makka , eilaf', 'السعودية . مكة  , ايلاف', 'jalal@skype.com');
 
 -- --------------------------------------------------------
 

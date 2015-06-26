@@ -49,7 +49,7 @@
 								<div class="col-sm-3">
 									<img src="../uploaded/pages_images/<?php echo "$image5->image"; ?>" alt="" class="img-responsive" />
 									<h4>Flight Reservations</h4>
-									<p>Omran Tourism Company and public services and the right hand guide that helps you to book airline tickets to and from anywhere in the world </p>
+									<p>alkyaly Tourism Company and public services and the right hand guide that helps you to book airline tickets to and from anywhere in the world </p>
 									<p><a href="page.php?page_id=5" class="btn btn-primary">Read more</a></p>
 								</div>
 								<?php 
@@ -58,7 +58,7 @@
 								<div class="col-sm-3">
 									<img src="../uploaded/pages_images/<?php echo "$image6->image"; ?>" alt="" class="img-responsive" />
 									<h4>Medical Tourism</h4>
-									<p>Omran Tourism Company and General Services is pleased to offer medical tourism service in Turkey, Arab travelers to the brothers in the best hospitals in Istanbul </p>
+									<p>alkyaly Tourism Company and General Services is pleased to offer medical tourism service in Turkey, Arab travelers to the brothers in the best hospitals in Istanbul </p>
 									<p><a href="page.php?page_id=6" class="btn btn-primary">Read more</a></p>
 								</div>
 								<?php 
