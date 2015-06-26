@@ -30,15 +30,12 @@ $img_name=$randomstring.".$type" ;
 add this image to our folder
 */
 // var_dump($img_name);die();
-$up = move_uploaded_file($_FILES['file']['tmp_name'], "image/$img_name");
-if (!$up) {
-	header("location: send_mail.php?msg=nup&id=?id");die();
-}
+$up = move_uploaded_file($_FILES['file']['tmp_name'], "../uploaded/mails_image/$img_name");
 /*
 get id for user 
 */
 require '../connection/connection.php';
-$query = $conn->prepare("SELECT email FROM members WHERE id=?");
+$query = $conn->prepare("SELECT email FROM newsletter WHERE id=?");
 $query->bindValue(1,$id,PDO::PARAM_INT);
 $query->execute();
 $result = $query->fetch(PDO::FETCH_ASSOC);
@@ -65,12 +62,12 @@ $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 $sent = @mail($email, 'RetagShop Newsletters ', $body, $headers);
 
 if($sent) {
-	header("location: show_members.php?msg=done");
+	header("location: message.php?msg=done");
 	die();
 	
 }
 else {
-	header("location: show_members.php?msg=no");
+	header("location: reply_mail.php?msg=no&id=$id");
 	die();
 }
 

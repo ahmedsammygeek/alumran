@@ -65,7 +65,7 @@ require 'sidebar.php';
                 </div><!-- /.box-header -->
 
                 <!-- form start -->
-                <form role="form" action="add_reply.php<?php echo "?id=$id"; ?>" method="post" enctype="multipart/form-data" >
+                <form role="form" action="add_mail.php<?php echo "?id=$id"; ?>" method="post" enctype="multipart/form-data" >
                     <div class="box-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">message: </label>
