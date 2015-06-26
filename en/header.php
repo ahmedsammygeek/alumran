@@ -60,8 +60,8 @@
 									<p><a href="page.php?page_id=6" class="btn btn-primary">Read more</a></p>
 								</div>
 								<div class="col-sm-3">
-									<img src="http://placehold.it/400x270.jpg" alt="" class="img-responsive" />
-									<h4>Single Rooms</h4>
+									<img src="../uploaded/hotels_images/<?php echo "$image_offer->pic"; ?>" alt="" class="img-responsive" />
+									<h4>Offers</h4>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus.</p>
 									<p><a href="offers.php" class="btn btn-primary">Read more</a></p>
 								</div>
