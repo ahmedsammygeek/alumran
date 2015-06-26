@@ -29,7 +29,7 @@ $img_name=$randomstring.".$type" ;
 add this image to our folder
 */
 // var_dump($img_name);die();
-$up = move_uploaded_file($_FILES['file']['tmp_name'], "image/$img_name");
+$up = move_uploaded_file($_FILES['file']['tmp_name'], "../uploaded/mails_image/$img_name");
 if (!$up) {
 	header("location: reply_mail.php?msg=nup&id=?id");die();
 }
