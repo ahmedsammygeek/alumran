@@ -22,9 +22,9 @@
 
 		<!-- ============ LOADER START ============ -->
 
-		<div id="loader">
+		<!-- <div id="loader">
 			<i class="fa fa-cog fa-4x fa-spin primary-color"></i>
-		</div>
+		</div> -->
 
 		<!-- ============ LOADER END ============ -->
 
