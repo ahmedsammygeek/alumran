@@ -175,7 +175,7 @@
 									<div class="owl-carousel">
 										
 										<?php 
-										$show = $conn->query("SELECT id , title , `desc` FROM hotels WHERE hotel_or_not='yes'");
+										$show = $conn->query("SELECT id , title , `desc` FROM hotels WHERE hotel_or_not=1");
 										while ($res = $show->fetch(PDO::FETCH_OBJ)) {
 											$small_desc = substr(strip_tags($res->desc), 0 , 50);
 											$hotel_img = $conn->query("SELECT pic FROM hotel_images WHERE hotel_id=$res->id");
@@ -220,7 +220,7 @@
 
 									<!-- Latest Review 2 -->
 									<div class="latest-review">
-										<blockquote><?php echo "$about_us->content"; ?> <small>JALAL RAMZY for web service</small></blockquote>
+										<blockquote><?php echo "$about_us->content"; ?> <small>JALAL alloz for web service</small></blockquote>
 									</div>
 
 

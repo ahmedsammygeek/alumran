@@ -44,7 +44,7 @@
 					<?php 
 
 					require '../connection/connection.php';
-					$hotels = $conn->prepare("SELECT H.*  , (SELECT pic FROM hotel_images WHERE hotel_id = H.id LIMIT 1) AS pic FROM hotels AS H  WHERE H.hotel_or_not = 'yes'");
+					$hotels = $conn->prepare("SELECT H.*  , (SELECT pic FROM hotel_images WHERE hotel_id = H.id LIMIT 1) AS pic FROM hotels AS H  WHERE H.hotel_or_not = '1'");
 					$hotels->execute();
 
 					while ($hotel = $hotels->fetch(PDO::FETCH_OBJ)) {

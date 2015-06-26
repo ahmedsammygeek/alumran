@@ -20,12 +20,12 @@
 					<h4>Quick links</h4>
 					<nav>
 						<ul>
-							<li><a href="weddings.html"><i class="fa fa-angle-right primary-color"></i>Weddings</a></li>
-							<li><a href="conferences.html"><i class="fa fa-angle-right primary-color"></i>Conferences</a></li>
-							<li><a href="events.html"><i class="fa fa-angle-right primary-color"></i>Events</a></li>
-							<li><a href="vouchers.html"><i class="fa fa-angle-right primary-color"></i>Gift Vouchers</a></li>
-							<li><a href="contact.html"><i class="fa fa-angle-right primary-color"></i>Location</a></li>
-							<li><a href="gallery.html"><i class="fa fa-angle-right primary-color"></i>Photo Gallery</a></li>
+							<li><a href="hotels.php"><i class="fa fa-angle-right primary-color"></i>hotels</a></li>
+							<li><a href="offers.php"><i class="fa fa-angle-right primary-color"></i>offers</a></li>
+							<li><a href="page.php?page_id=4"><i class="fa fa-angle-right primary-color"></i>Know about turkey</a></li>
+							<li><a href="page.php?page_id=1"><i class="fa fa-angle-right primary-color"></i>cars</a></li>
+							<li><a href="page.php?page_id=2"><i class="fa fa-angle-right primary-color"></i>property</a></li>
+							<li><a href="page.php?page_id=3"><i class="fa fa-angle-right primary-color"></i>VIP</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -67,7 +67,8 @@
 
 				<!-- Copyright Start -->
 				<div class="col-sm-6">
-					&copy; JALAL RAMZY .. web service
+					<a href="http://jalal.allowz@gmail.com">&copy; jalal.allowz@gmail.com .. web service</a>
+					
 				</div>
 				<!-- Copyright End -->
 
