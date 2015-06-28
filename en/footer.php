@@ -67,7 +67,7 @@
 
 				<!-- Copyright Start -->
 				<div class="col-sm-6">
-					<a href="http://jalal.allowz@gmail.com">&copy; jalal.allowz@gmail.com .. web service</a>
+					<a href="mailto:jalal.allowz@gmail.com">jalal allowz for web service</a>
 					
 				</div>
 				<!-- Copyright End -->

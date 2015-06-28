@@ -31,7 +31,7 @@ require 'sidebar.php';
        $query = $conn->query("SELECT * FROM website_home WHERE id=$id ");
        $result=$query->fetch(PDO::FETCH_OBJ);
        ?>
-       <form role="form" action="update_website_home.php<?php echo "?id=$id&img=$result->image"; ?>" method="post" enctype="multipart/form-data" >
+       <form role="form" action="update_website_home.php<?php echo "?id=$id"; ?>" method="post" enctype="multipart/form-data" >
         <div class="box-body">
           <?php
           if (isset($_GET['msg'])) {
@@ -90,11 +90,7 @@ require 'sidebar.php';
           <textarea class="textarea" name="content_ar"  style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"><?php echo $result->content_ar ; ?></textarea>
 
         </div> 
-        <div class="form-group">
-          <img src="../uploaded/index_image/<?php echo $result->image; ?>" width="120" height="150" alt=""><br>
-          <label for="exampleInputEmail1">image</label>
-          <input type="file" name="file" class="form-control" id="exampleInputEmail1" >
-        </div>
+       
 
       </div><!-- /.box-body -->
 
@@ -103,6 +99,89 @@ require 'sidebar.php';
       </div>
     </form>
   </div><!-- /.box -->
+
+  <div class="box-body table-responsive no-padding">
+   <?php 
+   if (isset($_GET['msg'])) {
+        //if exist msg in link get this message and do defferent action in every case and show alert
+
+    switch ($_GET['msg']) {
+
+      case 'empty_data':
+      echo '<div class="alert alert-danger alert-dismissable">
+      <i class="fa fa-ban"></i>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <b>Alert!</b> enter new image please.
+      </div>';
+      break;
+      case 'err_vali':
+      echo '<div class="alert alert-danger alert-dismissable">
+      <i class="fa fa-ban"></i>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <b>Alert!</b> enter new image (ipg , png , jpeg).
+      </div>';
+      break;
+      case 'deleted':
+      echo '<div class="alert alert-success alert-dismissable">
+      <i class="fa fa-check"></i>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <b>Alert!</b> data deleted successfully.
+      </div>';  
+      break;
+      case 'inserted':
+      echo '<div class="alert alert-success alert-dismissable">
+      <i class="fa fa-check"></i>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <b>Alert!</b> data deleted successfully.
+      </div>';  
+      break;
+      break; 
+      break;
+
+      default:
+
+      break;
+    }
+  }
+
+
+  ?>
+
+  <table class="table table-bordered table-striped">
+
+    <tbody><tr>
+      <th>#</th>
+      <th>IMAGES</th>
+      <th>DELETE</th>
+
+
+    </tr>
+    <?php
+    require '../connection/connection.php';
+    $sql="SELECT id , pic FROM website_home_images WHERE section_id=$id ";
+    $query=$conn->query($sql);
+    $i=1;
+    while ($result=$query->fetch(PDO::FETCH_OBJ)) {
+
+     echo " <tr>
+     <td>$i</td>
+     <td> <img src='../uploaded/index_image/".$result->pic."' width='60' height='60'> </td>
+     <td>
+     <a href='delete_index_image.php?image_id=$result->id&page_id=$id' class='btn btn-danger btn-sm'>delete</a>
+     </td>
+     </tr>" ;
+     $i++;
+
+   } 
+
+   ?>
+ </tbody></table>
+ <form role="form" action="insert_index_image.php<?php echo "?id=$id"; ?>" method="post" enctype="multipart/form-data" >
+  <label for="">add image: </label>
+  <input type="file" name="file"><br>
+  <button type="submit" name="submit" class="btn btn-primary">ADD</button>
+
+</form>
 
 
 </div><!--/.col (right) -->

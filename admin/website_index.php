@@ -47,7 +47,7 @@ require '../connection/connection.php';
                                     <th>#</th>
                                     <th>title(en) </th>
                                     <th>description(en) </th>
-                                    <th>image</th>
+                                    
                                     <th>title(ar)</th>
                                     <th>description(ar) </th>
                                     <th>update</th>
@@ -62,7 +62,7 @@ require '../connection/connection.php';
                                     <td>'.$i.'</td>
                                     <td>'.$result->title.'</td>
                                     <td>'.$result->content.'</td>
-                                    <td><img src="../uploaded/index_image/'.$result->image.'" width="50" height="50"></td>
+                                    
                                     <td>'.$result->title_ar.'</td>
                                     <td>'.$result->content_ar.'</td>
                                    
