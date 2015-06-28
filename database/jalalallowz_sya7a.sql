@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.4.9
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 26, 2015 at 10:04 AM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Host: 50.62.209.83:3306
+-- Generation Time: Jun 28, 2015 at 07:30 AM
+-- Server version: 5.5.43-37.2-log
+-- PHP Version: 5.5.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,10 +14,10 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `alumran`
+-- Database: `jalalallowz_sya7a`
 --
 
 -- --------------------------------------------------------
@@ -27,11 +27,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `aboutus` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `content` text NOT NULL,
-  `content_ar` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `content_ar` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `aboutus`
@@ -47,11 +46,10 @@ INSERT INTO `aboutus` (`id`, `content`, `content_ar`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `admin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `user_name` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `admin`
@@ -68,7 +66,7 @@ INSERT INTO `admin` (`id`, `user_name`, `password`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `booking` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phone` varchar(20) NOT NULL,
@@ -76,10 +74,9 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `refer_id` int(11) NOT NULL,
   `msg` text NOT NULL,
   `address` varchar(500) NOT NULL,
-  `date` timestamp NOT NULL,
-  `seen` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `seen` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `booking`
@@ -100,7 +97,7 @@ INSERT INTO `booking` (`id`, `name`, `email`, `phone`, `hotel`, `refer_id`, `msg
 --
 
 CREATE TABLE IF NOT EXISTS `hotels` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `desc` text NOT NULL,
   `BED` int(11) NOT NULL,
@@ -116,9 +113,8 @@ CREATE TABLE IF NOT EXISTS `hotels` (
   `PET_FRIENDLY` tinyint(4) NOT NULL,
   `title_ar` varchar(255) NOT NULL,
   `desc_ar` text NOT NULL,
-  `hotel_or_not` tinyint(4) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+  `hotel_or_not` tinyint(4) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `hotels`
@@ -138,11 +134,10 @@ INSERT INTO `hotels` (`id`, `title`, `desc`, `BED`, `POOL`, `SAFE`, `GAMES`, `TR
 --
 
 CREATE TABLE IF NOT EXISTS `hotel_images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `hotel_id` int(11) NOT NULL,
-  `pic` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+  `pic` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `hotel_images`
@@ -168,15 +163,14 @@ INSERT INTO `hotel_images` (`id`, `hotel_id`, `pic`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `messages` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `phone` varchar(20) NOT NULL,
   `watched` tinyint(4) NOT NULL,
-  `time_sent` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `time_sent` datetime NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `messages`
@@ -192,11 +186,10 @@ INSERT INTO `messages` (`id`, `name`, `email`, `content`, `phone`, `watched`, `t
 --
 
 CREATE TABLE IF NOT EXISTS `newsletter` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `newsletter`
@@ -216,15 +209,14 @@ INSERT INTO `newsletter` (`id`, `name`, `email`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `pages` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `descreption` text NOT NULL,
   `title_ar` varchar(255) NOT NULL,
   `descreption_ar` text NOT NULL,
   `page_name` varchar(255) NOT NULL,
-  `page_name_ar` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+  `page_name_ar` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `pages`
@@ -249,11 +241,10 @@ INSERT INTO `pages` (`id`, `title`, `descreption`, `title_ar`, `descreption_ar`,
 --
 
 CREATE TABLE IF NOT EXISTS `pages_images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `page_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+  `page_id` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `pages_images`
@@ -281,7 +272,7 @@ INSERT INTO `pages_images` (`id`, `image`, `page_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `site_info` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `phone` varchar(15) NOT NULL,
   `email` varchar(255) NOT NULL,
   `facebook` varchar(255) NOT NULL,
@@ -289,9 +280,8 @@ CREATE TABLE IF NOT EXISTS `site_info` (
   `instgram` varchar(255) NOT NULL,
   `address` text NOT NULL,
   `address_ar` text NOT NULL,
-  `skype` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `skype` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `site_info`
@@ -307,14 +297,13 @@ INSERT INTO `site_info` (`id`, `phone`, `email`, `facebook`, `twitter`, `instgra
 --
 
 CREATE TABLE IF NOT EXISTS `website_home` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `image` varchar(100) NOT NULL,
   `title_ar` varchar(255) NOT NULL,
-  `content_ar` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  `content_ar` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `website_home`
@@ -327,6 +316,135 @@ INSERT INTO `website_home` (`id`, `title`, `content`, `image`, `title_ar`, `cont
 (4, 'Water Tourism', 'General informationOf course we known that each country has its own character in many ways, for the piece must be certain we have a background for any country before traveling to it, the following points are as illustrative points and some of them tips.• Capital: Ankara• Official language: Turkish (but you can talk to them in English as well)• Currency: Turkish Lira (and can deal with them in dollars or euro)• Religion: Islam (99% Muslims, mostly Sunnis and Alawites There section)• Water: preferred not to drink water from the tap.•', 'royalwings.jpg', 'السياحة المائية', 'معلومات عامةطبعا معروف لنا ان لكل دولة طابعها الخاص من عدة نواحي , لذالك يجب ان تكون عندنا خلفية معينة عن اي دولة قبل السفر اليها , والنقاط التالية هي بمثابة نقاط توضيحية وقسم منها نصائح.• العاصمة : انقرة• اللغة الرسمية : تركية (لكن تستطيع ان تكلمهم بالانجليزية ايضا)• العملة : ليرة تركية جديدة (وتستطيع ان تتعامل معهم بالدولار او اليورو)• الديانة : اسلام ( 99% مسلمين واغلبهم من السنة ويوجد قسم علويين)• المياه : مفضل ان لا تشرب من ماء الحنفية.• الاسعار : ليست رخيصة بالذات في المناطق السياحية. احذر الاستغلال. (مثال: لتر بنزين عندهم ثمنه 7-8 ريال سعودي وهذا يدل على غلاء المعيشة)• طبيعة الناس : مثل العرب بالضبط من ناحية الشكل الخارجي والديانة , مزاجهم حار وسريعي الغضب. يعني لو دخلت لجدال مع بائع حول سعر سلعة معينة قد يغضب عليك ويطردك.• الطعام : شرقي ومألوف لنا كعرب.• أسعار الفنادق : على سبيل المثال رحلة 4 أيام ,'),
 (5, 'golf', 'General informationOf course we known that each country has its own character in many ways, for the piece must be certain we have a background for any country before traveling to it, the following points are as illustrative points and some of them tips.• Capital: Ankara• Official language: Turkish (but you can talk to them in English as well)• Currency: Turkish Lira (and can deal with them in dollars or euro)• Religion: Islam (99% Muslims, mostly Sunnis and Alawites There section)• Water: preferred not to drink water from the tap.•', '5.jpg', 'الجولف ', 'معلومات عامةطبعا معروف لنا ان لكل دولة طابعها الخاص من عدة نواحي , لذالك يجب ان تكون عندنا خلفية معينة عن اي دولة قبل السفر اليها , والنقاط التالية هي بمثابة نقاط توضيحية وقسم منها نصائح.• العاصمة : انقرة• اللغة الرسمية : تركية (لكن تستطيع ان تكلمهم بالانجليزية ايضا)• العملة : ليرة تركية جديدة (وتستطيع ان تتعامل معهم بالدولار او اليورو)• الديانة : اسلام ( 99% مسلمين واغلبهم من السنة ويوجد قسم علويين)• المياه : مفضل ان لا تشرب من ماء الحنفية.• الاسعار : ليست رخيصة بالذات في المناطق السياحية. احذر الاستغلال. (مثال: لتر بنزين عندهم ثمنه 7-8 ريال سعودي وهذا يدل على غلاء المعيشة)• طبيعة الناس : مثل العرب بالضبط من ناحية الشكل الخارجي والديانة , مزاجهم حار وسريعي الغضب. يعني لو دخلت لجدال مع بائع حول سعر سلعة معينة قد يغضب عليك ويطردك.• الطعام : شرقي ومألوف لنا كعرب.• أسعار الفنادق : على سبيل المثال رحلة 4 أيام ,');
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `aboutus`
+--
+ALTER TABLE `aboutus`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `hotels`
+--
+ALTER TABLE `hotels`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `hotel_images`
+--
+ALTER TABLE `hotel_images`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `newsletter`
+--
+ALTER TABLE `newsletter`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pages`
+--
+ALTER TABLE `pages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pages_images`
+--
+ALTER TABLE `pages_images`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `site_info`
+--
+ALTER TABLE `site_info`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `website_home`
+--
+ALTER TABLE `website_home`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `aboutus`
+--
+ALTER TABLE `aboutus`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `booking`
+--
+ALTER TABLE `booking`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `hotels`
+--
+ALTER TABLE `hotels`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `hotel_images`
+--
+ALTER TABLE `hotel_images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `newsletter`
+--
+ALTER TABLE `newsletter`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `pages`
+--
+ALTER TABLE `pages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `pages_images`
+--
+ALTER TABLE `pages_images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+--
+-- AUTO_INCREMENT for table `site_info`
+--
+ALTER TABLE `site_info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `website_home`
+--
+ALTER TABLE `website_home`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

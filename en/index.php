@@ -11,7 +11,6 @@
 
 	<!-- Main Stylesheet -->
 	<link href="css/style.css" rel="stylesheet">
-	<link href="css/slick.css" rel="stylesheet">
 
 	<!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -41,7 +40,7 @@
 		<!-- ============ VIDEO START ============ -->
 
 		<div id="video">
-			<video loop autoplay>
+			<video loop autoplay controls>
 				<source src="../vidoz/22.mp4" type="video/mp4" />
 				<source src="../vidoz/sta.m4v" type="video/m4v" />
 			</video>
@@ -57,11 +56,6 @@
 		/*data of index page*/
 		$query1   = $conn->query("SELECT * FROM website_home WHERE id=1");
 		$result1  = $query1->fetch(PDO::FETCH_OBJ); 
-
-		$query1_images = $conn->prepare("SELECT * FROM website_home_images WHERE section_id = 1");
-		$query1_images->execute();
-
-
 		?>
 
 		<!-- ============ WELCOME START ============ -->
@@ -75,34 +69,8 @@
 
 				</div>
 			</div>
-			<div class="col-sm-5 col-md-6 col-lg-7 photo" >
-
-				<div class="product-small-images">
-					<div index="0"><img src="/images/product/product.png"/></div>
-					<div index="1"><img src="/images/product/product.png"/></div>
-					<div index="2"><img src="/images/index/topseller/1009015.jpg"/></div>
-					<div index="3"><img src="/images/product/product.png"/></div>
-					<div index="4"><img src="/images/product/product.png"/></div>
-					<div index="5"><img src="/images/product/product.png"/></div>
-				</div>
-
-
-			<!-- <!-- 	<div id="slider">
-					<ul class="slides-container">	
-						<?php 
-						// while ($query1_image = $query1_images->fetch(PDO::FETCH_OBJ)) {
-						// 	echo '<li>
-						// 	<img src="../uploaded/index_image/'.$query1_image->pic.'" alt="" />
-						// 	</li>';
-						// }
-						?>			
-						
-					</ul>
-					<nav class="slides-navigation">
-						<a href="#" class="prev"><i class="fa fa-angle-left fa-2x"></i></a>
-						<a href="#" class="next"><i class="fa fa-angle-right fa-2x"></i></a>
-					</nav>
-				</div> --> -->
+			<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result1->image; ?>)">
+				
 			</div>
 		</section>
 
@@ -277,22 +245,5 @@
 
 
 					<?php 	require 'scripts.php'; ?>
-					<script src="slick.min.js"></script>
-					<script>
-
-					$('.fade').slick({
-						dots: true,
-						infinite: true,
-						speed: 500,
-						fade: true,
-						cssEase: 'linear'
-					});
-
-					</script>
 				</body>
 				</html>
-
-
-
-
-				<!-- style="background-image:url(../uploaded/index_image/<?php echo $result1->image; ?>)" -->
