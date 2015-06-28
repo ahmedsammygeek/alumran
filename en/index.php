@@ -77,6 +77,15 @@
 			</div>
 			<div class="col-sm-5 col-md-6 col-lg-7 photo" >
 
+				<div class="product-small-images">
+					<div index="0"><img src="/images/product/product.png"/></div>
+					<div index="1"><img src="/images/product/product.png"/></div>
+					<div index="2"><img src="/images/index/topseller/1009015.jpg"/></div>
+					<div index="3"><img src="/images/product/product.png"/></div>
+					<div index="4"><img src="/images/product/product.png"/></div>
+					<div index="5"><img src="/images/product/product.png"/></div>
+				</div>
+
 
 			<!-- <!-- 	<div id="slider">
 					<ul class="slides-container">	
