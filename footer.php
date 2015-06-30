@@ -21,7 +21,7 @@
 						<li><a href="<?php echo "$info->facebook"; ?>"><i class="fa fa-facebook fa-lg"></i></a></li>
 						<li><a href="<?php echo "$info->twitter"; ?>"><i class="fa fa-twitter fa-lg"></i></a></li>
 
-						<li><a href="<?php echo "$info->skype"; ?>"><i class="fa fa-skype fa-lg"></i></a></li>
+						<li><a href="<?php echo "$info->instgram"; ?>"><i class="fa fa-instagram fa-lg"></i></a></li>
 					</ul>
 				</div>
 				</div>

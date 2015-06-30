@@ -22,7 +22,7 @@
 					</div>
 
 					<div class="col-xs-4 col-sm-4">
-						<p class="text-center hidden-sm hidden-xs" style="font-size:20px;font-weight:bold;color:white;line-height:74px">الكيالى للخدمات السياحة و التجارية</p>
+						<p class="text-center hidden-sm hidden-xs" style="font-size:25px;font-weight:bold;color:white;line-height:74px">الكيالى للخدمات السياحة و التجارية</p>
 					</div>
 
 

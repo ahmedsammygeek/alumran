@@ -67,8 +67,8 @@ require 'sidebar.php';
 									<td>$result->facebook</td>
 									</tr>
 									<tr>
-									<td>twitter</td>
-									<td>$result->twitter</td>
+									<td>instgram</td>
+									<td>$result->instgram</td>
 									</tr>
 									<tr>
 									<td>email</td>

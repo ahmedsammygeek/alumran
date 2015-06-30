@@ -81,8 +81,8 @@ require 'sidebar.php';
                             <input type="text" name="facebook" value='<?php echo "$result->facebook"; ?>' class="form-control" id="exampleInputEmail1" >
                         </div>
                          <div class="form-group">
-                            <label for="exampleInputEmail1">twitter</label>
-                            <input type="text" name="twitter" value='<?php echo "$result->twitter"; ?>' class="form-control" id="exampleInputEmail1" >
+                            <label for="exampleInputEmail1">instgram</label>
+                            <input type="text" name="instgram" value='<?php echo "$result->instgram"; ?>' class="form-control" id="exampleInputEmail1" >
                         </div>
                          <div class="form-group">
                             <label for="exampleInputEmail1">email</label>
