@@ -1,382 +1,162 @@
-<?php 
-
-require 'AdminArea/connection.php';
-
-
-
-$site_data = $conn->prepare("SELECT  * FROM site_data WHERE id=1");
-
-$site_data->execute();
-
-
-
-$info = $site_data->fetch(PDO::FETCH_OBJ);
-
-
-
-$page1 = $conn->prepare("SELECT * FROM sub_pages WHERE parent_id = 1");
-
-$page1->execute();
-
-
-
-$page2 =  $conn->prepare("SELECT * FROM sub_pages WHERE parent_id = 2");
-
-$page2->execute();
-
-
-
-
-
-$page3 =  $conn->prepare("SELECT * FROM sub_pages WHERE parent_id = 3");
-
-$page3->execute();
-
-?>
-
-<!doctype html>
-
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-
-<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
-
-<html lang="en">
-
-
-
-<head>
-
-
-
-    <!-- Basic -->
-
-    <title><?php echo $info->title_ar ; ?> | Home</title>
-
-
-
-    <!-- Define Charset -->
-
-    <meta charset="utf-8">
-
-
-
-    <!-- Responsive Metatag -->
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-
-
-    <!-- Page Description and Author -->
-
-    <meta name="description" content="<?php echo $info->title ?> susdi oil company">
-
-   <!--  <meta name="author" content="iThemesLab"> -->
-
-
-
-    <!-- Bootstrap CSS  -->
-
-    <link rel="stylesheet" href="asset/css/bootstrap.css" type="text/css" media="screen">
-
-
-
-    <!-- Font Awesome CSS -->
-
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">
-
-
-
-    <!-- Margo CSS Styles  -->
-
-    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
-
-
-
-    <!-- Responsive CSS Styles  -->
-
-    <link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen">
-
-
-
-    <!-- Css3 Transitions Styles  -->
-
-    <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen">
-
-
-
-
-    <link rel="stylesheet" type="text/css" href="css/colors/blue.css" title="blue" media="screen" />  
-
-
-
-
-
-    <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-
-
-</head>
-
-
-
-<body>
-
-
-
-    <!-- Full Body Container -->
-
-    <div id="container">
-
-
-
-
-
-        <!-- Start Header Section --> 
-
-        <div class="hidden-header"></div>
-
-        <header class="clearfix">
-
-
-
-            <!-- Start Top Bar -->
-
-            <div class="top-bar">
-
-                <div class="container">
-
-                    <div class="row">
-
-                        <div class="col-md-7">
-
-                            <!-- Start Contact Info -->
-
-                            <ul class="contact-details">
-
-                                <li><a href="#"><i class="fa fa-map-marker"></i> <?php echo $info->address_ar; ?></a>
-
-                                </li>
-
-                                <li><a href="#"><i class="fa fa-envelope-o"></i> <?php echo $info->email; ?></a>
-
-                                </li>
-
-                                <li><a href="#"><i class="fa fa-phone"></i> <?php echo $info->phone; ?></a>
-
-                                </li>
-
-                            </ul>
-
-                            <!-- End Contact Info -->
-
-                        </div><!-- .col-md-6 -->
-
-                        <div class="col-md-5">
-
-                            <!-- Start Social Links -->
-
-                            <ul class="social-list">
-
-                                <li>
-
-                                    <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" target="_blank" href="<?php echo $info->facebook; ?>"><i class="fa fa-facebook"></i></a>
-
-                                </li>
-
-                                <li>
-
-                                    <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" target="_blank"  href="<?php echo $info->twitter; ?>"><i class="fa fa-twitter"></i></a>
-
-                                </li>
-
-                                <li>
-
-                                    <a class="google itl-tooltip" data-placement="bottom" title="Google Plus"  target="_blank"  href="<?php echo $info->google; ?>"><i class="fa fa-google-plus"></i></a>
-
-                                </li>
-
-                            </ul>
-
-                            <!-- End Social Links -->
-
-                        </div><!-- .col-md-6 -->
-
-                    </div><!-- .row -->
-
-                </div><!-- .container -->
-
-            </div><!-- .top-bar -->
-
-            <!-- End Top Bar -->
-
-            
-
-            
-
-            <!-- Start  Logo & Naviagtion  -->
-
-            <div class="navbar navbar-default navbar-top">
-
-                <div class="container">
-
-                    <div class="navbar-header ">
-
-                        <!-- Stat Toggle Nav Link For Mobiles -->
-
-                        <button type="button" class="navbar-toggle navbar-left" data-toggle="collapse" data-target=".navbar-collapse">
-
-                            <i class="fa fa-bars"></i>
-
-                        </button>
-
-                        <!-- End Toggle Nav Link For Mobiles -->
-
-                        <a class="navbar-brand" href="index.php">
-
-                            <img alt=""  src="images/logo.png" >
-
-                        </a>
-
-                    </div>
-
-                    <div class="navbar-collapse collapse">
-
-
-
-                        <!-- Start Navigation List -->
-
-                        <ul class="nav navbar-nav ">
-
-                         <li><a <?php if($active == "index" ) {echo 'class="active"'; } ?> href="index.php">الرئيسية </a>
-
-                         </li>
-
-                         <li><a <?php if($active == "about" ) {echo 'class="active"'; } ?> href="about.php">من نحن </a>
-
-                         </li>
-
-                         <li>
-
-
-
-                            <a <?php if($active == "1" ) {echo 'class="active"'; } ?> href="#">الطاقة الشمسية</a>
-
-                            <ul class="dropdown">
-
-                                <?php 
-
-                                while ($page = $page1->fetch(PDO::FETCH_OBJ)) {
-
-                                    echo '<li><a href="page.php?id='.$page->id.'">'.$page->title_ar.'</a>
-
-                                    </li>';
-
-                                }
-
-
-
-                                ?>
-
-                                
-
-
-
-                            </ul>
-
-                        </li>
-
-
-
-
-
-                        <li>
-
-                            <a <?php if($active == "2" ) {echo 'class="active"'; } ?> href="#">طاقة الرياح</a>
-
-                            <ul class="dropdown">
-
-                               <?php 
-
-                                while ($page = $page2->fetch(PDO::FETCH_OBJ)) {
-
-                                    echo '<li><a href="page.php?id='.$page->id.'">'.$page->title_ar.'</a>
-
-                                    </li>';
-
-                                }
-
-
-
-                                ?>
-
-                           </ul>
-
-                       </li>
-
-
-
-
-
-                       <li>
-
-                        <a <?php if($active == "3" ) {echo 'class="active"'; } ?> href="#">الطاقة الهجين</a>
-
-                        <ul class="dropdown">
-
-                           <?php 
-
-                                while ($page = $page3->fetch(PDO::FETCH_OBJ)) {
-
-                                    echo '<li><a href="page.php?id='.$page->id.'">'.$page->title_ar.'</a>
-
-                                    </li>';
-
-                                }
-
-
-
-                                ?>
-
-                       </ul>
-
-                   </li>
-
-
-
-
-
-                   <!-- <li><a href="our_customers.php">our customers</a> </li> -->
-
-                   <li><a <?php if($active == "work" ) {echo 'class="active"'; } ?> href="our_works.php">مشاريعنا</a> </li>
-
-                   <li><a <?php if($active == "content" ) {echo 'class="active"'; } ?> href="contact.php">اتصل بنا</a>
-                   <li><a  href="en/index.php">English</a>
-
-
-
-                   </li>
-
-               </ul>
-
-               <!-- End Navigation List -->
-
-           </div>
-
-       </div>
-
-   </div>
-
-   <!-- End Header Logo & Naviagtion -->
-
-
-
-</header> 
-
-<!-- End Header Section -->
-
-
-
-
-
+	<header>
+		<?php 
+		require 'popup.php';
+		require 'connection/connection.php';
+		$site_info = $conn->query("SELECT phone , email FROM site_info");
+		$info = $site_info->fetch(PDO::FETCH_OBJ);
+		?>
+		<div id="header">
+			<div class="container">
+				<div class="row">
+					<div id="logo" class="col-xs-3 col-sm-3">
+						<a href="index.php"><img width="90" height="45" src="en/images/lo.png" alt="The Traveller. Modern hotel html template." class="img-responsive" /></a>
+					</div>
+					<div class="col-xs-4 col-sm-4">
+						<p class="text-center hidden-sm hidden-xs" style="font-size:20px;font-weight:bold;color:white;line-height:74px">الكيالى للخدمات السياحة و التجارية</p>
+					</div>
+
+
+					<div class="col-xs-5 col-sm-5 text-right" id="hotel-info">
+						<ul>
+							<li ><a href="en/index.php"><i class="fa fa-language fa-lg primary-color"></i>En</a></li>
+							
+							<li id="hotel-phone"><a href="tel:<?php echo $info->phone; ?>"><i class="fa fa-phone fa-lg primary-color"></i></a></li>
+							<li id="contcat-link" ><a id="contcat-link" href="mailto:<?php echo $info->email; ?>"><i class="fa fa-envelope fa-lg primary-color"></i></a></li>
+
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Nav Start -->
+		<nav>
+			<div class="container ">
+				<ul class="jetmenu ">
+					<li class="active"><a href="index.php">الرئيسية </a>
+					</li>
+					<?php 
+					$hotels = $conn->query("SELECT id FROM hotels WHERE hotel_or_not=1");
+					$hotel = $hotels->fetch(PDO::FETCH_OBJ);
+					$hotel_image = $conn->query("SELECT pic FROM hotel_images WHERE hotel_id=$hotel->id");
+					$pic = $hotel_image->fetch(PDO::FETCH_OBJ); ?>
+					<li><a href="#">السياحة</a>
+						<div class="megamenu full-width">
+							<div class="row">
+								<div class="col-sm-3">
+									<img src="uploaded/hotels_images/<?php echo "$pic->pic"; ?>" alt="" class="img-responsive" />
+									<h4>حجوزات الفنادق</h4>
+									<p>مع خدمة حجز الفنادق يمكن تحديد أفضل الفنادق الأكثر أهمية والمنتشرة في جميع أنحاء تركيا مع جميع الخدمات التي تقدمها لهم واختيار الكتاب المناسب</p>
+									<p><a href="hotels.php" class="btn btn-primary">show</a></p>
+								</div>
+								<?php 
+								$page5 = $conn->query("SELECT image FROM pages_images WHERE page_id=5");
+								$image5 = $page5->fetch(PDO::FETCH_OBJ); ?>
+								<div class="col-sm-3">
+									<img src="uploaded/pages_images/<?php echo "$image5->image"; ?>" alt="" class="img-responsive" />
+									<h4>حجوزات الطيران</h4>
+									<p>شركة السياحة alkyaly والخدمات العامة ودليل اليد اليمنى التي تساعدك لحجز تذاكر الطيران من وإلى أي مكان في العالم </p>
+									<p><a href="page.php?page_id=5" class="btn btn-primary">قراءة المذيد</a></p>
+								</div>
+								<?php 
+								$page6 = $conn->query("SELECT image FROM pages_images WHERE page_id=6");
+								$image6 = $page6->fetch(PDO::FETCH_OBJ); ?>
+								<div class="col-sm-3">
+									<img src="uploaded/pages_images/<?php echo "$image6->image"; ?>" alt="" class="img-responsive" />
+									<h4>السياحة العلاجية</h4>
+									<p>شركة السياحة alkyaly والخدمات العامة ويسر لتقديم خدمة السياحة العلاجية في تركيا، الرحالة العرب للإخوة في أفضل المستشفيات في اسطنبول </p>
+									<p><a href="page.php?page_id=6" class="btn btn-primary">قراءة المذيد</a></p>
+								</div>
+								<?php 
+								$offers = $conn->query("SELECT id FROM hotels WHERE hotel_or_not =0");
+								$offer = $offers->fetch(PDO::FETCH_OBJ);
+								$offers_image = $conn->query("SELECT pic FROM hotel_images WHERE hotel_id=$offer->id");
+								$offer_image = $offers_image->fetch(PDO::FETCH_OBJ);
+								?>
+								<div class="col-sm-3">
+									<img src="uploaded/hotels_images/<?php echo "$offer_image->pic"; ?>" alt="" class="img-responsive" />
+									<h4>عروض</h4>
+									<p>تقدم شركة الكيالى للسياحة و الخدمات التجارية اقوى عروض الصيف يمكنك مشاهدتها عبر زياة الصفحة </p>
+									<p><a href="offers.php" class="btn btn-primary">قراءة المذيد</a></p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li><a href="#">استثمار</a>
+						<div class="megamenu full-width">
+							<div class="row">
+								<?php 
+								$page7 = $conn->query("SELECT image FROM pages_images WHERE page_id=7");
+								$image7 = $page7->fetch(PDO::FETCH_OBJ);
+								?>
+								<div class="col-sm-3">
+									<img src="uploaded/pages_images/<?php echo "$image7->image"; ?>" alt="" class="img-responsive" />
+									<h4>مشاريع الاستثمار</h4>
+									<p>شركة البناء حريصة على تشجيع الاستثمار من خلال توفير مستويات أعلى من الخدمة للمستثمرين في جميع الأوقات</p>
+									<p><a href="page.php?page_id=7" class="btn btn-primary">قراءة المذيد</a></p>
+								</div>
+								<?php 
+								$page8 = $conn->query("SELECT image FROM pages_images WHERE page_id=8");
+								$image8 = $page8->fetch(PDO::FETCH_OBJ);
+								// if(!$page8->rowCount()) {
+								// 	$image8->image = 'image.png';
+								// }
+
+								?>
+								<div class="col-sm-3">
+									<img src="uploaded/pages_images/<?php echo "$image8->image"; ?>" alt="" class="img-responsive" />
+									<h4>الدراسات الاقتصادية</h4>
+									<p>إعداد دراسات الجدوى الاقتصادية الأولية هي واحدة من الخدمات التي تقدمها شركة البناء للسياحة والخدمات العامة</p>
+									<p><a href="page.php?page_id=8" class="btn btn-primary">قراءة المذيد</a></p>
+								</div>
+								<?php 
+								$page9 = $conn->query("SELECT image FROM pages_images WHERE page_id=9");
+								$image9 = $page9->fetch(PDO::FETCH_OBJ);
+								?>
+								<div class="col-sm-3">
+									<img src="uploaded/pages_images/<?php echo "$image9->image"; ?>" alt="" class="img-responsive" />
+									<h4> الوساطة التجارية</h4>
+									<p>إعداد دراسات الجدوى الاقتصادية الأولية هي واحدة من الخدمات التي تقدمها شركة البناء للسياحة والخدمات العامة</p>
+									<p><a href="page.php?page_id=9" class="btn btn-primary">قراءة المذيد</a></p>
+								</div>
+								<?php 
+								$page10 = $conn->query("SELECT image FROM pages_images WHERE page_id=10");
+								$image10 = $page10->fetch(PDO::FETCH_OBJ);
+								?>
+								<div class="col-sm-3">
+									<img src="uploaded/pages_images/<?php echo "$image10->image"; ?>" alt="" class="img-responsive" />
+									<h4>خطوط الآلات والإنتاج.</h4>
+									<p>مهندسي البناء شركة مؤهلة تسعى لوضع خبراتها لخدمة عملائها ومساعدتهم على فهم وتوصيف وتحديد الاحتياجات الصناعية</p>
+									<p><a href="page.php?page_id=10" class="btn btn-primary">قراءة المذيد</a></p>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li><a href="page.php?page_id=1">تأجير سيارات</a>
+
+					</li>
+
+					<li><a href="page.php?page_id=2">عقارات</a>
+
+					</li>
+
+					<li><a href="page.php?page_id=3">الخدمات</a>
+
+					</li>
+
+
+					<li><a href="page.php?page_id=4">تعرف على تركيا</a>
+
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- Nav End -->
+
+
+
+		
+
+	</header>

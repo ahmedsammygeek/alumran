@@ -1,121 +1,134 @@
-<?php 
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="The Traveller - HTML Template">
+	<meta name="author" content="Coffeecream Themes, info@coffeecream.eu">
+	<title>AlKayali For Tourism</title>
+	
+	<link rel="shortcut icon" href="images/favicon.png">
 
-require 'header.php';
- ?>
-		
-			<!-- Start Map -->
-		<div id="content">
+	<!-- Main Stylesheet -->
+	<link href="css/style.css" rel="stylesheet">
+
+	<!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+	<body>
+
+		<!-- ============ LOADER START ============ -->
+
+		<div id="loader">
+			<i class="fa fa-cog fa-4x fa-spin primary-color"></i>
+		</div>
+
+		<!-- ============ LOADER END ============ -->
+
+		<!-- ============ HEADER START ============ -->
+
+		<?php require 'header.php'; ?>
+		<!-- ============ HEADER END ============ -->
+
+		<!-- ============ CONTENT START ============ -->
+
+		<section id="content">
 			<div class="container">
+
 				<div class="row">
-					<div class="col-xs-12">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d7323128.552528785!2d17.2692101!3d26.3347113!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1424659483270" width="100%" height="470" frameborder="0" style="border:0"></iframe>
+					<?php 
+					if (isset($_GET['msg'])) {
+						switch ($_GET['msg']) {
+							case 'empty_data':
+							echo '<div class="alert alert-danger alert-dismissable">
+							<i class="fa fa-ban"></i>
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+							<b>Alert!</b> please enter all data ..
+							</div>';
+							break;
+							case 'sent':
+							echo '<div class="alert alert-success alert-dismissable">
+							<i class="fa fa-check"></i>
+
+							<b>Alert!</b> your message sent thanks about your support.
+							</div>' ;
+							break;
+
+
+							default:
+
+							break;
+						}
+					}
+
+
+					?>
+
+
+					<div class="col-sm-12 text-center">
+						<h5>Visit or call us</h5>
+						<h1>Contact</h1>
 					</div>
 				</div>
-			</div>
-		</div>
 
-<!-- Start Content -->
-<div id="content">
-	<div class="container">
-		
-		<div class="row">
-			
-			<div class="col-md-8">
-				<?php 
-
-				if(isset($_GET['msg']) && !empty($_GET['msg'])) {
-					echo "<h3>";
-					echo '<strong class="accent-color">';
-					echo "";
-					switch ($_GET['msg']) {
-						case 'fail':
-							echo "sorry please try again to send  this email";
-							break;
-							case 'done':
-							echo "your message has been send successfully";
-							break;
-							case 'inv_email':
-							echo "please enter a valid email";
-							break;
-							case 'empty':
-							echo "please enter all required data";
-							break;		
-					}
-				}
-				echo "</strong>  </h3>";
-				 ?>
-				<!-- Classic Heading -->
-				<h4 class="classic-title"><span>Contact Us</span></h4>
-				
-				<!-- Start Contact Form -->
-				<div id="contact-form" class="contatct-form">
-					<div class="loader"></div>
-					<form action="send.php" class="contactForm" name="cform" method="post">
-						<div class="row">
-							<div class="col-md-4">
-								<label for="name">Name<span class="required">*</span></label>
-								<span class="name-missing">Please enter your name</span>  
-								<input id="name" name="name" type="text" value="" size="30">
-							</div>
-							<div class="col-md-4">
-								<label for="e-mail">Email<span class="required">*</span></label>
-								<span class="email-missing">Please enter a valid e-mail</span> 
-								<input id="e-mail" name="email" type="text" value="" size="30">
-							</div>
-							
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<label for="message">Add Your Comment<span class="required">*</span></label>
-								<span class="message-missing">Say something!</span>
-								<textarea id="message" name="message" cols="45" rows="10"></textarea>
-								<input type="submit" name="submit" class="button" id="submit_btn" value="Send Message">
+				<!-- Contact Form Start -->
+				<form action="insert_user_mail.php" method="post">
+					<div class="row">
+						<div class="col-sm-4 form-group">
+							<label class="sr-only" for="contact-name">Name</label>
+							<div class="input-group">
+								<input type="text" name="name" class="form-control" id="contact-name" placeholder="Name">
+								<div class="input-group-addon"><i class="fa fa-user"></i></div>
 							</div>
 						</div>
-					</form>
-				</div>
-				<!-- End Contact Form -->
-				
+						<div class="col-sm-4 form-group">
+							<label class="sr-only" for="contact-email">Email</label>
+							<div class="input-group">
+								<input type="email" name="email" class="form-control" id="contact-email" placeholder="Email">
+								<div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+							</div>
+						</div>
+						<div class="col-sm-4 form-group">
+							<label class="sr-only"  for="contact-subject">phone</label>
+							<div class="input-group">
+								<input type="text" name="phone" class="form-control" id="contact-subject" placeholder="phone number">
+								<div class="input-group-addon"><i class="fa fa-pencil"></i></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 form-group">
+							<label class="sr-only" for="contact-message">content</label>
+							<textarea class="form-control" name="msg" rows="6" id="contact-message" placeholder="Message"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<button type="submit" name="submit" class="btn btn-primary btn-lg">Submit</button>
+							<hr>
+						</div>
+					</div>
+				</form>
+				<!-- Contact Form End -->
 			</div>
-			
-			<div class="col-md-4">
-				
-				<!-- Classic Heading -->
-				<h4 class="classic-title"><span>Information</span></h4>
-				
-				<!-- Some Info -->
-				<p>You can always contact us through these means</p>
-				
-				<!-- Divider -->
-				<div class="hr1" style="margin-bottom:10px;"></div>
-				
-				<!-- Info - Icons List -->
-				<ul class="icons-list">
-					<li><i class="fa fa-globe">  </i> <strong>Address:</strong> <?php echo $info->address; ?></li>
-					<li><i class="fa fa-envelope-o"></i> <strong>Email:</strong> <?php echo $info->email; ?></li>
-					<li><i class="fa fa-mobile"></i> <strong>Phone:</strong> <?php echo $info->phone; ?></li>
-				</ul>
-				
-				<!-- Divider -->
-				<div class="hr1" style="margin-bottom:15px;"></div>
-				
-				<!-- Classic Heading -->
-				<h4 class="classic-title"><span>Working Hours</span></h4>
-				
-				<!-- Info - List -->
-				<ul class="list-unstyled">
-					<?php echo html_entity_decode($info->working_dates); ?>
-				</ul>
-				
-			</div>
-			
-		</div>
-		
-	</div>
-</div>
-<!-- End content -->
+		</section>
 
-<?php 
+		<!-- ============ CONTENT END ============ -->
 
-require 'footer.php';
- ?>
+		<!-- ============ FOOTER START ============ -->
+
+		<?php require 'footer.php'; ?>
+		<!-- ============ FOOTER END ============ -->
+
+		<!-- ============ RESERVATION BAR START ============ -->
+
+
+		<!-- ============ RESERVATION BAR END ============ -->
+
+		<?php require 'scripts.php'; ?>
+	</body>
+	</html>

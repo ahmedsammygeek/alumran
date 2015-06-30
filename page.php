@@ -1,134 +1,238 @@
 <?php 
-
-require 'AdminArea/connection.php';
-
-if(!isset($_GET['id']) || empty($_GET['id']))  {
-	header("location: index.php");
-	die();
+$page_id = filter_input(INPUT_GET, 'page_id' , FILTER_SANITIZE_NUMBER_INT);
+if(!$page_id) {
+	header('location: index.php');
+	die;
 }
-$id = filter_input(INPUT_GET, 'id' , FILTER_SANITIZE_NUMBER_INT);
-$page = $conn->prepare("SELECT * FROM sub_pages WHERE id = ?");
-$page->bindValue(1,$id,PDO::PARAM_INT);
+
+require 'connection/connection.php';
+$page = $conn->prepare("SELECT * FROM pages WHERE id = ?");
+$page->bindValue(1,$page_id , PDO::PARAM_INT);
 $page->execute();
 if(!$page->rowCount()) {
-	header("location: index.php");
-	die();
+	header('location: index.php');
+	die;
 }
-$page_info = $page->fetch(PDO::FETCH_OBJ);
-
-$page_pics = $conn->prepare("SELECT * FROM page_images WHERE page_id = ?");
-$page_pics->bindValue(1,$id,PDO::PARAM_INT);
-$page_pics->execute();
-
-
-
-$clients =  $conn->prepare("SELECT * FROM clients");
-$clients->execute();
-
-require 'header.php';
+$page_details = $page->fetch(PDO::FETCH_OBJ);
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="The Traveller - HTML Template">
+	<meta name="author" content="Coffeecream Themes, info@coffeecream.eu">
 
+	<title>الكيالى للخدمات السياحة و التجارية</title>
+	<link rel="shortcut icon" href="images/favicon.png">
 
-<!-- Start Page Banner -->
-<div class="page-banner" style="padding:40px 0; background: url(images/slide-02-bg.jpg) center #f9f9f9;">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6">
-				<h2><?php echo $page_info->title_ar; ?></h2>
-				
-			</div>
-			<div class="col-md-6">
-				<ul class="breadcrumbs">
-					<li><a href="#">الرئيسية</a></li>
-					<li><?php echo $page_info->title_ar; ?></li>
-				</ul>
-			</div>
+	<!-- Main Stylesheet -->
+	<link href="css/style.css" rel="stylesheet">
+
+	<!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+	<body>
+
+		<!-- ============ LOADER START ============ -->
+
+		<div id="loader">
+			<i class="fa fa-cog fa-4x fa-spin primary-color"></i>
 		</div>
-	</div>
-</div>
-<!-- End Page Banner -->
 
+		<!-- ============ LOADER END ============ -->
 
+		<!-- ============ HEADER START ============ -->
+		<?php require 'header.php'; ?>
 
+		<!-- ============ HEADER END ============ -->
 
-<!-- Start Content -->
-<div id="content">
-	<div class="container">
-		<div class="page-content">
+		<!-- ============ CONTENT START ============ -->
 
-
-			<div class="row">
-
-				
-				<div class="col-md-5"> 
-
-					<!-- Start Touch Slider -->
-					<div class="touch-slider" data-slider-navigation="true" data-slider-pagination="true">
-						<?php 
-						while ($image = $page_pics->fetch(PDO::FETCH_OBJ)) {
-							echo '<div class="item"><img alt="" width="100%" src="uploaded/pages/'.$image->image.'"></div>';
-						}
-
-						?>
+		<section id="content">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<!-- <h5>Relax &amp; Enjoy</h5> -->
+						<h1><?php echo $page_details->title_ar; ?></h1>
 					</div>
-					<!-- End Touch Slider -->
-
 				</div>
 
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<hr>				
+						<!-- Gallery Start -->
+						<div class="fotorama" data-nav="thumbs" data-loop="true">
+							<?php 
 
-				<div class="col-md-7">
 
-					<!-- Classic Heading -->
-					<h4 class="classic-title text-right"><span><?php echo $page_info->title_ar; ?></span></h4>
+							$page_images = $conn->prepare("SELECT image FROM pages_images WHERE page_id = ?");
+							$page_images->bindValue(1,$page_id,PDO::PARAM_INT);
+							$page_images->execute();
+
+							while ($page_image = $page_images->fetch(PDO::FETCH_OBJ)) {
+								echo '<img src="uploaded/pages_images/'.$page_image->image.'" alt="" />';
+							}
+							?>
+							
+						</div>
+						<!-- Gallery End -->
+
+					</div>
+				</div>
+
+				<div class="row">
+					
+					<div class="col-sm-6 text-right pull-right">
+						<?php echo html_entity_decode($page_details->descreption_ar); ?>
+					</div>
+
+					<div class="col-sm-6">
+						<div class="embed-responsive embed-responsive-16by9">
+							<!-- <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/46751897"></iframe> -->
+						</div>
+					</div>
+					</div>
+
+					<div class="row">
+						<?php if($page_id == 4)  {?>
+
+					<div class="col-xs-6"> <iframe width="100%" height="315" src="https://www.youtube.com/embed/<?php echo $page_details->video1; ?>" frameborder="0" allowfullscreen></iframe> </div>
+					<div class="col-xs-6"> <iframe width="100%" height="315" src="https://www.youtube.com/embed/<?php echo $page_details->video2; ?>" frameborder="0" allowfullscreen></iframe> </div>
+					<div class="col-xs-6"> <iframe width="100%" height="315" src="https://www.youtube.com/embed/<?php echo $page_details->video3; ?>" frameborder="0" allowfullscreen></iframe> </div>
+					<div class="col-xs-6"> <iframe width="100%" height="315" src="https://www.youtube.com/embed/<?php echo $page_details->video4; ?>" frameborder="0" allowfullscreen></iframe> </div>
+
+				
+					
+					 
+					 <?php } ?>
+					</div>
+
+					<div class="row">
+
 
 					
-					<p><?php echo html_entity_decode($page_info->content_ar); ?></p>
+					<div class="col-md-12">
+
+						<?php 
+						if (isset($_GET['msg'])) {
+
+							switch ($_GET['msg']) {
+								case 'erro':	
+								echo '<div class="alert alert-danger alert-dismissable">
+								<i class="fa fa-ban"></i>
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+								<b>Alert!</b> please try again .
+								</div>';
+								break;
+								case 'name':
+								case 'email':
+								case 'msg':
+								case 'address':
+								case 'phone':
+								echo '<div class="alert alert-danger alert-dismissable">
+								<i class="fa fa-ban"></i>
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+								<b>Alert!</b> error  , please complete required data.
+								</div>';
+								break;
+								
+								case 'emailIN':
+								echo '<div class="alert alert-danger alert-dismissable">
+								<i class="fa fa-ban"></i>
+								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+								<b>Alert!</b> erro  , please enter A valid email
+								</div>';
+								break;
+
+								case 'done':
+								echo '<div class="alert alert-success alert-dismissable">
+								<i class="fa fa-check"></i>
+
+								<b>Alert!</b> reservation send successfully.
+								</div>' ;
+								break;
+
+
+								case 'deleted':
+								echo '<div class="alert alert-success alert-dismissable">
+								<i class="fa fa-check"></i>
+
+								<b>Alert!</b> data deleted successfully. we will call you very soon 
+								</div>' ;
+								break;
+
+							}
+						}
+
+
+						?>
+						<h2 class="text-center"> احجز الان مع الكيالى للسياحة  </h2>
+						<form id="res_form" dir="rtl" action="book-page.php?id=<?php echo $page_id; ?>" method="post">
+							<div class="row">
+								<div class="form-group col-sm-6" id="booking-name">
+									<label for="booking-name" > الاسم </label>
+									<input type="text" name="name" class="form-control"  >
+								</div>
+								<div class="form-group col-sm-6" id="booking-address">
+									<label for="booking-company"> العنوان </label>
+									<input type="text" name="address" class="form-control" >
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="form-group col-sm-6" id="booking-email">
+									<label for="booking-email"> البريد </label>
+									<input type="email" name="email" class="form-control" id="booking-email">
+								</div>
+								<div class="form-group col-sm-6" id="booking-phone">
+									<label for="booking-phone"> التليفون المحمول </label>
+									<input type="phone" name="phone" class="form-control" id="booking-phone">
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-sm-12" id="booking-msg">
+									<label for="booking-phone">الرسالة </label>
+									<textarea name="msg" id="" class="form-control" cols="20" rows="4"></textarea>
+
+								</div>
+
+							</div>
+							<div class="row">
+								<div class="col-sm-12">
+									<button type="submit" name="book_this_hotel" class="btn color3"> ارسال </button>
+								</div>
+							</div>
+						</form>
+					</div>
 
 				</div>
 
 
+				
 			</div>
+		</section>
 
-			<!-- Divider -->
-			<div class="hr1" style="margin-bottom:50px;"></div>
-
-
-
-			
-			
-
-			<!-- Divider -->
-			<div class="hr1" style="margin-bottom:50px;"></div>
-
-			<!-- Start Clients Carousel -->
-			<div class="our-clients">
-
-				<!-- Classic Heading -->
-				<h4 class="classic-title text-right"><span>عملائنا</span></h4>
-
-				<div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5">
-
-					<?php 
-					while ($client = $clients->fetch(PDO::FETCH_OBJ)) {
-						echo  '<div class="client-item item">
-						<a href="'.$client->link.'"><img src="uploaded/clients/'.$client->image.'" alt="" /></a>
-						</div>';
-					}
-					?>
-
-				</div>
-			</div>
-			<!-- End Clients Carousel -->
+		<!-- ============ CONTENT END ============ -->
 
 
-		</div>
-	</div>
-</div>
-<!-- End content -->
+
+		<!-- ============ FOOTER START ============ -->
+
+		<?php require 'footer.php'; ?>
+		<!-- ============ FOOTER END ============ -->
+
+		<!-- ============ RESERVATION BAR START ============ -->
 
 
-<?php 
+		<!-- ============ RESERVATION BAR END ============ -->
+		<?php require 'scripts.php'; ?>
 
-require 'footer.php';
-?>
+		<script src="js/fotorama.js"></script>
+	</body>
+	</html>

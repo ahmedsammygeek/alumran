@@ -1,245 +1,133 @@
-<?php 
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="The Traveller - HTML Template">
+	<meta name="author" content="Coffeecream Themes, info@coffeecream.eu">
+	<title>الكيالى للخدمات السياحة و التجارية</title>
+	<link rel="shortcut icon" href="images/favicon.png">
 
+	<!-- Main Stylesheet -->
+	<link href="css/style.css" rel="stylesheet">
 
-$active = "content";
-require 'header.php';
+	<!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
 
-?>
+	</head>
+	<body>
 
+		<!-- ============ LOADER START ============ -->
 
-
-<!-- Start Map -->
-
-<div id="content">
-
-	<div class="container">
-
-		<div class="row">
-
-			<div class="col-xs-12">
-
-				<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d7323128.552528785!2d17.2692101!3d26.3347113!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1424659483270" width="100%" height="470" frameborder="0" style="border:0"></iframe>
-
-			</div>
-
+		<div id="loader">
+			<i class="fa fa-cog fa-4x fa-spin primary-color"></i>
 		</div>
 
-	</div>
+		<!-- ============ LOADER END ============ -->
 
-</div>
+		<!-- ============ HEADER START ============ -->
 
+		<?php require 'header.php'; ?>
+		<!-- ============ HEADER END ============ -->
 
+		<!-- ============ CONTENT START ============ -->
 
-<!-- Start Content -->
+		<section id="content">
+			<div class="container">
 
-<div id="content">
+				<div class="row">
+					<?php 
+					if (isset($_GET['msg'])) {
+						switch ($_GET['msg']) {
+							case 'empty_data':
+							echo '<div class="alert alert-danger alert-dismissable">
+							<i class="fa fa-ban"></i>
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+							<b>Alert!</b> من فضلك ادخل جميع البيانات  ..
+							</div>';
+							break;
+							case 'sent':
+							echo '<div class="alert alert-success alert-dismissable">
+							<i class="fa fa-check"></i>
 
-	<div class="container">
+							<b>Alert!</b> تم ارسال الرسالة بنجاح .
+							</div>' ;
+							break;
 
-		
 
-		<div class="row">
+							default:
 
-			
-
-
-
-			
-
-			<div dir="rtl" class="col-md-4">
-
-				
-
-				<!-- Classic Heading -->
-
-				<h4 class="classic-title"><span>معلومات</span></h4>
-
-				
-
-				<!-- Some Info -->
-
-				<p>تستطيع دئما ان تتواصل معنا ...نرحب بذلك دئما</p>
-
-				
-
-				<!-- Divider -->
-
-				<div class="hr1" style="margin-bottom:10px;"></div>
-
-				
-
-				<!-- Info - Icons List -->
-
-				<ul class="icons-list">
-
-					<li><i class="fa fa-globe">  </i> <strong>العنوان:</strong> <?php echo $info->address; ?></li>
-
-					<li><i class="fa fa-envelope-o"></i> <strong>البريد:</strong> <?php echo $info->email; ?></li>
-
-					<li><i class="fa fa-mobile"></i> <strong>التليفون:</strong> <?php echo $info->phone; ?></li>
-
-				</ul>
-
-				
-
-				<!-- Divider -->
-
-				<div class="hr1" style="margin-bottom:15px;"></div>
-
-				
-
-				<!-- Classic Heading -->
-
-				<h4 class="classic-title"><span>ساعات العمل</span></h4>
-
-				
-
-				<!-- Info - List -->
-
-				<ul class="list-unstyled">
-
-					<?php echo html_entity_decode($info->working_dates); ?>
-
-				</ul>
-
-				
-
-			</div>
-
-
-
-			<div  dir="rtl" class="col-md-8">
-
-				<?php 
-
-
-
-				if(isset($_GET['msg']) && !empty($_GET['msg'])) {
-
-					echo "<h3>";
-
-					echo '<strong class="accent-color">';
-
-					echo "";
-
-					switch ($_GET['msg']) {
-
-						case 'fail':
-
-						echo "عفوا : من فضلك حاول مرة اخرى ";
-
-						break;
-
-						case 'done':
-
-						echo "تم ارسال الرسالة بنجاح .. شكرا لك";
-
-						break;
-
-						case 'inv_email':
-
-						echo "من فضلك ادخل بريد صالح";
-
-						break;
-
-						case 'empty':
-
-						echo "من فضلك ادخل جميع البيانات المطلوبة";
-
-						break;		
-
+							break;
+						}
 					}
 
-				}
 
-				echo "</strong>  </h3>";
+					?>
 
-				?>
 
-				<!-- Classic Heading -->
-
-				<h4 class="classic-title"><span>اتصل بنا</span></h4>
-
-				
-
-				<!-- Start Contact Form -->
-
-				<div id="contact-form" class="contatct-form">
-
-					<div class="loader"></div>
-
-					<form action="send.php" class="contactForm" name="cform" method="post">
-
-						<div class="row">
-
-							<div class="col-md-6">
-
-								<label for="name">الاسم<span class="required">*</span></label>
-
-								<span class="name-missing">من فضلك ادخل الاسم هنا</span>  
-
-								<input id="name" name="name" type="text" value="" size="30">
-
-							</div>
-
-							<div class="col-md-6">
-
-								<label for="e-mail">البريد<span class="required">*</span></label>
-
-								<span class="email-missing">من فضلك ادخل البريد هنا</span> 
-
-								<input id="e-mail" name="email" type="text" value="" size="30">
-
-							</div>
-
-							
-
-						</div>
-
-						<div class="row">
-
-							<div class="col-md-12">
-
-								<label for="message">محتوى الرسالة<span class="required">*</span></label>
-
-								<span class="message-missing"></span>
-
-								<textarea id="message" name="message" cols="45" rows="10"></textarea>
-
-								<input type="submit" name="submit" class="button" id="submit_btn" value="ارسال">
-
-							</div>
-
-						</div>
-
-					</form>
-
+					<div class="col-sm-12 text-center">
+						<h5>تواصل معنا دائما فنحن نرحب بذلك </h5>
+						<h1>اتصل بنا </h1>
+					</div>
 				</div>
 
-				<!-- End Contact Form -->
-
-				
-
+				<!-- Contact Form Start -->
+				<form action="insert_user_mail.php" method="post">
+					<div class="row">
+						<div class="col-sm-4 form-group">
+							<label class="sr-only" for="contact-name"> الاسم </label>
+							<div class="input-group">
+								<input type="text" name="name" class="form-control" id="contact-name" placeholder="Name">
+								<div class="input-group-addon"><i class="fa fa-user"></i></div>
+							</div>
+						</div>
+						<div class="col-sm-4 form-group">
+							<label class="sr-only" for="contact-email"> البريد</label>
+							<div class="input-group">
+								<input type="email" name="email" class="form-control" id="contact-email" placeholder="Email">
+								<div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+							</div>
+						</div>
+						<div class="col-sm-4 form-group">
+							<label class="sr-only"  for="contact-subject"> الجوال </label>
+							<div class="input-group">
+								<input type="text" name="phone" class="form-control" id="contact-subject" placeholder="phone number">
+								<div class="input-group-addon"><i class="fa fa-pencil"></i></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 form-group">
+							<label class="sr-only" for="contact-message"> محتوى الرسالة </label>
+							<textarea class="form-control" name="msg" rows="6" id="contact-message" placeholder="Message"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<button type="submit" name="submit" class="btn btn-primary btn-lg"> ارسال </button>
+							<hr>
+						</div>
+					</div>
+				</form>
+				<!-- Contact Form End -->
 			</div>
+		</section>
 
-			
+		<!-- ============ CONTENT END ============ -->
 
-		</div>
+		<!-- ============ FOOTER START ============ -->
 
-		
+		<?php require 'footer.php'; ?>
+		<!-- ============ FOOTER END ============ -->
 
-	</div>
-
-</div>
-
-<!-- End content -->
+		<!-- ============ RESERVATION BAR START ============ -->
 
 
+		<!-- ============ RESERVATION BAR END ============ -->
 
-<?php 
-
-
-
-require 'footer.php';
-
-?>
+		<?php require 'scripts.php'; ?>
+	</body>
+	</html>
