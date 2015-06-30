@@ -24,7 +24,7 @@ $page_details = $page->fetch(PDO::FETCH_OBJ);
 	<meta name="description" content="The Traveller - HTML Template">
 	<meta name="author" content="Coffeecream Themes, info@coffeecream.eu">
 
-	<title>الكيالى للخدمات السياحة و التجارية</title>
+	<title>الكيالى  للخدمات السياحة و التجارية</title>
 	<link rel="shortcut icon" href="images/favicon.png">
 
 	<!-- Main Stylesheet -->

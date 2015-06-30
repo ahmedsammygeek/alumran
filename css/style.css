@@ -308,6 +308,7 @@ hr {
 
 		#logo img {
 			position: absolute;
+			right: 4%;
 			top: 50%;
 			-webkit-transform: translateY(-50%);
 			-ms-transform: translateY(-50%);
@@ -386,7 +387,7 @@ hr {
 	}
 
 		#video video {
-			background: url(http://placehold.it/1400x900.jpg) no-repeat;
+			background: url(../images/video.jpg) no-repeat;
 			background-size: cover;
 			bottom: 0;
 			height: auto;

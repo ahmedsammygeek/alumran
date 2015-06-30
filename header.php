@@ -8,15 +8,10 @@
 		<div id="header">
 			<div class="container">
 				<div class="row">
-					<div id="logo" class="col-xs-3 col-sm-3">
-						<a href="index.php"><img width="90" height="45" src="en/images/lo.png" alt="The Traveller. Modern hotel html template." class="img-responsive" /></a>
-					</div>
-					<div class="col-xs-4 col-sm-4">
-						<p class="text-center hidden-sm hidden-xs" style="font-size:20px;font-weight:bold;color:white;line-height:74px">الكيالى للخدمات السياحة و التجارية</p>
-					</div>
+					
+					
 
-
-					<div class="col-xs-5 col-sm-5 text-right" id="hotel-info">
+					<div class="col-xs-4 col-sm-4" id="hotel-info">
 						<ul>
 							<li ><a href="en/index.php"><i class="fa fa-language fa-lg primary-color"></i>En</a></li>
 							
@@ -25,6 +20,16 @@
 
 						</ul>
 					</div>
+
+					<div class="col-xs-4 col-sm-4">
+						<p class="text-center hidden-sm hidden-xs" style="font-size:20px;font-weight:bold;color:white;line-height:74px">الكيالى للخدمات السياحة و التجارية</p>
+					</div>
+
+
+					<div id="logo" class="col-xs-4 col-sm-4 ">
+						<a href="index.php"><img width="90" height="45" src="images/logo.jpg" alt="The Traveller. Modern hotel html template." class="img-responsive" /></a>
+					</div>
+
 				</div>
 
 			</div>

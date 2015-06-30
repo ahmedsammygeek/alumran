@@ -9,7 +9,7 @@
 			<div class="container">
 				<div class="row">
 					<div id="logo" class="col-xs-4 col-sm-4">
-						<a href="index.php"><img width="90" height="45" src="images/lo.png" alt="The Traveller. Modern hotel html template." class="img-responsive" /></a>
+						<a href="index.php"><img width="90" height="45" src="images/logo.jpg" alt="The Traveller. Modern hotel html template." class="img-responsive" /></a>
 					</div>
 					<div class="col-xs-4 col-sm-4">
 						

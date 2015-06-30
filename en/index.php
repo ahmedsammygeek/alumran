@@ -43,6 +43,7 @@
 			<video loop autoplay controls>
 				<source src="../vidoz/22.mp4" type="video/mp4" />
 				<source src="../vidoz/sta.m4v" type="video/m4v" />
+				<source src="../vidoz/mob.webm" type="video/webm" />
 			</video>
 			<div class="tint">
 				<div class="container">

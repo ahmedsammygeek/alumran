@@ -6,7 +6,7 @@
 	<meta name="viewport" content_ar="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="description" content_ar="The Traveller - HTML Template">
 	<meta name="author" content_ar="Coffeecream Themes, info@coffeecream.eu">
-	<title>الكيلانى لخدمات السياحة </title>
+	<title>الكيالى  للخدمات السياحة و التجارية</title>
 	<link rel="shortcut icon" href="images/favicon.png">
 
 	<!-- Main Stylesheet -->
@@ -40,9 +40,10 @@
 		<!-- ============ VIDEO START ============ -->
 
 		<div id="video">
-			<video loop autoplay controls>
+			<video loop autoplay >
 				<source src="vidoz/22.mp4" type="video/mp4" />
 				<source src="vidoz/sta.m4v" type="video/m4v" />
+				<source src="vidoz/mob.webm" type="video/webm" />
 			</video>
 			<div class="tint">
 				<div class="container">

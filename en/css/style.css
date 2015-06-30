@@ -386,7 +386,7 @@ hr {
 	}
 
 		#video video {
-			background: url(http://placehold.it/1400x900.jpg) no-repeat;
+			background: url(../../images/video.jpg) no-repeat;
 			background-size: cover;
 			bottom: 0;
 			height: auto;
