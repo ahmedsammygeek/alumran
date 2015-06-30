@@ -1,129 +1,291 @@
-<footer>
-	<?php 
-	require '../connection/connection.php';
-	$site_info = $conn->query("SELECT * FROM site_info");
-	$info = $site_info->fetch(PDO::FETCH_OBJ);
-	?>
-	<div id="widgets">
-		<div class="container">
-			<div class="row">
+  
 
-				<!-- About Us Start -->
-				<div class="col-sm-3 widget">
-					<h4>Address</h4>
-					<p><?php echo "$info->address"; ?></p>
-				</div>
-				<!-- About Us End -->
+        
 
-				<!-- Quick Links Start -->
-				<div class="col-sm-3 widget">
-					<h4>Quick links</h4>
-					<nav>
-						<ul>
-							<li><a href="hotels.php"><i class="fa fa-angle-right primary-color"></i>hotels</a></li>
-							<li><a href="offers.php"><i class="fa fa-angle-right primary-color"></i>offers</a></li>
-							<li><a href="page.php?page_id=4"><i class="fa fa-angle-right primary-color"></i>Know about turkey</a></li>
-							<li><a href="page.php?page_id=1"><i class="fa fa-angle-right primary-color"></i>cars</a></li>
-							<li><a href="page.php?page_id=2"><i class="fa fa-angle-right primary-color"></i>property</a></li>
-							<li><a href="page.php?page_id=3"><i class="fa fa-angle-right primary-color"></i>VIP</a></li>
-						</ul>
-					</nav>
-				</div>
-				<!-- Quick Links End -->
+        
 
-				<!-- Newsletter Start -->
-				<div class="col-sm-3 widget">
-					<h4>Newsletter</h4>
-					<form role="form" id="newsletter-form" action="insert_newsletter.php" method="post">
-						<div class="form-group" id="newsletter-name-group">
-							<label class="sr-only" for="newsletter-name">Name</label>
-							<input type="text" class="form-control" id="newsletter-name" placeholder="name">
-						</div>
-						<div class="form-group" id="newsletter-email-group">
-							<label class="sr-only" for="newsletter-email">Email</label>
-							<input type="email" class="form-control" id="newsletter-email" placeholder="email">
-						</div>
-						<input type="submit" name="submit" class="btn btn-primary" value="Subscribe">
-					</form>
-				</div>
-				<!-- Newsletter End -->
+        <!-- Start Footer Section -->
 
-				<!-- Contact Start -->
-				<div class="col-sm-3 widget">
-					<h4>Contact</h4>
-					<p>
-						Phone: <?php echo "$info->phone"; ?><br>
-						Email: <?php echo "$info->email"; ?>
-					</p>
-				</div>
-				<!-- Contact End -->
+        <footer>
 
-			</div>
-		</div>
-	</div>
-	<div id="credits">
-		<div class="container">
-			<div class="row">
+            <div class="container">
 
-				<!-- Copyright Start -->
-				<div class="col-sm-6">
-					<a href="mailto:jalal.allowz@gmail.com">jalal allowz for web service</a>
-					
-				</div>
-				<!-- Copyright End -->
+                <div class="row footer-widgets">
 
-				<!-- Social Networks Start -->
-				<div class="col-sm-6 text-right">
-					<ul>
-						<li><a href="<?php echo "$info->facebook"; ?>"><i class="fa fa-facebook fa-lg"></i></a></li>
-						<li><a href="<?php echo "$info->twitter"; ?>"><i class="fa fa-twitter fa-lg"></i></a></li>
+                    
 
-						<li><a href="<?php echo "$info->skype"; ?>"><i class="fa fa-skype fa-lg"></i></a></li>
-					</ul>
-				</div>
-				<!-- Social Networks End -->
+                    
 
-			</div>
-		</div>
-	</div>
-</footer>
+                    <!-- Start Subscribe & Social Links Widget -->
 
-<div id="concat_form">	
-	<div id="reservation-container" class="primary-background img-rounded">
-		<button class="close"><i class="fa fa-remove fa-lg"></i></button>
-		<h2>Contat us</h2>
-		<form  action="send_mail_to_us.php" method="post" >
-			<div class="row" >
-				<div class="form-group col-sm-6" id="booking-name">
-					<label for="booking-name">Your Name</label>
-					<input type="text" name="name" class="form-control" >
-				</div>
-				<div class="form-group col-sm-6" id="booking-address">
-					<label for="booking-company">phone</label>
-					<input type="text" name="phone" class="form-control" >
-				</div>
-			</div>
+                    <div class="col-md-4 col-xs-12">
 
-			<div class="row" >
-				<div class="form-group col-sm-12" id="booking-name">
-					<label for="booking-name">email</label>
-					<input type="text" name="email" class="form-control" >
-				</div>
-			</div>
+                       
 
-			<div class="row">
-				<div class="form-group col-sm-12" id="booking-msg">
-					<label for="booking-phone">message</label>
-					<textarea name="msg" id="" class="form-control" cols="30" rows="4"></textarea>
-					
-				</div>
-				
-			</div>
-			<div class="row">
-				<div class="col-sm-12">
-					<button type="submit" class="btn color3">Book Now</button>
-				</div>
-			</div>
-		</form>
-	</div>
-</div>
+                        <div class="footer-widget social-widget">
+
+                            <h4>Follow Us<span class="head-line"></span></h4>
+
+                            <ul class="social-icons">
+
+                                <li>
+
+                                    <a class="facebook" target="_blank" href="<?php echo $info->facebook; ?>"><i class="fa fa-facebook"></i></a>
+
+                                </li>
+
+                                <li>
+
+                                    <a class="twitter" target="_blank" href="<?php echo $info->twitter; ?>"><i class="fa fa-twitter"></i></a>
+
+                                </li>
+
+                                <li>
+
+                                    <a class="google" target="_blank" href="<?php echo $info->google; ?>"><i class="fa fa-google-plus"></i></a>
+
+                                </li>
+
+                               
+
+                                
+
+                            </ul>
+
+                        </div>
+
+                    </div><!-- .col-md-3 -->
+
+                    <!-- End Subscribe & Social Links Widget -->
+
+                    
+
+                   
+
+
+
+
+
+                    <!-- Start Flickr Widget -->
+
+                    <div class="col-md-4 col-xs-12">
+
+                        <div class="footer-widget flickr-widget">
+
+                            <h4>Flicker Feed<span class="head-line"></span></h4>
+
+                            <ul class="flickr-list">
+
+                                <li>
+
+                                    <a href="images/flickr-01.jpg" class="lightbox">
+
+                                        <img alt="" src="images/flickr-01.jpg">
+
+                                    </a>
+
+                                </li>
+
+                                <li>
+
+                                    <a href="images/flickr-02.jpg" class="lightbox">
+
+                                        <img alt="" src="images/flickr-02.jpg">
+
+                                    </a>
+
+                                </li>
+
+                                <li>
+
+                                    <a href="images/flickr-03.jpg" class="lightbox">
+
+                                        <img alt="" src="images/flickr-03.jpg">
+
+                                    </a>
+
+                                </li>
+
+                                <li>
+
+                                    <a href="images/flickr-04.jpg" class="lightbox">
+
+                                        <img alt="" src="images/flickr-04.jpg">
+
+                                    </a>
+
+                                </li>
+
+                                
+
+                            </ul>
+
+                        </div>
+
+                    </div><!-- .col-md-3 -->
+
+                    <!-- End Flickr Widget -->
+
+
+
+                    
+
+                    <!-- Start Contact Widget -->
+
+                    <div class="col-md-4 col-xs-12">
+
+                        <div class="footer-widget contact-widget">
+
+                            <h4><img src="images/logo.png" class="img-responsive" alt="Footer Logo" /></h4>
+
+                            <p><?php $Contact = htmlspecialchars_decode($info->about);
+
+                            echo substr(strip_tags($Contact), 0,120); 
+
+                             ?></p>
+
+                            <ul>
+
+                                <li><span>Phone Number:</span> <?php echo $info->phone; ?></li>
+
+                                <li><span>Email:</span> <?php echo $info->email; ?></li>
+
+                                <li><span>Website:</span> <?php echo "www.".$_SERVER['SERVER_NAME'].".com"; ?></li>
+
+                            </ul>
+
+                        </div>
+
+                    </div><!-- .col-md-3 -->
+
+                    <!-- End Contact Widget -->
+
+
+
+                    
+
+                </div><!-- .row -->
+
+
+
+                <!-- Start Copyright -->
+
+                <div class="copyright-section">
+
+                    <div class="row">
+
+                       <!--  <div class="col-md-6">
+
+                            <p>&copy; 2014 Margo -  All Rights Reserved <a href="http://graygrids.com">GrayGrids</a> </p>
+
+                        </div> -->
+
+                        <!-- .col-md-6 -->
+
+                        <div class="col-md-6">
+
+                            <ul class="footer-nav">
+
+                                
+
+                                <li><a href="about.php">about</a>
+
+                                </li>
+
+                                <li><a href="contact.php">Contact</a>
+
+                                </li>
+
+                            </ul>
+
+                        </div><!-- .col-md-6 -->
+
+
+
+                        <div class="col-md-6">
+
+                            <p><span>Developed by</span> <a href="http://experts10.com">Experts</a></p>
+
+                        </div>
+
+                    </div><!-- .row -->
+
+                    <div class="row">
+                        <p class="text-center">
+                            All rights reserved to the Office of Western Group 2013
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- End Copyright -->
+
+
+
+            </div>
+
+        </footer>
+
+        <!-- End Footer Section -->
+
+        
+
+        
+
+    </div>
+
+    <!-- End Full Body Container -->
+
+
+
+    <!-- Go To Top Link -->
+
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+
+    <div id="loader">
+
+        <div class="spinner">
+
+            <div class="dot1"></div>
+
+            <div class="dot2"></div>
+
+        </div>
+
+    </div>
+
+ 
+
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery.migrate.js"></script>
+
+    <script type="text/javascript" src="js/modernizrr.js"></script>
+
+    <script type="text/javascript" src="asset/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+
+    <script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery.appear.js"></script>
+
+    <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery.textillate.js"></script>
+
+    <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery.parallax.js"></script>
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+</body>
+
+
+
+</html>

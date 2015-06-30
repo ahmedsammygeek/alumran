@@ -1,249 +1,251 @@
-<?php error_reporting(0); ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="description" content="The Traveller - HTML Template">
-	<meta name="author" content="Coffeecream Themes, info@coffeecream.eu">
-	<title>The Traveller - HTML Template</title>
-	<link rel="shortcut icon" href="images/favicon.png">
-
-	<!-- Main Stylesheet -->
-	<link href="css/style.css" rel="stylesheet">
-
-	<!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-		<script src="js/html5shiv.js"></script>
-		<script src="js/respond.min.js"></script>
-		<![endif]-->
-
-	</head>
-	<body>
-
-		<!-- ============ LOADER START ============ -->
-
-		<!-- <div id="loader">
-			<i class="fa fa-cog fa-4x fa-spin primary-color"></i>
-		</div> -->
-
-		<!-- ============ LOADER END ============ -->
-
-		<!-- ============ HEADER START ============ -->
-
-		<?php 
-		require 'header.php';
-		require '../connection/connection.php'; 
-		?>
-		<!-- ============ HEADER END ============ -->
-
-		<!-- ============ VIDEO START ============ -->
-
-		<div id="video">
-			<video loop autoplay controls>
-				<source src="../vidoz/22.mp4" type="video/mp4" />
-				<source src="../vidoz/sta.m4v" type="video/m4v" />
-			</video>
-			<div class="tint">
-				<div class="container">
-					<div id="weather"></div>
-				</div>
-			</div>
-		</div>
-
-		<!-- ============ VIDEO END ============ -->
-		<?php 
-		/*data of index page*/
-		$query1   = $conn->query("SELECT * FROM website_home WHERE id=1");
-		$result1  = $query1->fetch(PDO::FETCH_OBJ); 
-		?>
-
-		<!-- ============ WELCOME START ============ -->
-
-		<section id="welcome" class="row color2 home-section">
-			<div class="col-sm-7 col-md-6 col-lg-5 text">
-				<div class="padding">
-					<h5>Welcome to</h5>
-					<h1><?php echo "$result1->title"; ?></h1>
-					<p><?php echo "$result1->content"; ?></p>
-
-				</div>
-			</div>
-			<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result1->image; ?>)">
-				
-			</div>
-		</section>
-
-		<!-- ============ WELCOME END ============ -->
-		<?php 
-		/*data of index page*/
-		$query2   = $conn->query("SELECT * FROM website_home WHERE id=2");
-		$result2  = $query2->fetch(PDO::FETCH_OBJ); 
-		?>
-
-		<!-- ============ ROOMS START ============ -->
-
-		<section id="rooms" class="row color3 home-section">
-			<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result2->image; ?>)">
-				
-			</div>
-			<div class="col-sm-7 col-md-6 col-lg-5 text">
-				<div class="padding">
-					<h5>Check out our</h5>
-					<h1><?php echo "$result2->title"; ?></h1>
-					<p><?php echo "$result2->content"; ?></p>
-					
-				</div>
-			</div>
-		</section>
-
-		<!-- ============ ROOMS END ============ -->
-		<?php 
-		/*data of index page*/
-		$query3   = $conn->query("SELECT * FROM website_home WHERE id=3");
-		$result3  = $query3->fetch(PDO::FETCH_OBJ); 
-		?>
-
-		<!-- ============ RESTAURANT START ============ -->
-
-		<section id="restaurant" class="row home-section">
-			<div class="col-sm-7 col-md-6 col-lg-5 text">
-				<div class="padding">
-					<h5>Fine dining at our</h5>
-					<h1><?php echo "$result3->title"; ?></h1>
-					<p><?php echo "$result3->content"; ?></p>
-					
-				</div></div>
-				<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result3->image; ?>)">
-
-				</div>
-			</section>
-
-			<!-- ============ RESTAURANT END ============ -->
-			<?php 
-			/*data of index page*/
-			$query4   = $conn->query("SELECT * FROM website_home WHERE id=4");
-			$result4  = $query4->fetch(PDO::FETCH_OBJ); 
-			?>
-
-			<!-- ============ SPA START ============ -->
-
-			<section id="spa" class="row color2 home-section">
-				<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result4->image; ?>)">
-
-				</div>
-				<div class="col-sm-7 col-md-6 col-lg-5 text">
-					<div class="padding">
-						<h5>Relax at our</h5>
-						<h1><?php echo "$result4->title"; ?></h1>
-						<p><?php echo "$result4->content"; ?></p>
-
-					</div></div>
-				</section>
-
-				<!-- ============ SPA END ============ -->
-				<?php 
-				/*data of index page*/
-				$query5   = $conn->query("SELECT * FROM website_home WHERE id=5");
-				$result5  = $query5->fetch(PDO::FETCH_OBJ); 
-				?>
-
-				<!-- ============ GOLF START ============ -->
-
-				<section id="golf" class="row color3 home-section">
-					<div class="col-sm-7 col-md-6 col-lg-5 text">
-						<div class="padding">
-							<h5>Enjoy our 16 hole</h5>
-							<h1><?php echo "$result5->title"; ?></h1>
-							<p><?php echo "$result5->content"; ?></p>
-
-						</div></div>
-						<div class="col-sm-5 col-md-6 col-lg-7 photo" style="background-image:url(../uploaded/index_image/<?php echo $result5->image; ?>)">
-
-						</div>
-					</section>
-
-					<!-- ============ GOLF END ============ -->
-
-					<!-- ============ SPECIAL OFFERS START ============ -->
-
-					<section id="specials">
-						<div class="container">
-							<div class="row">
-								<div class="col-sm-12 text-center">
-									<h5>Check Out our latest</h5>
-									<h1>Tourist sites</h1>
-									<div class="owl-carousel">
-										
-										<?php 
-										$show = $conn->query("SELECT id , title , `desc` FROM hotels WHERE hotel_or_not=1");
-										while ($res = $show->fetch(PDO::FETCH_OBJ)) {
-											$small_desc = substr(strip_tags($res->desc), 0 , 50);
-											$hotel_img = $conn->query("SELECT pic FROM hotel_images WHERE hotel_id=$res->id");
-											$res2 = $hotel_img->fetch(PDO::FETCH_OBJ);
-											echo '<div class="special-offer">';
-											echo '<img src="../uploaded/hotels_images/'.$res2->pic.'" alt="" width="400" height="267" class="img-responsive" />
-											<h4>'.$res->title.'</h4>
-											<p>'.$small_desc.'</p>
-											<p><a href="offer.php?hotel_id='.$res->id.'" class="btn btn-primary">DETAILS</a></p>
-											' ;
-											echo'</div>
-											' ;
-										}
-
-										?>
-
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-
-					<!-- ============ SPECIAL OFFERS END ============ -->
-
-					<!-- ============ REVIEWS START ============ -->
-
-					<section id="home-reviews" class="primary-background">
-						<div class="container">
-							<div class="row">
-								<div class="col-sm-12 text-center">
-
-									<h1>About Us</h1>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-12">
-									<?php 
-									$about = $conn->query("SELECT * FROM aboutus");
-									$about_us = $about->fetch(PDO::FETCH_OBJ);
-
-									?>
-
-									<!-- Latest Review 2 -->
-									<div class="latest-review">
-										<blockquote><?php echo $about_us->content; ?> <small>JALAL alloz for web service</small></blockquote>
-									</div>
 
 
-								</div>
-							</div>
+<?php
+require 'header.php'; 
 
-						</div>
-					</section>
 
-					<!-- ============ REVIEWS END ============ -->
+$slides = $conn->prepare("SELECT * FROM slider");
+$slides->execute();
+
+$news =  $conn->prepare("SELECT * FROM news");
+$news->execute();
+
+
+$services =  $conn->prepare("SELECT * FROM services");
+$services->execute();
+
+$clients =  $conn->prepare("SELECT * FROM clients");
+$clients->execute();
+
+?>
+<!-- Start Home Page Slider -->
+<section id="home">
+    <!-- Carousel -->
+    <div id="main-slide" style="width:83%; margin-left:auto; margin-right:auto;" class="carousel slide" data-ride="carousel">
 
 
 
-					<!-- ============ FOOTER START ============ -->
+        <!-- Carousel inner -->
+        <div class="carousel-inner">
 
-					<?php 
-					require 'footer.php';
-					?>
-					<!-- ============ FOOTER END ============ -->
+         <?php 
+         $i = 0;
+
+         while ($slide = $slides->fetch(PDO::FETCH_OBJ)) {
+            if ($i == 0) {
+              echo '<div class="item active">
+              <img class="img-responsive" src="../uploaded/slider/'.$slide->image.'" alt="slider">
+              <div class="slider-content">
+              <div class="col-md-12 text-center">
+              <h3 class="animated5">
+              
+              </h3>  
+
+              </div>
+              </div>
+              </div>';
+
+          } else {
+            echo '<div class="item">
+            <img class="img-responsive" src="../uploaded/slider/'.$slide->image.'" alt="slider">
+            <div class="slider-content">
+            <div class="col-md-12 text-center">
+
+            <h3 class="animated5">
+           
+            </h3>  
+
+            </div>
+            </div>
+            </div>';
+        }
+        $i++;
+    }
+    ?>
+
+</div>
+<!-- Carousel inner end-->
+
+<!-- Controls -->
+<a class="left carousel-control" href="#main-slide" data-slide="prev">
+    <span><i class="fa fa-angle-left"></i></span>
+</a>
+<a class="right carousel-control" href="#main-slide" data-slide="next">
+    <span><i class="fa fa-angle-right"></i></span>
+</a>
+</div>
+<!-- /carousel -->
+</section>
+<!-- End Home Page Slider -->
+
+<div class="section service">
+    <div class="container">
+        <div class="row">
+          <!-- Start Recent Posts Carousel -->
+          <div class="latest-posts">
+            <h4 class="classic-title"><span>Latest News</span></h4>
+            <div class="latest-posts-classic custom-carousel touch-carousel" data-appeared-items="3">
+
+                <?php 
+                while ($topic = $news->fetch(PDO::FETCH_OBJ)) {
+                    $date = explode(" ", $topic->date);
+                    $content = $topic->content;
+                    $content = strip_tags($topic->content);
+                    // $content = html_entity_decode($content);
+                    echo '<div class="post-row item">
+                    <div class="left-meta-post">
+                    <div class="post-date"><span class="day">'.$date[1].'</span><span class="month">'.$date[0].'</span></div>
+                    <div class="post-type"><i class="fa fa-picture-o"></i></div>
+                    </div>
+                    <h3 class="post-title"><a href="topic.php?id='.$topic->id.'">'.$topic->title.'</a></h3>
+                    <div class="post-content"> <p>
+                    '.substr(strip_tags(htmlspecialchars_decode($content)), 0 ,168).'<a class="read-more" href="topic.php?id='.$topic->id.'">Read More...</a>
+                    </p>
+                    </div>
+                    </div>';
+
+                }
+                ?>
+
+
+            </div>
+        </div>
+        <!-- End Recent Posts Carousel -->
+    </div>
+</div>
+
+</div>
+
+<!-- Start Services Section -->
+<div class="section service">
+    <div class="container">
+        <div class="row">
+
+            <!-- Start Service Icon 1 -->
+            <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="01">
+                <div class="service-icon">
+                    <i class="fa fa-leaf icon-large"></i>
+                </div>
+                <div class="service-content">
+                    <h4>High Quality Theme</h4>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
+
+                </div>
+            </div>
+            <!-- End Service Icon 1 -->
+
+            <!-- Start Service Icon 2 -->
+            <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="02">
+                <div class="service-icon">
+                    <i class="fa fa-desktop icon-large"></i>
+                </div>
+                <div class="service-content">
+                    <h4>Full Responsive</h4>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
+                </div>
+            </div>
+            <!-- End Service Icon 2 -->
+
+            <!-- Start Service Icon 3 -->
+            <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="03">
+                <div class="service-icon">
+                    <i class="fa fa-eye icon-large"></i>
+                </div>
+                <div class="service-content">
+                    <h4>Retina Display Ready</h4>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
+                </div>
+            </div>
+            <!-- End Service Icon 3 -->
+
+            <!-- Start Service Icon 4 -->
+            <div class="col-md-3 col-sm-6 service-box service-center" data-animation="fadeIn" data-animation-delay="04">
+                <div class="service-icon">
+                    <i class="fa fa-code icon-large"></i>
+                </div>
+                <div class="service-content">
+                    <h4>Clean Modern Code</h4>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat Lorem pariatur</p>
+                </div>
+            </div>
+            <!-- End Service Icon 4 -->
+
+           
+
+        </div><!-- .row -->
+    </div><!-- .container -->
+</div>
+<!-- End Services Section -->
 
 
 
-					<?php 	require 'scripts.php'; ?>
-				</body>
-				</html>
+
+
+
+
+
+<div class="container">
+
+    <!-- Classic Heading -->
+    <h4 class="classic-title"><span>Our Services</span></h4>
+    <div class="row">
+      <div class="latest-posts-classic custom-carousel touch-carousel" data-appeared-items="3">
+
+        <?php 
+        while ($service = $services->fetch(PDO::FETCH_OBJ)) {
+          echo ' <div class=" col-lg-12 col-md-12  col-sm-12  col-xs-12  image-service-box">
+            <img class="img-thumbnail" src="../uploaded/services/'.$service->image.'" alt="">
+            <h4>'.$service->title.'</h4>
+            <p>'.$service->content.'</p>
+        </div>';
+        }
+
+         ?>
+      
+
+    </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Start Client/Partner Section -->
+<div class="partner">
+    <div class="container">
+        <div class="row">
+
+            <!-- Start Big Heading -->
+            <div class="big-title text-center">
+             <h1>Our Happy <strong>Clients</strong></h1>
+             <p class="title-desc">Partners We Work With</p>
+         </div>
+         <!-- End Big Heading -->
+
+         <!--Start Clients Carousel-->
+         <div class="our-clients">
+             <div class="clients-carousel custom-carousel touch-carousel navigation-3" data-appeared-items="5" data-navigation="true">
+          <?php 
+          while ($client = $clients->fetch(PDO::FETCH_OBJ)) {
+           echo  '<div class="client-item item">
+                   <a href="'.$client->link.'"><img src="../uploaded/clients/'.$client->image.'" alt="" /></a>
+               </div>';
+          }
+           ?>
+                <!-- Client 1 -->
+                
+
+           </div>
+       </div>
+       <!-- End Clients Carousel -->
+   </div><!-- .row -->
+</div><!-- .container -->
+</div>
+<!-- End Client/Partner Section -->
+
+
+<?php
+require 'footer.php'; 
+?>

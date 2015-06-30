@@ -1,155 +1,387 @@
-	<header>
-		<?php 
-		require 'popup.php';
-		require '../connection/connection.php';
-		$site_info = $conn->query("SELECT phone , email FROM site_info");
-		$info = $site_info->fetch(PDO::FETCH_OBJ);
-		?>
-		<div id="header">
-			<div class="container">
-				<div class="row">
-					<div id="logo" class="col-xs-8 col-sm-4">
-						<a href="index.php"><img width="259" height="45" src="images/1.png" alt="The Traveller. Modern hotel html template." class="img-responsive" /></a>
-					</div>
-					<div class="col-xs-4 col-sm-8 text-right" id="hotel-info">
-						<ul>
-							<li id="hotel-phone"><a href="tel:<?php echo $info->phone; ?>"><i class="fa fa-phone fa-lg primary-color"></i></a></li>
-							<li id="contcat-link" ><a id="contcat-link" href="mailto:<?php echo $info->email; ?>"><i class="fa fa-envelope fa-lg primary-color"></i></a></li>
+<?php 
 
-						</ul>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-		<!-- Nav Start -->
-		<nav>
-			<div class="container">
-				<ul class="jetmenu">
-					<li class="active"><a href="index.php">Home</a>
-					</li>
-					<?php 
-					$hotels = $conn->query("SELECT id FROM hotels WHERE hotel_or_not=1");
-					$hotel = $hotels->fetch(PDO::FETCH_OBJ);
-					$hotel_image = $conn->query("SELECT pic FROM hotel_images WHERE hotel_id=$hotel->id");
-					$pic = $hotel_image->fetch(PDO::FETCH_OBJ); ?>
-					<li><a href="#">Tourism</a>
-						<div class="megamenu full-width">
-							<div class="row">
-								<div class="col-sm-3">
-									<img src="../uploaded/hotels_images/<?php echo "$pic->pic"; ?>" alt="" class="img-responsive" />
-									<h4>Hotel reservations</h4>
-									<p>With hotel reservation service can identify the most important and best hotels scattered across Turkey with all the services provided by them and choose the right book</p>
-									<p><a href="hotels.php" class="btn btn-primary">show</a></p>
-								</div>
-								<?php 
-								$page5 = $conn->query("SELECT image FROM pages_images WHERE page_id=5");
-								$image5 = $page5->fetch(PDO::FETCH_OBJ); ?>
-								<div class="col-sm-3">
-									<img src="../uploaded/pages_images/<?php echo "$image5->image"; ?>" alt="" class="img-responsive" />
-									<h4>Flight Reservations</h4>
-									<p>alkyaly Tourism Company and public services and the right hand guide that helps you to book airline tickets to and from anywhere in the world </p>
-									<p><a href="page.php?page_id=5" class="btn btn-primary">Read more</a></p>
-								</div>
-								<?php 
-								$page6 = $conn->query("SELECT image FROM pages_images WHERE page_id=6");
-								$image6 = $page6->fetch(PDO::FETCH_OBJ); ?>
-								<div class="col-sm-3">
-									<img src="../uploaded/pages_images/<?php echo "$image6->image"; ?>" alt="" class="img-responsive" />
-									<h4>Medical Tourism</h4>
-									<p>alkyaly Tourism Company and General Services is pleased to offer medical tourism service in Turkey, Arab travelers to the brothers in the best hospitals in Istanbul </p>
-									<p><a href="page.php?page_id=6" class="btn btn-primary">Read more</a></p>
-								</div>
-								<?php 
-								$offers = $conn->query("SELECT id FROM hotels WHERE hotel_or_not =0");
-								$offer = $offers->fetch(PDO::FETCH_OBJ);
-								$offers_image = $conn->query("SELECT pic FROM hotel_images WHERE hotel_id=$offer->id");
-								$offer_image = $offers_image->fetch(PDO::FETCH_OBJ);
-								?>
-								<div class="col-sm-3">
-									<img src="../uploaded/hotels_images/<?php echo "$offer_image->pic"; ?>" alt="" class="img-responsive" />
-									<h4>Offers</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu lacus sed neque auctor cursus.</p>
-									<p><a href="offers.php" class="btn btn-primary">Read more</a></p>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li><a href="#">Investment</a>
-						<div class="megamenu full-width">
-							<div class="row">
-								<?php 
-								$page7 = $conn->query("SELECT image FROM pages_images WHERE page_id=7");
-								$image7 = $page7->fetch(PDO::FETCH_OBJ);
-								?>
-								<div class="col-sm-3">
-									<img src="../uploaded/pages_images/<?php echo "$image7->image"; ?>" alt="" class="img-responsive" />
-									<h4>Investment projects</h4>
-									<p>Construction company is keen to encourage investment by providing higher levels of service to investors at all times</p>
-									<p><a href="page.php?page_id=7" class="btn btn-primary">Read more</a></p>
-								</div>
-								<?php 
-								$page8 = $conn->query("SELECT image FROM pages_images WHERE page_id=8");
-								$image8 = $page8->fetch(PDO::FETCH_OBJ);
-								// if(!$page8->rowCount()) {
-								// 	$image8->image = 'image.png';
-								// }
-
-								?>
-								<div class="col-sm-3">
-									<img src="../uploaded/pages_images/<?php echo "$image8->image"; ?>" alt="" class="img-responsive" />
-									<h4>Economic Studies</h4>
-									<p>The preparation of the initial economic feasibility studies is one of the services provided by the construction company for tourism and public services</p>
-									<p><a href="page.php?page_id=8" class="btn btn-primary">Read more</a></p>
-								</div>
-								<?php 
-								$page9 = $conn->query("SELECT image FROM pages_images WHERE page_id=9");
-								$image9 = $page9->fetch(PDO::FETCH_OBJ);
-								?>
-								<div class="col-sm-3">
-									<img src="../uploaded/pages_images/<?php echo "$image9->image"; ?>" alt="" class="img-responsive" />
-									<h4> Brokerage business</h4>
-									<p>The preparation of the initial economic feasibility studies is one of the services provided by the construction company for tourism and public services</p>
-									<p><a href="page.php?page_id=9" class="btn btn-primary">Read more</a></p>
-								</div>
-								<?php 
-								$page10 = $conn->query("SELECT image FROM pages_images WHERE page_id=10");
-								$image10 = $page10->fetch(PDO::FETCH_OBJ);
-								?>
-								<div class="col-sm-3">
-									<img src="../uploaded/pages_images/<?php echo "$image10->image"; ?>" alt="" class="img-responsive" />
-									<h4>Machines-and-production lines.</h4>
-									<p>Construction company seeking to put its engineers qualified expertise to serve its customers and help them understand and characterize and identify industrial needs</p>
-									<p><a href="page.php?page_id=10" class="btn btn-primary">Read more</a></p>
-								</div>
-							</div>
-						</div>
-					</li>
-
-					<li><a href="page.php?page_id=1">Rent cars</a>
-
-					</li>
-
-					<li><a href="page.php?page_id=2">Property</a>
-
-					</li>
-
-					<li><a href="page.php?page_id=3">Services</a>
-
-					</li>
-
-
-					<li><a href="page.php?page_id=4">Know on Turkey</a>
-
-					</li>
-				</ul>
-			</div>
-		</nav>
-		<!-- Nav End -->
+require '../AdminArea/connection.php';
 
 
 
-		
+$site_data = $conn->prepare("SELECT  * FROM site_data WHERE id=1");
 
-	</header>
+$site_data->execute();
+
+
+
+$info = $site_data->fetch(PDO::FETCH_OBJ);
+
+
+
+$page1 = $conn->prepare("SELECT * FROM sub_pages WHERE parent_id = 1");
+
+$page1->execute();
+
+
+
+$page2 =  $conn->prepare("SELECT * FROM sub_pages WHERE parent_id = 2");
+
+$page2->execute();
+
+
+
+
+
+$page3 =  $conn->prepare("SELECT * FROM sub_pages WHERE parent_id = 3");
+
+$page3->execute();
+
+?>
+
+<!doctype html>
+
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><html lang="en" class="no-js"> <![endif]-->
+
+<html lang="en">
+
+
+
+<head>
+
+
+
+    <!-- Basic -->
+
+    <title><?php echo $info->title ; ?> | Home</title>
+
+
+
+    <!-- Define Charset -->
+
+    <meta charset="utf-8">
+
+
+
+    <!-- Responsive Metatag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <!-- Page Description and Author -->
+
+    <meta name="description" content="<?php echo $info->title ?> susdi oil company">
+
+   <!--  <meta name="author" content="iThemesLab"> -->
+
+
+
+    <!-- Bootstrap CSS  -->
+
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css" type="text/css" media="screen">
+
+
+
+    <!-- Font Awesome CSS -->
+
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">
+
+
+
+    <!-- Margo CSS Styles  -->
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+
+
+
+    <!-- Responsive CSS Styles  -->
+
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen">
+
+
+
+    <!-- Css3 Transitions Styles  -->
+
+    <link rel="stylesheet" type="text/css" href="css/animate.css" media="screen">
+
+
+
+    <!-- Color CSS Styles  -->
+
+    <!-- <link rel="stylesheet" type="text/css" href="css/colors/red.css" title="red" media="screen" /> -->
+
+
+
+    <link rel="stylesheet" type="text/css" href="css/colors/blue.css" title="blue" media="screen" />  
+
+
+
+
+
+    <!--[if IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+    <!-- Full Body Container -->
+
+    <div id="container">
+
+
+
+
+
+        <!-- Start Header Section --> 
+
+        <div class="hidden-header"></div>
+
+        <header class="clearfix">
+
+
+
+            <!-- Start Top Bar -->
+
+            <div class="top-bar">
+
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-md-7">
+
+                            <!-- Start Contact Info -->
+
+                            <ul class="contact-details">
+
+                                <li><a href="#"><i class="fa fa-map-marker"></i> <?php echo $info->address; ?></a>
+
+                                </li>
+
+                                <li><a href="#"><i class="fa fa-envelope-o"></i> <?php echo $info->email; ?></a>
+
+                                </li>
+
+                                <li><a href="#"><i class="fa fa-phone"></i> <?php echo $info->phone; ?></a>
+
+                                </li>
+
+                            </ul>
+
+                            <!-- End Contact Info -->
+
+                        </div><!-- .col-md-6 -->
+
+                        <div class="col-md-5">
+
+                            <!-- Start Social Links -->
+
+                            <ul class="social-list">
+
+                                <li>
+
+                                    <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" target="_blank" href="<?php echo $info->facebook; ?>"><i class="fa fa-facebook"></i></a>
+
+                                </li>
+
+                                <li>
+
+                                    <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" target="_blank"  href="<?php echo $info->twitter; ?>"><i class="fa fa-twitter"></i></a>
+
+                                </li>
+
+                                <li>
+
+                                    <a class="google itl-tooltip" data-placement="bottom" title="Google Plus"  target="_blank"  href="<?php echo $info->google; ?>"><i class="fa fa-google-plus"></i></a>
+
+                                </li>
+
+                            </ul>
+
+                            <!-- End Social Links -->
+
+                        </div><!-- .col-md-6 -->
+
+                    </div><!-- .row -->
+
+                </div><!-- .container -->
+
+            </div><!-- .top-bar -->
+
+            <!-- End Top Bar -->
+
+            
+
+            
+
+            <!-- Start  Logo & Naviagtion  -->
+
+            <div class="navbar navbar-default navbar-top">
+
+                <div class="container">
+
+                    <div class="navbar-header">
+
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
+                            <i class="fa fa-bars"></i>
+
+                        </button>
+
+                        <!-- End Toggle Nav Link For Mobiles -->
+
+                        <a class="navbar-brand" href="index.php">
+
+                            <img alt=""  src="images/logo.png" >
+
+                        </a>
+
+                    </div>
+
+                    <div class="navbar-collapse collapse">
+
+
+
+                        <!-- Start Navigation List -->
+
+                        <ul class="nav navbar-nav navbar-right">
+
+                         <li><a class="active" href="index.php">Home </a>
+
+                         </li>
+
+                         <li><a href="about.php">About</a>
+
+                         </li>
+
+                         <li>
+
+
+
+                            <a href="#">Solar Energy</a>
+
+                            <ul class="dropdown">
+
+                                <?php 
+
+                                while ($page = $page1->fetch(PDO::FETCH_OBJ)) {
+
+                                    echo '<li><a href="page.php?id='.$page->id.'">'.$page->title.'</a>
+
+                                    </li>';
+
+                                }
+
+
+
+                                ?>
+
+                                
+
+
+
+                            </ul>
+
+                        </li>
+
+
+
+
+
+                        <li>
+
+                            <a href="#">Wind Energy</a>
+
+                            <ul class="dropdown">
+
+                               <?php 
+
+                                while ($page = $page2->fetch(PDO::FETCH_OBJ)) {
+
+                                    echo '<li><a href="page.php?id='.$page->id.'">'.$page->title.'</a>
+
+                                    </li>';
+
+                                }
+
+
+
+                                ?>
+
+                           </ul>
+
+                       </li>
+
+
+
+
+
+                       <li>
+
+                        <a href="#">Hiberd Energy</a>
+
+                        <ul class="dropdown">
+
+                           <?php 
+
+                                while ($page = $page3->fetch(PDO::FETCH_OBJ)) {
+
+                                    echo '<li><a href="page.php?id='.$page->id.'">'.$page->title.'</a>
+
+                                    </li>';
+
+                                }
+
+
+
+                                ?>
+
+                       </ul>
+
+                   </li>
+
+
+
+
+
+                   <!-- <li><a href="our_customers.php">our customers</a> </li> -->
+
+                   <li><a href="our_works.php">our works</a> </li>
+
+                   <li><a href="contact.php">Contact</a>
+                   <li><a href="../index.php">العربية</a>
+
+
+
+                   </li>
+
+               </ul>
+
+               <!-- End Navigation List -->
+
+           </div>
+
+       </div>
+
+   </div>
+
+   <!-- End Header Logo & Naviagtion -->
+
+
+
+</header> 
+
+<!-- End Header Section -->
+
+
+
+
+
